@@ -1,0 +1,116 @@
+Date : 2021-08-26 03:28:10
+Directory : c:\Users\digan\Downloads\shopingweb-20210825T192405Z-001
+Total : 78 files,  22112 codes, 1927 comments, 4564 blanks, all 28603 lines
+
+Languages
++------------+------------+------------+------------+------------+------------+
+| language   | files      | code       | comment    | blank      | total      |
++------------+------------+------------+------------+------------+------------+
+| CSS        |         22 |      8,749 |        678 |      2,681 |     12,108 |
+| HTML       |         36 |      8,687 |        807 |        940 |     10,434 |
+| JavaScript |         17 |      4,656 |        431 |        942 |      6,029 |
+| XML        |          1 |         12 |          1 |          1 |         14 |
+| JSON       |          2 |          8 |         10 |          0 |         18 |
++------------+------------+------------+------------+------------+------------+
+
+Directories
++-------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                                  | files      | code       | comment    | blank      | total      |
++-------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                                     |         78 |     22,112 |      1,927 |      4,564 |     28,603 |
+| shopingweb                                                                                            |         77 |     22,105 |      1,917 |      4,564 |     28,586 |
+| shopingweb\PRODUCT                                                                                    |         12 |      4,775 |        635 |      1,115 |      6,525 |
+| shopingweb\PRODUCT\css                                                                                |          3 |         11 |         42 |          4 |         57 |
+| shopingweb\PRODUCT\js                                                                                 |          4 |      3,350 |        330 |        851 |      4,531 |
+| shopingweb\blog                                                                                       |         13 |      4,738 |        257 |      1,836 |      6,831 |
+| shopingweb\cart                                                                                       |          2 |        445 |         74 |         63 |        582 |
+| shopingweb\css                                                                                        |          2 |        232 |          7 |          0 |        239 |
+| shopingweb\image                                                                                      |          2 |         13 |          1 |          1 |         15 |
+| shopingweb\js                                                                                         |          2 |          9 |         49 |          1 |         59 |
+| shopingweb\login                                                                                      |          4 |        347 |        300 |        141 |        788 |
++-------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++-------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| filename                                                                                              | language   | code       | comment    | blank      | total      |
++-------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| c:\Users\digan\Downloads\shopingweb-20210825T192405Z-001\firebase.json                                | JSON       |          7 |         10 |          0 |         17 |
+| c:\Users\digan\Downloads\shopingweb-20210825T192405Z-001\shopingweb\PRODUCT\css\bootstrap.min.css     | CSS        |          4 |          6 |          2 |         12 |
+| c:\Users\digan\Downloads\shopingweb-20210825T192405Z-001\shopingweb\PRODUCT\css\mdb-pro.min.css       | CSS        |          6 |         27 |          0 |         33 |
+| c:\Users\digan\Downloads\shopingweb-20210825T192405Z-001\shopingweb\PRODUCT\css\mdb.ecommerce.min.css | CSS        |          1 |          9 |          2 |         12 |
+| c:\Users\digan\Downloads\shopingweb-20210825T192405Z-001\shopingweb\PRODUCT\js\bootstrap.js           | JavaScript |      3,347 |        325 |        850 |      4,522 |
+| c:\Users\digan\Downloads\shopingweb-20210825T192405Z-001\shopingweb\PRODUCT\js\mdb.ecommerce.min.js   | JavaScript |          1 |          1 |          0 |          2 |
+| c:\Users\digan\Downloads\shopingweb-20210825T192405Z-001\shopingweb\PRODUCT\js\mdb.min.js             | JavaScript |          1 |          0 |          0 |          1 |
+| c:\Users\digan\Downloads\shopingweb-20210825T192405Z-001\shopingweb\PRODUCT\js\popper.min.js          | JavaScript |          1 |          4 |          1 |          6 |
+| c:\Users\digan\Downloads\shopingweb-20210825T192405Z-001\shopingweb\PRODUCT\product.html              | HTML       |        501 |        104 |         94 |        699 |
+| c:\Users\digan\Downloads\shopingweb-20210825T192405Z-001\shopingweb\PRODUCT\tryle.css                 | CSS        |        297 |         18 |         48 |        363 |
+| c:\Users\digan\Downloads\shopingweb-20210825T192405Z-001\shopingweb\PRODUCT\zzzzzz.css                | CSS        |         35 |         60 |         15 |        110 |
+| c:\Users\digan\Downloads\shopingweb-20210825T192405Z-001\shopingweb\PRODUCT\zzzzzzz.html              | HTML       |        572 |         81 |        103 |        756 |
+| c:\Users\digan\Downloads\shopingweb-20210825T192405Z-001\shopingweb\PRODUCT\zzzzzzzzz.js              | JavaScript |          9 |          0 |          0 |          9 |
+| c:\Users\digan\Downloads\shopingweb-20210825T192405Z-001\shopingweb\about.html                        | HTML       |         84 |          0 |          2 |         86 |
+| c:\Users\digan\Downloads\shopingweb-20210825T192405Z-001\shopingweb\app.js                            | JavaScript |         12 |          0 |          5 |         17 |
+| c:\Users\digan\Downloads\shopingweb-20210825T192405Z-001\shopingweb\blog\Jquery3.4.1.min.js           | JavaScript |          1 |          0 |          1 |          2 |
+| c:\Users\digan\Downloads\shopingweb-20210825T192405Z-001\shopingweb\blog\all.css                      | CSS        |      2,963 |          6 |      1,427 |      4,396 |
+| c:\Users\digan\Downloads\shopingweb-20210825T192405Z-001\shopingweb\blog\aos.css                      | CSS        |          1 |          0 |          1 |          2 |
+| c:\Users\digan\Downloads\shopingweb-20210825T192405Z-001\shopingweb\blog\aos.js                       | JavaScript |          1 |          0 |          1 |          2 |
+| c:\Users\digan\Downloads\shopingweb-20210825T192405Z-001\shopingweb\blog\blog.css                     | CSS        |        601 |         30 |        152 |        783 |
+| c:\Users\digan\Downloads\shopingweb-20210825T192405Z-001\shopingweb\blog\blog.html                    | HTML       |        166 |        117 |         36 |        319 |
+| c:\Users\digan\Downloads\shopingweb-20210825T192405Z-001\shopingweb\blog\font.css                     | CSS        |         20 |          5 |          4 |         29 |
+| c:\Users\digan\Downloads\shopingweb-20210825T192405Z-001\shopingweb\blog\index.html                   | HTML       |        325 |         52 |         36 |        413 |
+| c:\Users\digan\Downloads\shopingweb-20210825T192405Z-001\shopingweb\blog\main.js                      | JavaScript |         36 |          4 |          8 |         48 |
+| c:\Users\digan\Downloads\shopingweb-20210825T192405Z-001\shopingweb\blog\owl.carousel.min.js          | JavaScript |          2 |          5 |          1 |          8 |
+| c:\Users\digan\Downloads\shopingweb-20210825T192405Z-001\shopingweb\blog\owl.css                      | CSS        |          1 |          5 |          0 |          6 |
+| c:\Users\digan\Downloads\shopingweb-20210825T192405Z-001\shopingweb\blog\owndefault.css               | CSS        |          1 |          5 |          1 |          7 |
+| c:\Users\digan\Downloads\shopingweb-20210825T192405Z-001\shopingweb\blog\style.css                    | CSS        |        620 |         28 |        168 |        816 |
+| c:\Users\digan\Downloads\shopingweb-20210825T192405Z-001\shopingweb\cart\cart.html                    | HTML       |        301 |         68 |         48 |        417 |
+| c:\Users\digan\Downloads\shopingweb-20210825T192405Z-001\shopingweb\cart\style.css                    | CSS        |        144 |          6 |         15 |        165 |
+| c:\Users\digan\Downloads\shopingweb-20210825T192405Z-001\shopingweb\contect.html                      | HTML       |         47 |          4 |          6 |         57 |
+| c:\Users\digan\Downloads\shopingweb-20210825T192405Z-001\shopingweb\css\flickity.min.css              | CSS        |          1 |          3 |          0 |          4 |
+| c:\Users\digan\Downloads\shopingweb-20210825T192405Z-001\shopingweb\css\w3.css                        | CSS        |        231 |          4 |          0 |        235 |
+| c:\Users\digan\Downloads\shopingweb-20210825T192405Z-001\shopingweb\eror.html                         | HTML       |         17 |          0 |          1 |         18 |
+| c:\Users\digan\Downloads\shopingweb-20210825T192405Z-001\shopingweb\graficcard.html                   | HTML       |          0 |          1 |          0 |          1 |
+| c:\Users\digan\Downloads\shopingweb-20210825T192405Z-001\shopingweb\image\gif3.json                   | JSON       |          1 |          0 |          0 |          1 |
+| c:\Users\digan\Downloads\shopingweb-20210825T192405Z-001\shopingweb\image\phone.svg                   | XML        |         12 |          1 |          1 |         14 |
+| c:\Users\digan\Downloads\shopingweb-20210825T192405Z-001\shopingweb\index.html                        | HTML       |        990 |        211 |         98 |      1,299 |
+| c:\Users\digan\Downloads\shopingweb-20210825T192405Z-001\shopingweb\item1.html                        | HTML       |        226 |          4 |         20 |        250 |
+| c:\Users\digan\Downloads\shopingweb-20210825T192405Z-001\shopingweb\item10.html                       | HTML       |        246 |          2 |         22 |        270 |
+| c:\Users\digan\Downloads\shopingweb-20210825T192405Z-001\shopingweb\item11.html                       | HTML       |        235 |          3 |         21 |        259 |
+| c:\Users\digan\Downloads\shopingweb-20210825T192405Z-001\shopingweb\item12.html                       | HTML       |        228 |          3 |         21 |        252 |
+| c:\Users\digan\Downloads\shopingweb-20210825T192405Z-001\shopingweb\item2.html                        | HTML       |        223 |          3 |         20 |        246 |
+| c:\Users\digan\Downloads\shopingweb-20210825T192405Z-001\shopingweb\item3.html                        | HTML       |        205 |         17 |         21 |        243 |
+| c:\Users\digan\Downloads\shopingweb-20210825T192405Z-001\shopingweb\item4.html                        | HTML       |        231 |          3 |         20 |        254 |
+| c:\Users\digan\Downloads\shopingweb-20210825T192405Z-001\shopingweb\item5.html                        | HTML       |        237 |          3 |         21 |        261 |
+| c:\Users\digan\Downloads\shopingweb-20210825T192405Z-001\shopingweb\item6.html                        | HTML       |        239 |          3 |         20 |        262 |
+| c:\Users\digan\Downloads\shopingweb-20210825T192405Z-001\shopingweb\item7.html                        | HTML       |        241 |          3 |         20 |        264 |
+| c:\Users\digan\Downloads\shopingweb-20210825T192405Z-001\shopingweb\item8.html                        | HTML       |        242 |          3 |         20 |        265 |
+| c:\Users\digan\Downloads\shopingweb-20210825T192405Z-001\shopingweb\item9.html                        | HTML       |        241 |          2 |         20 |        263 |
+| c:\Users\digan\Downloads\shopingweb-20210825T192405Z-001\shopingweb\itemL1.html                       | HTML       |        267 |          3 |         24 |        294 |
+| c:\Users\digan\Downloads\shopingweb-20210825T192405Z-001\shopingweb\itemL2.html                       | HTML       |        271 |          3 |         25 |        299 |
+| c:\Users\digan\Downloads\shopingweb-20210825T192405Z-001\shopingweb\itemL3.html                       | HTML       |        281 |          3 |         26 |        310 |
+| c:\Users\digan\Downloads\shopingweb-20210825T192405Z-001\shopingweb\itemL4.html                       | HTML       |        271 |          3 |         25 |        299 |
+| c:\Users\digan\Downloads\shopingweb-20210825T192405Z-001\shopingweb\itemL5.html                       | HTML       |        248 |          3 |         24 |        275 |
+| c:\Users\digan\Downloads\shopingweb-20210825T192405Z-001\shopingweb\itemL6.html                       | HTML       |        274 |          3 |         24 |        301 |
+| c:\Users\digan\Downloads\shopingweb-20210825T192405Z-001\shopingweb\itemL7.html                       | HTML       |        279 |          3 |         24 |        306 |
+| c:\Users\digan\Downloads\shopingweb-20210825T192405Z-001\shopingweb\itemL8.html                       | HTML       |        304 |          3 |         26 |        333 |
+| c:\Users\digan\Downloads\shopingweb-20210825T192405Z-001\shopingweb\js\app.js                         | JavaScript |          1 |          1 |          1 |          3 |
+| c:\Users\digan\Downloads\shopingweb-20210825T192405Z-001\shopingweb\js\flickity.pkgd.min.js           | JavaScript |          8 |         48 |          0 |         56 |
+| c:\Users\digan\Downloads\shopingweb-20210825T192405Z-001\shopingweb\lightslider.css                   | CSS        |        350 |         16 |         26 |        392 |
+| c:\Users\digan\Downloads\shopingweb-20210825T192405Z-001\shopingweb\lightslider.js                    | JavaScript |      1,102 |         11 |         28 |      1,141 |
+| c:\Users\digan\Downloads\shopingweb-20210825T192405Z-001\shopingweb\login\login.css                   | CSS        |        180 |        255 |         92 |        527 |
+| c:\Users\digan\Downloads\shopingweb-20210825T192405Z-001\shopingweb\login\login.html                  | HTML       |         55 |         27 |         17 |         99 |
+| c:\Users\digan\Downloads\shopingweb-20210825T192405Z-001\shopingweb\login\login.js                    | JavaScript |         17 |          6 |         11 |         34 |
+| c:\Users\digan\Downloads\shopingweb-20210825T192405Z-001\shopingweb\login\otp.js                      | JavaScript |         95 |         12 |         21 |        128 |
+| c:\Users\digan\Downloads\shopingweb-20210825T192405Z-001\shopingweb\main.js                           | JavaScript |         17 |         13 |         14 |         44 |
+| c:\Users\digan\Downloads\shopingweb-20210825T192405Z-001\shopingweb\product.html                      | HTML       |        364 |          2 |         30 |        396 |
+| c:\Users\digan\Downloads\shopingweb-20210825T192405Z-001\shopingweb\rufe.html                         | HTML       |          0 |         59 |          0 |         59 |
+| c:\Users\digan\Downloads\shopingweb-20210825T192405Z-001\shopingweb\ryzen.html                        | HTML       |        217 |          8 |         21 |        246 |
+| c:\Users\digan\Downloads\shopingweb-20210825T192405Z-001\shopingweb\style.css                         | CSS        |      2,287 |        174 |        540 |      3,001 |
+| c:\Users\digan\Downloads\shopingweb-20210825T192405Z-001\shopingweb\style1.css                        | CSS        |        713 |         15 |        164 |        892 |
+| c:\Users\digan\Downloads\shopingweb-20210825T192405Z-001\shopingweb\try.css                           | CSS        |         45 |          1 |          0 |         46 |
+| c:\Users\digan\Downloads\shopingweb-20210825T192405Z-001\shopingweb\try.html                          | HTML       |          0 |          0 |          1 |          1 |
+| c:\Users\digan\Downloads\shopingweb-20210825T192405Z-001\shopingweb\try.js                            | JavaScript |          5 |          1 |          0 |          6 |
+| c:\Users\digan\Downloads\shopingweb-20210825T192405Z-001\shopingweb\try2.css                          | CSS        |        191 |          5 |         15 |        211 |
+| c:\Users\digan\Downloads\shopingweb-20210825T192405Z-001\shopingweb\try2.html                         | HTML       |         59 |          0 |          3 |         62 |
+| c:\Users\digan\Downloads\shopingweb-20210825T192405Z-001\shopingweb\tryle.css                         | CSS        |         57 |          0 |          9 |         66 |
+| Total                                                                                                 |            |     22,112 |      1,927 |      4,564 |     28,603 |
++-------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+

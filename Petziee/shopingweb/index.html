@@ -1,0 +1,1467 @@
+<!---      36      ---->
+<!-- 
+1=6789/
+2=78910/
+3=89101/
+ background: linear-gradient(#389dfc, #63ece1);
+4=91012/
+5=10123 
+6=1234
+7=2345
+8=3456
+9=4567
+10=5678 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Petziee</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="try.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
+
+    <link rel="stylesheet" href="css/w3.css">
+    <link rel="stylesheet" href="css/flickity.min.css">
+
+    <!-- id -->
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/8.9.1/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/8.9.1/firebase-auth.js"></script>
+    <script defer src="/__/firebase/8.9.1/firebase-database.js"></script>
+    <script defer src="/__/firebase/8.9.1/firebase-firestore.js"></script>
+    <script defer src="/__/firebase/8.9.1/firebase-functions.js"></script>
+    <script defer src="/__/firebase/8.9.1/firebase-messaging.js"></script>
+    <script defer src="/__/firebase/8.9.1/firebase-storage.js"></script>
+    <!-- <script defer src="/__/firebase/8.9.1/firebase-analytics.js"></script> -->
+    <!-- <script defer src="/__/firebase/8.9.1/firebase-remote-config.js"></script> -->
+    <!-- <script defer src="/__/firebase/8.9.1/firebase-performance.js"></script> -->
+
+
+</head>
+
+<body>
+
+    <!-- <div id="preloader"></div> -->
+
+    <nav class="navbar">
+        <div class="content">
+            <div class="logo">
+                <a href="#">PETZIEE</a>
+            </div>
+            <ul class="menu-list">
+                <div class="icon cancel-btn">
+                    <i class="fas fa-times"></i>
+                </div>
+                <li><a href="#"><i class="fas fa-home"></i></a></li>
+                <li><a href="login/login.html">Login</a></li>
+                <li><a href="event/event.html">Offers</a></li>
+                <li><a href="cart/cart.html">Cart</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            <div class="icon menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+
+
+    <script>
+        const body = document.querySelector("body");
+        const navbar = document.querySelector(".navbar");
+        const menuBtn = document.querySelector(".menu-btn");
+        const cancelBtn = document.querySelector(".cancel-btn");
+        menuBtn.onclick = () => {
+            navbar.classList.add("show");
+            menuBtn.classList.add("hide");
+            body.classList.add("disabled");
+        }
+        cancelBtn.onclick = () => {
+            body.classList.remove("disabled");
+            navbar.classList.remove("show");
+            menuBtn.classList.remove("hide");
+        }
+        window.onscroll = () => {
+            this.scrollY > 20 ? navbar.classList.add("sticky") : navbar.classList.remove("sticky");
+        }
+    </script>
+
+    <div class="carousel" data-flickity='{ "wrapAround": true, "autoPlay": true, "imagesLoaded":true }'>
+        <div class="carousel-cell">
+            <img class="w3-image" src="image/1.jpg">
+        </div>
+        <div class="carousel-cell">
+            <img class="w3-image" src="image/2.jpg">
+        </div>
+        <div class="carousel-cell">
+            <img class="w3-image" src="image/3.jpg">
+        </div>
+    </div>
+    <script src="js/app.js"></script>
+    <script src="js/flickity.pkgd.min.js"></script>
+
+
+    <div class="header1">
+        <div class="container">
+            <!-- <div class="navbar" style="width: 100%;">
+                <div class="logo"> -->
+            <!-- <img src="image/logoshop.png" width="135px"> -->
+            <!-- <h1 style="color: beige;">Petziee</h1>
+                </div>
+                <nav class="nav">
+                    <ul id="MenuItems nav-list">
+                        <li><a href="about.html" class="clink nav-list"><i class="fas fa-home"></i></a></li>
+                        <li><a href="index.html" class="clink nav-list"><i class="fas fa-search"></i></a></li>
+                        <li><a href="product.html" class="clink nav-list" ><i class="far fa-user"></i></a></li>
+                        <li><a href="contect.html" class="clink nav-list"><i class="fas fa-shopping-bag"></i></a></li>
+                    </ul>
+                </nav> -->
+
+            <!-- <img src="image/3line.png" class="menu-bt" onclick="menutoggle()"> -->
+            <!-- <div class="menu-btn" style="margin-right: 25px; padding-top: 29px;" onclick="menutoggle()">
+                    <div class="menu-btn__burger"></div>
+                </div>
+                <script src="main.js"></script>
+            </div> -->
+        </div>
+    </div>
+
+
+    <!-- <header>
+        <div class="container">
+            <nav class="nav">
+                <a href="index.html" class="logo">Petziee</a>
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link"><i class="fas fa-search"></i></a></li>
+                    <li><a href="#" class="nav-link"><i class="fas fa-home"></i></a></li>
+                    <li><a href="#" class="nav-link"><i class="far fa-user"></i></a></li>
+                    <li><a href="#" class="nav-link"><i class="fas fa-shopping-bag"></i></a></li>
+                    <li><a href="#" class="nav-link">Contact</a></li>
+                </ul>
+                <a href="#" id="nav-cta" style="border-radius: 15px; padding: 3px 25px;">Storys</a>
+            </nav>
+        </div>
+    </header> -->
+
+    <section class="hero"></section>
+    <section class="demo-content"></section>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            let header = document.querySelector('header');
+            let windowPosition = window.scrollY > 0;
+
+            if (header != null) {
+                header.classList.toggle('scrolling-active', windowPosition);
+            }
+        })
+    </script>
+
+
+    <!-- ----------slider img---------- -->
+    <!-- <div class="toolbar">
+    <div class="tool">
+        <div class="line1">
+            <div class="colom">
+                <a href="#"><h2><i class="fas fa-bone"></i></h2></a>
+                <a href="#">Food</a>
+            </div>
+
+            <div class="colom">
+                <a href="#"><h2><i class="fas fa-spray-can"></i></h2></a>
+                <a href="#">Care</a>
+            </div>
+
+            <div class="colom">
+                <a href="#"><h2><i class="fas fa-keyboard"></i></h2></a>
+                <a href="#">accessories</a>
+            </div>
+
+            <div class="colom">
+                <a href="#"><h2><i class="fas fa-tshirt"></i></h2></a>
+                <a href="#">Clothing</a>
+            </div>
+
+            <div class="colom">
+                <a href="#"><h2><i class="fas fa-snowman"></i></h2></a>
+                <a href="#">Decor</a>
+            </div>
+
+            <div class="colom">
+                <a href="#"><h2><i class="fas fa-brush"></i></h2></a>
+                <a href="#">Grooming</a>
+            </div>
+
+            <div class="colom">
+                <a href="#"><h2><i class="fas fa-pump-medical"></i></h2></a>
+                <a href="#">Medicine</a>
+            </div>
+
+            <div class="colom">
+                <a href="#"><h2><i class="fab fa-laravel"></i></h2></a>
+                <a href="#">Lavatory</a>
+            </div>
+        </div>
+    </div>
+</div> -->
+    <!-- ---------SHOW PICE PC------------>
+
+    <script>
+        console.log("inside");
+
+        // document.getElementById("cartp1ID ").addEventListener("click", myFunction);
+        // document.getElementById("cartp1ID").onclick = function() {
+        //     myFunction()
+        // };
+
+
+        // function myFunction() {
+        //     console.log("Cliked");
+        //     document.;
+
+        // };
+    </script>
+
+    <section class="section001">
+        <ul class="ul">
+            <!-- <li class="list active" data-filter="a">A</li> -->
+            <li class="list" data-filter="b">Food</li>
+            <li class="list" data-filter="c">Care</li>
+            <li class="list" data-filter="d">accessories</li>
+            <li class="list" data-filter="d">Clothing</li>
+            <li class="list" data-filter="d">Medicine</li>
+
+            <!-- <li class="list" data-filter="e">E</li>
+      <li class="list" data-filter="f">F</li> -->
+        </ul>
+
+
+        <div class="products">
+            <div class="container">
+                <!-- <h1 class = "lg-title" style="font-family: 'Quicksand', sans-serif;">Special Offers</h1>
+            <p class = "text-light" style="font-family: 'Quicksand', sans-serif;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur quos sit consectetur, ipsa voluptatem vitae necessitatibus dicta veniam, optio, possimus assumenda laudantium. Temporibus, quis cum.</p>
+     -->
+                <div class="product-items" id="productitems">
+                    <!-- single product -->
+                    <!-- Product 0 -->
+
+                    <div class="product itemBox" data-item="b">
+                        <div class="product-content ">
+                            <div class="product-img ">
+                                <a href="dp/HU5JOHllg1ZwlZ1MUNdA.html "><img src="image/tryleprod.png " id="p1 " alt="product image "></a>
+                            </div>
+                            <div class="product-btns ">
+                                <button type="button " class="btn-cart " onclick="console.log( 'clicked there') " id="ca "> add to cart
+                                <span><i class = "fas fa-plus "></i></span>
+                            </button>
+                                <button type="button " class="btn-buy "> buy now
+                                <span><i class = "fas fa-shopping-cart "></i></span>
+                            </button>
+                                <div class="product-icon ">
+                                    <ul>
+                                        <li><a href=" "><i class="fas fa-heart "></i></a> </li>
+                                        <li><a href="cart/cart.html "><i class="fas fa-shopping-cart "></i></a> </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-info ">
+                            <div class="product-info-top ">
+                                <h2 class="sm-title ">lifestyle B</h2>
+                                <div class="rating ">
+                                    <span><i class = "fas fa-star " ></i></span>
+                                    <span><i class = "fas fa-star "></i></span>
+                                    <span><i class = "fas fa-star "></i></span>
+                                    <span><i class = "fas fa-star "></i></span>
+                                    <span><i class = "far fa-star "></i></span>
+                                </div>
+                            </div>
+                            <a href="dp/HU5JOHllg1ZwlZ1MUNdA.html " class="product-name ">Chappi Adult Dry Dog Food, Chicken & Rice</a>
+                            <p class="product-price "><i class="fas fa-rupee-sign "></i> 150.00</p>
+                            <p class="product-price "><i class="fas fa-rupee-sign "></i> 133.00</p>
+                        </div>
+
+                        <div class="off-info ">
+                            <h2 class="sm-title ">25% off</h2>
+                        </div>
+                    </div>
+                    <!-- end of single product -->
+                    <!-- single product -->
+                    <div class="product itemBox " data-item="c">
+                        <div class="product-content ">
+                            <div class="product-img ">
+                                <img src="image/tryleprod.png " alt="product image ">
+                            </div>
+                            <div class="product-btns ">
+                                <button type="button " class="btn-cart "> add to cart
+                                <span><i class = "fas fa-plus "></i></span>
+                            </button>
+                                <button type="button " class="btn-buy "> buy now
+                                <span><i class = "fas fa-shopping-cart "></i></span>
+                            </button>
+                                <div class="product-icon ">
+                                    <ul>
+                                        <li><a href=" "><i class="fas fa-heart "></i></a> </li>
+                                        <li><a href=" "><i class="fas fa-shopping-cart "></i></a> </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-info ">
+                            <div class="product-info-top " data-item="e">
+                                <h2 class="sm-title ">lifestyle C</h2>
+                                <div class="rating ">
+                                    <span><i class = "fas fa-star "></i></span>
+                                    <span><i class = "fas fa-star "></i></span>
+                                    <span><i class = "fas fa-star "></i></span>
+                                    <span><i class = "fas fa-star "></i></span>
+                                    <span><i class = "far fa-star "></i></span>
+                                </div>
+                            </div>
+                            <a href="# " class="product-name ">Pedigree Adult Dry Dog Food, Chicken & Vegetables</a>
+                            <p class="product-price "><i class="fas fa-rupee-sign "></i> 470.00</p>
+                            <p class="product-price "><i class="fas fa-rupee-sign "></i> 833.00</p>
+                        </div>
+                    </div>
+                    <!-- end of single product -->
+                    <!-- single product -->
+                    <div class="product itemBox " data-item="b">
+                        <div class="product-content ">
+                            <div class="product-img ">
+                                <img src="image/shoe-3.png " alt="product image ">
+                            </div>
+                            <div class="product-btns ">
+                                <button type="button " class="btn-cart "> add to cart
+                                <span><i class = "fas fa-plus "></i></span>
+                            </button>
+                                <button type="button " class="btn-buy "> buy now
+                                <span><i class = "fas fa-shopping-cart "></i></span>
+                            </button>
+                                <div class="product-icon ">
+                                    <ul>
+                                        <li><a href=" "><i class="fas fa-heart "></i></a> </li>
+                                        <li><a href=" "><i class="fas fa-shopping-cart "></i></a> </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-info ">
+                            <div class="product-info-top ">
+                                <h2 class="sm-title ">lifestyle B</h2>
+                                <div class="rating ">
+                                    <span><i class = "fas fa-star "></i></span>
+                                    <span><i class = "fas fa-star "></i></span>
+                                    <span><i class = "fas fa-star "></i></span>
+                                    <span><i class = "fas fa-star "></i></span>
+                                    <span><i class = "far fa-star "></i></span>
+                                </div>
+                            </div>
+                            <a href="# " class="product-name ">mens shoes DN 23XX, new product</a>
+                            <p class="product-price ">$ 150.00</p>
+                            <p class="product-price ">$ 133.00</p>
+                        </div>
+                    </div>
+                    <!-- end of single product -->
+                    <!-- single product -->
+                    <div class="product itemBox " data-item="b">
+                        <div class="product-content ">
+                            <div class="product-img ">
+                                <img src="image/shoe-4.png " alt="product image ">
+                            </div>
+                            <div class="product-btns ">
+                                <button type="button " class="btn-cart "> add to cart
+                                <span><i class = "fas fa-plus "></i></span>
+                            </button>
+                                <button type="button " class="btn-buy "> buy now
+                                <span><i class = "fas fa-shopping-cart "></i></span>
+                            </button>
+                                <div class="product-icon ">
+                                    <ul>
+                                        <li><a href=" "><i class="fas fa-heart "></i></a> </li>
+                                        <li><a href=" "><i class="fas fa-shopping-cart "></i></a> </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-info ">
+                            <div class="product-info-top ">
+                                <h2 class="sm-title ">lifestyle B</h2>
+                                <div class="rating ">
+                                    <span><i class = "fas fa-star "></i></span>
+                                    <span><i class = "fas fa-star "></i></span>
+                                    <span><i class = "fas fa-star "></i></span>
+                                    <span><i class = "fas fa-star "></i></span>
+                                    <span><i class = "far fa-star "></i></span>
+                                </div>
+                            </div>
+                            <a href="# " class="product-name ">mens shoes DN 23XX, new product</a>
+                            <p class="product-price ">$ 150.00</p>
+                            <p class="product-price ">$ 133.00</p>
+                        </div>
+
+                        <div class="off-info ">
+                            <h2 class="sm-title ">25% off</h2>
+                        </div>
+                    </div>
+                    <!-- end of single product -->
+                    <!-- single product -->
+                    <div class="product itemBox " data-item="c ">
+                        <div class="product-content ">
+                            <div class="product-img ">
+                                <img src="image/shoe-3.png " alt="product image ">
+                            </div>
+                            <div class="product-btns ">
+                                <button type="button " class="btn-cart "> add to cart
+                                <span><i class = "fas fa-plus "></i></span>
+                            </button>
+                                <button type="button " class="btn-buy "> buy now
+                                <span><i class = "fas fa-shopping-cart "></i></span>
+                            </button>
+                                <div class="product-icon ">
+                                    <ul>
+                                        <li><a href=" "><i class="fas fa-heart "></i></a> </li>
+                                        <li><a href=" "><i class="fas fa-shopping-cart "></i></a> </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-info ">
+                            <div class="product-info-top ">
+                                <h2 class="sm-title ">lifestyle C</h2>
+                                <div class="rating ">
+                                    <span><i class = "fas fa-star "></i></span>
+                                    <span><i class = "fas fa-star "></i></span>
+                                    <span><i class = "fas fa-star "></i></span>
+                                    <span><i class = "fas fa-star "></i></span>
+                                    <span><i class = "far fa-star "></i></span>
+                                </div>
+                            </div>
+                            <a href="# " class="product-name ">womens shoes DN 23XX, new product</a>
+                            <p class="product-price ">$ 150.00</p>
+                            <p class="product-price ">$ 133.00</p>
+                        </div>
+                    </div>
+                    <!-- end of single product -->
+                    <!-- single product -->
+                    <div class="product itemBox " data-item="b ">
+                        <div class="product-content ">
+                            <div class="product-img ">
+                                <img src="image/shoe-1.png " alt="product image ">
+                            </div>
+                            <div class="product-btns ">
+                                <button type="button " class="btn-cart "> add to cart
+                                <span><i class = "fas fa-plus "></i></span>
+                            </button>
+                                <button type="button " class="btn-buy "> buy now
+                                <span><i class = "fas fa-shopping-cart "></i></span>
+                            </button>
+                                <div class="product-icon ">
+                                    <ul>
+                                        <li><a href=" "><i class="fas fa-heart "></i></a> </li>
+                                        <li><a href=" "><i class="fas fa-shopping-cart "></i></a> </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-info ">
+                            <div class="product-info-top ">
+                                <h2 class="sm-title ">lifestyle B</h2>
+                                <div class="rating ">
+                                    <span><i class = "fas fa-star "></i></span>
+                                    <span><i class = "fas fa-star "></i></span>
+                                    <span><i class = "fas fa-star "></i></span>
+                                    <span><i class = "fas fa-star "></i></span>
+                                    <span><i class = "far fa-star "></i></span>
+                                </div>
+                            </div>
+                            <a href="# " class="product-name ">womens shoes DN 23XX, new product</a>
+                            <p class="product-price ">$ 150.00</p>
+                            <p class="product-price ">$ 133.00</p>
+                        </div>
+                    </div>
+                    <!-- end of single product -->
+                    <!-- single product -->
+                    <div class="product itemBox " data-item="d ">
+                        <div class="product-content ">
+                            <div class="product-img ">
+                                <img src="image/shoe-4.png " alt="product image ">
+                            </div>
+                            <div class="product-btns ">
+                                <button type="button " class="btn-cart "> add to cart
+                                <span><i class = "fas fa-plus "></i></span>
+                            </button>
+                                <button type="button " class="btn-buy "> buy now
+                                <span><i class = "fas fa-shopping-cart "></i></span>
+                            </button>
+                                <div class="product-icon ">
+                                    <ul>
+                                        <li><a href=" "><i class="fas fa-heart "></i></a> </li>
+                                        <li><a href=" "><i class="fas fa-shopping-cart "></i></a> </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-info ">
+                            <div class="product-info-top ">
+                                <h2 class="sm-title ">lifestyle D</h2>
+                                <div class="rating ">
+                                    <span><i class = "fas fa-star "></i></span>
+                                    <span><i class = "fas fa-star "></i></span>
+                                    <span><i class = "fas fa-star "></i></span>
+                                    <span><i class = "fas fa-star "></i></span>
+                                    <span><i class = "far fa-star "></i></span>
+                                </div>
+                            </div>
+                            <a href="# " class="product-name ">womens shoes DN 23XX, new product</a>
+                            <p class="product-price ">$ 150.00</p>
+                            <p class="product-price ">$ 133.00</p>
+                        </div>
+                    </div>
+                    <!-- end of single product -->
+                    <!-- single product -->
+                    <div class="product itemBox " data-item="c ">
+                        <div class="product-content ">
+                            <div class="product-img ">
+                                <img src="image/shoe-2.png " alt="product image ">
+                            </div>
+                            <div class="product-btns ">
+                                <button type="button " class="btn-cart "> add to cart
+                                <span><i class = "fas fa-plus "></i></span>
+                            </button>
+                                <button type="button " class="btn-buy "> buy now
+                                <span><i class = "fas fa-shopping-cart "></i></span>
+                            </button>
+                                <div class="product-icon ">
+                                    <ul>
+                                        <li><a href=" "><i class="fas fa-heart "></i></a> </li>
+                                        <li><a href=" "><i class="fas fa-shopping-cart "></i></a> </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-info ">
+                            <div class="product-info-top ">
+                                <h2 class="sm-title ">lifestyle C</h2>
+                                <div class="rating ">
+                                    <span><i class = "fas fa-star "></i></span>
+                                    <span><i class = "fas fa-star "></i></span>
+                                    <span><i class = "fas fa-star "></i></span>
+                                    <span><i class = "fas fa-star "></i></span>
+                                    <span><i class = "far fa-star "></i></span>
+                                </div>
+                            </div>
+                            <a href="# " class="product-name ">womens shoes DN 23XX, new product</a>
+                            <p class="product-price ">$ 150.00</p>
+                            <p class="product-price ">$ 133.00</p>
+                        </div>
+
+                        <div class="off-info ">
+                            <h2 class="sm-title ">35% off</h2>
+                        </div>
+                    </div>
+                    <!-- end of single product -->
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+
+    <!-- <script>
+        let list = document.querySelectorAll('.list ');
+        let itemBox = document.querySelectorAll('.itemBox ');
+
+        for (let i = 0; i < list.length; i++) {
+            list[i].addEventListener('click ', function() {
+                for (let j = 0; j < list.length; j++) {
+                    list[j].classList.remove('active ');
+                }
+                this.classList.add('active ');
+
+                let dataFilter = this.getAttribute('data-filter ');
+
+                for (let k = 0; k < itemBox.length; k++) {
+                    itemBox[k].classList.remove('active ');
+                    itemBox[k].classList.add('hide ');
+
+                    if (itemBox[k].getAttribute('data-item ') == dataFilter ||
+                        dataFilter == "a ") {
+                        itemBox[k].classList.remove('hide ');
+                        itemBox[k].classList.add('active ');
+
+                    }
+                }
+            })
+        }
+    </script> -->
+    <script>
+        let list = document.querySelectorAll('.list');
+        let itemBox = document.querySelectorAll('.itemBox');
+
+        for (let i = 0; i < list.length; i++) {
+            list[i].addEventListener('click', function() {
+                for (let j = 0; j < list.length; j++) {
+                    list[j].classList.remove('active');
+                }
+                this.classList.add('active');
+
+                let dataFilter = this.getAttribute('data-filter');
+
+                for (let k = 0; k < itemBox.length; k++) {
+                    itemBox[k].classList.remove('active');
+                    itemBox[k].classList.add('hide');
+
+                    if (itemBox[k].getAttribute('data-item') == dataFilter ||
+                        dataFilter == "a") {
+                        itemBox[k].classList.remove('hide');
+                        itemBox[k].classList.add('active');
+
+                    }
+                }
+            })
+        }
+    </script>
+
+    <!-- --------PRODUCT FOR SLAE--------->
+
+
+    <div class="products ">
+        <div class="container ">
+            <h1 class="lg-title " style="font-family: 'Quicksand ', sans-serif; ">Special Offers</h1>
+            <p class="text-light " style="font-family: 'Quicksand ', sans-serif; ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur quos sit consectetur, ipsa voluptatem vitae necessitatibus dicta veniam, optio, possimus assumenda laudantium. Temporibus, quis cum.</p>
+
+            <div class="product-items ">
+                <!-- single product -->
+                <div class="product ">
+                    <div class="product-content ">
+                        <div class="product-img ">
+                            <img src="image/shoe-1.png " alt="product image ">
+                        </div>
+                        <div class="product-btns ">
+                            <button type="button " class="btn-cart "> add to cart
+                            <span><i class = "fas fa-plus "></i></span>
+                        </button>
+                            <button type="button " class="btn-buy "> buy now
+                            <span><i class = "fas fa-shopping-cart "></i></span>
+                        </button>
+                            <div class="product-icon ">
+                                <ul>
+                                    <li><a href=" "><i class="fas fa-heart "></i></a> </li>
+                                    <li><a href=" "><i class="fas fa-shopping-cart "></i></a> </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-info ">
+                        <div class="product-info-top ">
+                            <h2 class="sm-title ">lifestyle</h2>
+                            <div class="rating ">
+                                <span><i class = "fas fa-star "></i></span>
+                                <span><i class = "fas fa-star "></i></span>
+                                <span><i class = "fas fa-star "></i></span>
+                                <span><i class = "fas fa-star "></i></span>
+                                <span><i class = "far fa-star "></i></span>
+                            </div>
+                        </div>
+                        <a href="# " class="product-name ">mens shoes DN 23XX, new product</a>
+                        <p class="product-price ">$ 150.00</p>
+                        <p class="product-price ">$ 133.00</p>
+                    </div>
+
+                    <div class="off-info ">
+                        <h2 class="sm-title ">25% off</h2>
+                    </div>
+                </div>
+                <!-- end of single product -->
+                <!-- single product -->
+                <div class="product ">
+                    <div class="product-content ">
+                        <div class="product-img ">
+                            <img src="image/shoe-2.png " alt="product image ">
+                        </div>
+                        <div class="product-btns ">
+                            <button type="button " class="btn-cart "> add to cart
+                            <span><i class = "fas fa-plus "></i></span>
+                        </button>
+                            <button type="button " class="btn-buy "> buy now
+                            <span><i class = "fas fa-shopping-cart "></i></span>
+                        </button>
+                            <div class="product-icon ">
+                                <ul>
+                                    <li><a href=" "><i class="fas fa-heart "></i></a> </li>
+                                    <li><a href=" "><i class="fas fa-shopping-cart "></i></a> </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-info ">
+                        <div class="product-info-top ">
+                            <h2 class="sm-title ">lifestyle</h2>
+                            <div class="rating ">
+                                <span><i class = "fas fa-star "></i></span>
+                                <span><i class = "fas fa-star "></i></span>
+                                <span><i class = "fas fa-star "></i></span>
+                                <span><i class = "fas fa-star "></i></span>
+                                <span><i class = "far fa-star "></i></span>
+                            </div>
+                        </div>
+                        <a href="# " class="product-name ">mens shoes DN 23XX, new product</a>
+                        <p class="product-price ">$ 150.00</p>
+                        <p class="product-price ">$ 133.00</p>
+                    </div>
+                </div>
+                <!-- end of single product -->
+                <!-- single product -->
+                <div class="product ">
+                    <div class="product-content ">
+                        <div class="product-img ">
+                            <img src="image/shoe-3.png " alt="product image ">
+                        </div>
+                        <div class="product-btns ">
+                            <button type="button " class="btn-cart "> add to cart
+                            <span><i class = "fas fa-plus "></i></span>
+                        </button>
+                            <button type="button " class="btn-buy "> buy now
+                            <span><i class = "fas fa-shopping-cart "></i></span>
+                        </button>
+                            <div class="product-icon ">
+                                <ul>
+                                    <li><a href=" "><i class="fas fa-heart "></i></a> </li>
+                                    <li><a href=" "><i class="fas fa-shopping-cart "></i></a> </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-info ">
+                        <div class="product-info-top ">
+                            <h2 class="sm-title ">lifestyle</h2>
+                            <div class="rating ">
+                                <span><i class = "fas fa-star "></i></span>
+                                <span><i class = "fas fa-star "></i></span>
+                                <span><i class = "fas fa-star "></i></span>
+                                <span><i class = "fas fa-star "></i></span>
+                                <span><i class = "far fa-star "></i></span>
+                            </div>
+                        </div>
+                        <a href="# " class="product-name ">mens shoes DN 23XX, new product</a>
+                        <p class="product-price ">$ 150.00</p>
+                        <p class="product-price ">$ 133.00</p>
+                    </div>
+                </div>
+                <!-- end of single product -->
+                <!-- single product -->
+                <div class="product ">
+                    <div class="product-content ">
+                        <div class="product-img ">
+                            <img src="image/shoe-4.png " alt="product image ">
+                        </div>
+                        <div class="product-btns ">
+                            <button type="button " class="btn-cart "> add to cart
+                            <span><i class = "fas fa-plus "></i></span>
+                        </button>
+                            <button type="button " class="btn-buy "> buy now
+                            <span><i class = "fas fa-shopping-cart "></i></span>
+                        </button>
+                            <div class="product-icon ">
+                                <ul>
+                                    <li><a href=" "><i class="fas fa-heart "></i></a> </li>
+                                    <li><a href=" "><i class="fas fa-shopping-cart "></i></a> </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-info ">
+                        <div class="product-info-top ">
+                            <h2 class="sm-title ">lifestyle</h2>
+                            <div class="rating ">
+                                <span><i class = "fas fa-star "></i></span>
+                                <span><i class = "fas fa-star "></i></span>
+                                <span><i class = "fas fa-star "></i></span>
+                                <span><i class = "fas fa-star "></i></span>
+                                <span><i class = "far fa-star "></i></span>
+                            </div>
+                        </div>
+                        <a href="# " class="product-name ">mens shoes DN 23XX, new product</a>
+                        <p class="product-price ">$ 150.00</p>
+                        <p class="product-price ">$ 133.00</p>
+                    </div>
+
+                    <div class="off-info ">
+                        <h2 class="sm-title ">25% off</h2>
+                    </div>
+                </div>
+                <!-- end of single product -->
+                <!-- single product -->
+                <div class="product ">
+                    <div class="product-content ">
+                        <div class="product-img ">
+                            <img src="image/shoe-3.png " alt="product image ">
+                        </div>
+                        <div class="product-btns ">
+                            <button type="button " class="btn-cart "> add to cart
+                            <span><i class = "fas fa-plus "></i></span>
+                        </button>
+                            <button type="button " class="btn-buy "> buy now
+                            <span><i class = "fas fa-shopping-cart "></i></span>
+                        </button>
+                            <div class="product-icon ">
+                                <ul>
+                                    <li><a href=" "><i class="fas fa-heart "></i></a> </li>
+                                    <li><a href=" "><i class="fas fa-shopping-cart "></i></a> </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-info ">
+                        <div class="product-info-top ">
+                            <h2 class="sm-title ">lifestyle</h2>
+                            <div class="rating ">
+                                <span><i class = "fas fa-star "></i></span>
+                                <span><i class = "fas fa-star "></i></span>
+                                <span><i class = "fas fa-star "></i></span>
+                                <span><i class = "fas fa-star "></i></span>
+                                <span><i class = "far fa-star "></i></span>
+                            </div>
+                        </div>
+                        <a href="# " class="product-name ">womens shoes DN 23XX, new product</a>
+                        <p class="product-price ">$ 150.00</p>
+                        <p class="product-price ">$ 133.00</p>
+                    </div>
+                </div>
+                <!-- end of single product -->
+                <!-- single product -->
+                <div class="product ">
+                    <div class="product-content ">
+                        <div class="product-img ">
+                            <img src="image/shoe-1.png " alt="product image ">
+                        </div>
+                        <div class="product-btns ">
+                            <button type="button " class="btn-cart "> add to cart
+                            <span><i class = "fas fa-plus "></i></span>
+                        </button>
+                            <button type="button " class="btn-buy "> buy now
+                            <span><i class = "fas fa-shopping-cart "></i></span>
+                        </button>
+                            <div class="product-icon ">
+                                <ul>
+                                    <li><a href=" "><i class="fas fa-heart "></i></a> </li>
+                                    <li><a href=" "><i class="fas fa-shopping-cart "></i></a> </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-info ">
+                        <div class="product-info-top ">
+                            <h2 class="sm-title ">lifestyle</h2>
+                            <div class="rating ">
+                                <span><i class = "fas fa-star "></i></span>
+                                <span><i class = "fas fa-star "></i></span>
+                                <span><i class = "fas fa-star "></i></span>
+                                <span><i class = "fas fa-star "></i></span>
+                                <span><i class = "far fa-star "></i></span>
+                            </div>
+                        </div>
+                        <a href="# " class="product-name ">womens shoes DN 23XX, new product</a>
+                        <p class="product-price ">$ 150.00</p>
+                        <p class="product-price ">$ 133.00</p>
+                    </div>
+                </div>
+                <!-- end of single product -->
+                <!-- single product -->
+                <div class="product ">
+                    <div class="product-content ">
+                        <div class="product-img ">
+                            <img src="image/shoe-4.png " alt="product image ">
+                        </div>
+                        <div class="product-btns ">
+                            <button type="button " class="btn-cart "> add to cart
+                            <span><i class = "fas fa-plus "></i></span>
+                        </button>
+                            <button type="button " class="btn-buy "> buy now
+                            <span><i class = "fas fa-shopping-cart "></i></span>
+                        </button>
+                            <div class="product-icon ">
+                                <ul>
+                                    <li><a href=" "><i class="fas fa-heart "></i></a> </li>
+                                    <li><a href=" "><i class="fas fa-shopping-cart "></i></a> </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-info ">
+                        <div class="product-info-top ">
+                            <h2 class="sm-title ">lifestyle</h2>
+                            <div class="rating ">
+                                <span><i class = "fas fa-star "></i></span>
+                                <span><i class = "fas fa-star "></i></span>
+                                <span><i class = "fas fa-star "></i></span>
+                                <span><i class = "fas fa-star "></i></span>
+                                <span><i class = "far fa-star "></i></span>
+                            </div>
+                        </div>
+                        <a href="# " class="product-name ">womens shoes DN 23XX, new product</a>
+                        <p class="product-price ">$ 150.00</p>
+                        <p class="product-price ">$ 133.00</p>
+                    </div>
+                </div>
+                <!-- end of single product -->
+                <!-- single product -->
+                <div class="product ">
+                    <div class="product-content ">
+                        <div class="product-img ">
+                            <img src="image/shoe-2.png " alt="product image ">
+                        </div>
+                        <div class="product-btns ">
+                            <button type="button " class="btn-cart "> add to cart
+                            <span><i class = "fas fa-plus "></i></span>
+                        </button>
+                            <button type="button " class="btn-buy "> buy now
+                            <span><i class = "fas fa-shopping-cart "></i></span>
+                        </button>
+                            <div class="product-icon ">
+                                <ul>
+                                    <li><a href=" "><i class="fas fa-heart "></i></a> </li>
+                                    <li><a href=" "><i class="fas fa-shopping-cart "></i></a> </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-info ">
+                        <div class="product-info-top ">
+                            <h2 class="sm-title ">lifestyle</h2>
+                            <div class="rating ">
+                                <span><i class = "fas fa-star "></i></span>
+                                <span><i class = "fas fa-star "></i></span>
+                                <span><i class = "fas fa-star "></i></span>
+                                <span><i class = "fas fa-star "></i></span>
+                                <span><i class = "far fa-star "></i></span>
+                            </div>
+                        </div>
+                        <a href="# " class="product-name ">womens shoes DN 23XX, new product</a>
+                        <p class="product-price ">$ 150.00</p>
+                        <p class="product-price ">$ 133.00</p>
+                    </div>
+
+                    <div class="off-info ">
+                        <h2 class="sm-title ">35% off</h2>
+                    </div>
+                </div>
+                <!-- end of single product -->
+            </div>
+        </div>
+    </div>
+
+
+    <!-- -----blog---------- -->
+    <div class="hearder">
+        <!-- bg video -->
+        <video autoplay muted loop id="bg-video">
+          <source src = "image/bg-video.mp4" type = "video/mp4">
+        </video>
+        <!-- end of bg video -->
+
+        <div class="container">
+            <!-- hero section -->
+            <div class="hero-content">
+                <div class="hero-content-change">
+                    <div>
+                        <h3>
+                            <div class="line"></div>
+                            <span style="font-size: 17px;">Something creative</span>
+                            <div class="line"></div>
+                        </h3>
+                        <h1 class="hero-lg-text">
+                            do something caretive For pets
+                        </h1>
+                    </div>
+                </div>
+
+                <blockquote class="hero-quote">
+                    <span>
+                <i class = "fas fa-quote-left"></i>
+              </span> Healthy Pets! We hand pick and research the foods we carry to take the worry out of the process of buying the right food for your pet. We sale up to 30% everything for pet.
+                    <span>
+                <i class = "fas fa-quote-right"></i>
+              </span>
+                </blockquote>
+                <a href="#" style="justify-items: center;"> <button type="button" class="hero-btn">
+                View Now &#8594;
+            </button></a>
+            </div>
+            <!-- end of hero section -->
+        </div>
+    </div>
+
+
+
+    <!-- by -->
+
+
+
+    <!-- <div class="offer " id="Ryzen7 ">
+    <div class="small-container ">
+        <div class="row ">
+            <div class="col-2 ">
+                <p style="color: white; "><i class="fa fa-times " style="color: #0090ff; "></i>  Exlusively Available on Sanivari</p>
+                <h1>Everything For Pet</h1>
+                <p style="color: white; ">Healthy Pets! We hand pick and research the foods we carry to take the worry out of the process of buying the right food for your pet. We sale up to 30% everything for 
+                    pet.</p>
+                    <a href="ryzen.html " class="btn ">View Now &#8594;</a>
+            </div>
+            <div class="col-2 ">
+                <img src="image/ry2.png " class="offer-img " style="width: 500px; filter: drop-shadow(2px 4px 6px black); ">
+            </div>
+            
+        </div>
+    </div>
+</div> -->
+
+
+
+    <div class="body ">
+        <div class="container1 ">
+            <div class="card1 tex ">
+                <div class="imgBx1 ">
+                    <img src="image/banner1.jpg " alt=" ">
+                </div>
+                <div class="content1 ">
+                    <div>
+                        <h2>BOWLS & FEEDERS</h2>
+                        <p>Serve your dogs in style with our fun and functional dog bowls and dog feeders. Browse Petoria and see our big selection dog dishes and feeders.
+                        </p>
+                        <a href="blog/index.html "><button class="btn ">Explore More</button></a>
+                    </div>
+                </div>
+            </div>
+            <div class="card1 ">
+                <div class="imgBx1 ">
+                    <img src="image/banner2.jpg " alt=" ">
+                </div>
+                <div class="content1 ">
+                    <div>
+                        <h2>PET HOUSES</h2>
+                        <p>Pampering your pet has never been easier. Outdoor dog houses are typically durable houses that are built to withstand the elements outdoors.
+                        </p>
+                        <a href="blog/index.html "><button class="btn ">Explore More</button></a>
+                    </div>
+                </div>
+            </div>
+            <div class="card1 ">
+                <div class="imgBx1 ">
+                    <img src="image/banner3.jpg " alt=" ">
+                </div>
+                <div class="content1 ">
+                    <div>
+                        <h2>HEATED BEDS</h2>
+                        <p>The Pet Warming Beds use the same technology found in space blankets to heat your dog's bed. Soft and cosy, these beds can help your dog sleep comfortably.</p>
+                        <a href="blog/index.html "><button class="btn ">Explore More</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ----------BRANDS----------->
+    <div class="brands ">
+        <div class="small-container1 ">
+            <div class="row ">
+                <div class="col-5 ">
+                    <img src="image/logo-godrej.png ">
+                </div>
+                <div class="col-5 ">
+                    <img src="image/logo-oppo.png ">
+                </div>
+                <div class="col-5 ">
+                    <img src="image/logo-coca-cola.png ">
+                </div>
+                <div class="col-5 ">
+                    <img src="image/logo-paypal.png ">
+                </div>
+                <div class="col-5 ">
+                    <img src="image/logo-philips.png ">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- --------FOOTER---------->
+
+    <!-- <div class="footer ">
+    <div class="container ">
+        <div class="row ">
+            <div class="footer-col-1 ">
+                <h3>Download our app</h3>
+                <p>Download App for Android or Ios mobial phone</p>
+                <div class="app-logo ">
+                    <a href="eror.html "><img src="image/play-store.png ">
+                    <img src="image/app-store.png "></a>
+                </div>
+            </div>
+            <div class="footer-col-2 ">
+                <img src="image/logo1.png ">
+                <p>Our Purpose Is to Sustainably Make the pleasure and Benefits of Gaming Accessible to the Many.</p>
+                <p>Contact us with +91 7046067472</p>
+            </div>
+            <div class="footer-col-3 ">
+                <h3>Usefull links</h3>
+                <ul>
+                    <li>Coupons</li>
+                    <li>Blog Post</li>
+                    <li>Return Policy</li>
+                    <li>Join Affiliate</li>
+                </ul>
+            </div>
+            <div class="footer-col-4 ">
+                <h3>Follow Us</h3>
+                <ul>
+                    <li>Facebook</li>
+                    <li>twiter</li>
+                    <li>Instagram</li>
+                    <li>Youtube</li>
+                </ul>
+            </div>
+        </div> 
+    </div>
+    <hr>
+    <p class="copyright ">Copyright 2020 - SANIWARI</p>
+</div> -->
+
+
+    <section id="map " class="googlemap">
+        <!-- <img src = "image/Map.png " alt = "location map "> -->
+        <h1><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d238133.1523867798!2d72.68220631071016!3d21.159142498901016!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be04e59411d1563%3A0xfe4558290938b042!2sSurat%2C%20Gujarat!5e0!3m2!1sen!2sin!4v1628909404514!5m2!1sen!2sin
+                        " width="1920 " height="400 " style="border:0; " allowfullscreen=" " loading="lazy "></iframe></h1>
+    </section>
+    </main>
+
+
+    <footer id="footer ">
+        <div class="container ">
+            <div class="footer-list flex ">
+                <div class="footer-item one ">
+                    <a href="# " class="footer-logo ">
+                        <h1 style="letter-spacing: 5px; ">PETZIEE</h1>
+                    </a>
+                    <p class="text ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, aliquam expedita odit possimus a ipsam.</p>
+                    <!-- <form>
+                <div class = "form-element flex ">
+                    <input type = "email " class = "form-control " placeholder="Enter your e-mail ">
+                    <button type = "submit " class = "subs-btn button ">subscribe</button>
+                </div>
+            </form> -->
+                </div>
+
+                <div class="footer-item ">
+                    <h2>Products</h2>
+                    <ul>
+                        <li><a href="# ">Prices drop</a></li>
+                        <li><a href="# ">New products</a></li>
+                        <li><a href="# ">Best sales</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-item ">
+                    <h2>Information</h2>
+                    <ul>
+                        <li><a href="# ">Delivery</a></li>
+                        <li><a href="# ">Legal Notice</a></li>
+                        <li><a href="# ">Terms and Conditions of use</a></li>
+                        <li><a href="# ">About us</a></li>
+                        <li><a href="# ">Secure payment</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-item ">
+                    <h2>Your account</h2>
+                    <ul>
+                        <li><a href="# ">Addresses</a></li>
+                        <li><a href="# ">Credit sales</a></li>
+                        <li><a href="# ">Orders</a></li>
+                        <li><a href="# ">Personal info</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="copyright-text ">
+            <div class="container ">
+                <p class="text " style="color: white; ">&copy; 2021 Petziee - Made with <i class="fas fa-heart"></i> and <i class="fas fa-coffee"></i></p>
+                <div>
+                    <img src="image/pay_method.png " alt="payment method ">
+                </div>
+            </div>
+        </div>
+    </footer>
+    </div>
+
+
+
+    <!-- ----------TOGGLE FOR MENU------------>
+    <script>
+        var MenuItems = document.getElementById('MenuItems');
+        MenuItems.style.maxHeight = "0px ";
+        // FUNCTION FOR TOGGLE 
+        function menutoggle() {
+            if (MenuItems.style.maxHeight == "0px ") {
+                MenuItems.style.maxHeight = "200px ";
+            } else {
+                MenuItems.style.maxHeight = "0px ";
+            }
+        }
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js " integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin=" anonymous "></script>
+
+    <script>
+        $(window).scroll(function() {
+            if ($(window).scrollTop()) {
+                $("nav ").addClass("blur ");
+            } else {
+                $("nav ").removeClass("blur ");
+            }
+        })
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const loadEl = document.querySelector('#load');
+            // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+            // // The Firebase SDK is initialized and available here!
+            //
+            // firebase.auth().onAuthStateChanged(user => { });
+            // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
+            // firebase.firestore().doc('/foo/bar').get().then(() => { });
+            // firebase.functions().httpsCallable('yourFunction')().then(() => { });
+            // firebase.messaging().requestPermission().then(() => { });
+            // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
+            // firebase.analytics(); // call to activate
+            // firebase.analytics().logEvent('tutorial_completed');
+            // firebase.performance(); // call to activate
+            //
+            // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+
+            try {
+                // FirebaseApp.initializeApp();
+                // let app = firebase.app();
+
+                firebase.initializeApp({
+                    apiKey: "AIzaSyC5EHyg7Y5InbSGerMutlDBSrpRRQf3o5c",
+                    authDomain: "petezzie.firebaseapp.com",
+                    databaseURL: "https://petezzie.firebaseio.com",
+                    projectId: "petezzie",
+                    storageBucket: "petezzie.appspot.com",
+                    messagingSenderId: "232300058192",
+                    appId: "1:232300058192:web:d1868e4351b3142dd46355",
+                    measurementId: "G-8N4647EL3H"
+                });
+                // app.initializeApp();
+                // let features = [
+                //   'auth', 
+                //   'database', 
+                //   'firestore',
+                //   'functions',
+                //   'messaging', 
+                //   'storage', 
+                //   'analytics', 
+                //   'remoteConfig',
+                //   'performance',
+                // ].filter(feature => typeof app[feature] === 'function');
+                // loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
+                // db.collection("test").doc("seee").set({
+                //   "see":"hell0",
+                // });
+                console.log('done');
+
+                firebase.auth().onAuthStateChanged(function(user) {
+                    console.log('done');
+                    if (user) {
+                        console.log("User is logged in", user);
+                        userLoggedInFunction(true);
+
+                        // db.collection("test").add({
+                        //     first: "Ada",
+                        //     last: "Lovelace",
+                        //     born: 1815
+                        // })
+                        // .then((docRef) => {
+                        //     console.log("Document written with ID: ", docRef.id);
+                        // })
+                        // .catch((error) => {
+                        //     console.error("Error adding document: ", error);
+                        // });    
+                    } else {
+                        // userLoggedInFunction();           
+                        userLoggedInFunction(true);
+
+                        console.log("User is not logged in");
+                    }
+                });
+            } catch (e) {
+                console.log("Error", e);
+                // loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
+            }
+        });
+        console.log("started");
+        // When clicked on food items
+
+        console.log("started");
+        var code = '<div class = "product itemBox" data-item="b" id = "product0Id"> \
+                <div class = "product-content">\
+                    <div class = "product-img">\
+                        <a id = "product0ImageLink" href ="#" ><img src = "image/shoe-1.png" alt = "product image" id = "product0Image"></a>\
+                    </div>\
+                    <div class = "product-btns" id = "product0btns">\
+                        <button type = "button" class = "btn-cart" data-btn="addToCart"> add to cart\
+                            <span><i class = "fas fa-plus"></i></span>\
+                        </button>\
+                        <button type = "button" class = "btn-buy"> buy now\
+                            <span><i class = "fas fa-shopping-cart"></i></span>\
+                        </button>\
+                        <div class="product-icon">\
+                            <ul>\
+                                <li><a href=""><i class="fas fa-heart"></i></a> </li>\
+                              <li><a href=""><i class="fas fa-shopping-cart"></i></a> </li>\
+                            </ul>\
+                        </div>\
+                    </div>\
+                </div>\
+\
+                <div class = "product-info">\
+                    <div class = "product-info-top">\
+                        <h2 class = "sm-title" id="product0Title">This is the added item B</h2>\
+                        <div class = "rating">\
+                            <span><i class = "fas fa-star"></i></span>\
+                            <span><i class = "fas fa-star"></i></span>\
+                            <span><i class = "fas fa-star"></i></span>\
+                            <span><i class = "fas fa-star"></i></span>\
+                            <span><i class = "far fa-star"></i></span>\
+                        </div>\
+                    </div>\
+                    <a id = "product0Name" href = "#" class = "product-name">mens shoes DN 23XX, new product</a>\
+                    <p class = "product-price" id="product0OriginalPrice">$ 150.00</p>\
+                    <p class = "discount-product-price" id="product0DiscountedPrice">$ 133.00</p>\
+                </div>\
+\
+                <div class = "off-info">\
+                    <h2 class = "sm-title"id="product0SalePerc">25% off</h2>\
+                </div>\
+            </div>';
+
+        console.log("Compelted");
+
+
+
+        async function userLoggedInFunction(fromLogIn = false) {
+            if (fromLogIn) {
+                let db = firebase.firestore();
+
+                function removeAllChildNodes(parent) {
+                    while (parent.firstChild) {
+                        parent.removeChild(parent.firstChild);
+                    }
+                }
+
+                console.log("Inside of userLoggedInFunctions");
+                // for(let i = 0 ; i<10 ; i++){
+                //     $('.product-items').append(code);
+                // }
+
+                //#productitems is the id 
+                const container = document.querySelector('#productitems');
+                removeAllChildNodes(container);
+                // where("type","==","food")
+                db.collection("Products").get().then((qs) => {
+                    qs.forEach(element => {
+                        makeProduct(element);
+                        async function makeProduct(element) {
+                            await $('.product-items').append(code);
+                            console.log(element.id, " => ", element.data());
+                            document.getElementById("product0Image").src = element.data().mainImage;
+                            document.getElementById("product0Title").innerHTML = element.data().type;
+                            document.getElementById("product0Name").innerHTML = element.data().name;
+                            document.getElementById("product0OriginalPrice").innerHTML = element.data().originalPrice;
+                            document.getElementById("product0ImageLink").setAttribute("href", "dp/" + element.data().id + ".html");
+                            document.getElementById("product0Name").setAttribute("href", "dp/" + element.data().id + ".html");
+
+                            if (element.data().isSale) {
+                                let x = element.data().salePerc;
+                                let disPrice = element.data().originalPrice % x;
+                                document.getElementById("product0DiscountedPrice").innerHTML = disPrice;
+                                document.getElementById("product0SalePerc").innerHTML = x;
+                                document.getElementById("product0DiscountedPrice").setAttribute("id", element.data().id + "DiscountedPrice");
+                                document.getElementById("product0SalePerc").setAttribute("id", element.data().id + "SalePerc");
+                            } else {
+                                //                         var elem = document.getElementById( 'product0Id' );
+                                // // elem.classList.add('some-class'); // Add class
+                                // elem.classList.remove('discount-product-price'); // Remove class
+                                // elem.classList.remove('off-info'); // Remove class
+                                document.getElementById("product0SalePerc").outerHTML = "";
+                                document.getElementById("product0DiscountedPrice").outerHTML = "";
+
+
+
+                                // elem.classList.toggle('some-other-class'); // Add or remove class
+                                // if ( elem.classList.contains('some-third-class') ) { // Check for class
+                                //     console.log('yep!');
+                                // }
+                            }
+                            document.getElementById("product0Id").setAttribute("id", element.data().id);
+                            document.getElementById("product0Image").setAttribute("id", element.data().id + "Image");
+                            document.getElementById("product0btns").setAttribute("id", element.data().id + "Btns");
+                            document.getElementById("product0ImageLink").setAttribute("id", element.data().id + "ImageLink");
+
+                            document.getElementById("product0Title").setAttribute("id", element.data().id + "Title");
+                            document.getElementById("product0Name").setAttribute("id", element.data().id + "Name");
+                            document.getElementById("product0OriginalPrice").setAttribute("id", element.data().id + "OriginalPrice");
+
+                        }
+                        // document.getElementById("product0Id").innerHTML = element.data().price;
+
+                    });
+                }).catch((error) => {
+                    console.log("Error getting documents: ", error);
+                });
+            }
+        }
+
+
+        console.log("Master id is inside");
+    </script>
+
+    <script>
+        var loader = document.getElementById("preloader ");
+
+        window.addEventListener("load ", function() {
+            loader.style.display = "none ";
+        })
+    </script>
+
+</body>
+
+</html>

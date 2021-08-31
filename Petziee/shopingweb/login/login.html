@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="login.css">
+
+
+    <script src="/__/firebase/6.2.4/firebase-app.js"></script>
+    <script src="/__/firebase/6.2.4/firebase-auth.js"></script>
+
+    <script src="/__/firebase/init.js"></script>
+</head>
+
+<body>
+
+    <!-- <section class="container mail-container">
+        <fieldset>
+          <div>
+              <img src="image/phone.svg" alt="signin with mail & password">
+          </div>
+          <div>
+            <label for="phoneNumber">Phone Number</label> <br>
+            <input type="tel" id="phoneNumber" name="phoneNumber" pattern="[0-9]"/> <br>
+          </div>
+          <div>
+            <label for="code">Code</label> <br>
+            <input type="text" id="code" name="code"/> <br>
+          </div>
+          <div id="recaptcha-container"></div>
+          <button id="signInWithPhone">Login</button>
+          <button id="getCode">Get Code</button>  
+      </fieldset>    
+  </section> -->
+
+
+    <section>
+        <div class="container">
+            <div class="user singinBx">
+                <div class="imgBx"><img src="image/extra1.jpeg"></div>
+                <div class="formBx">
+                    <fieldset>
+                        <h2>Sign In</h2>
+                        <!-- <input type="text" name="" placeholder="Username"> -->
+
+                        <div>
+                            <!-- <label for="phoneNumber">Phone Number</label> <br> -->
+                            <input type="tel" id="phoneNumber" name="phoneNumber" pattern="[0-9]" placeholder="Phone" /> <br>
+                        </div>
+                        <div id="recaptcha-container"></div>
+                        <p class="signup"> <a href="#" onclick="toggleForm();"><button id="getCode">Get Code</button></a></p>
+                    </fieldset>
+                </div>
+            </div>
+            <div class="user singupBx">
+                <div class="formBx">
+                    <fieldset>
+                        <h2>Sign In</h2>
+                        <!-- <input type="text" name="" placeholder="Username"> -->
+
+                        <div>
+                            <!-- <label for="phoneNumber">Phone Number</label> <br> -->
+                            <!-- <input type="tel" id="phoneNumber" name="phoneNumber" pattern="[0-9]" placeholder="Phone"/> <br> -->
+                        </div>
+                        <!-- <div id="recaptcha-container"></div> -->
+                        <!-- <button id="getCode">Get Code</button> -->
+                        <div>
+                            <!-- <label for="code" >Code</label> <br> -->
+                            <input type="text" id="code" name="code" placeholder="Code" /> <br>
+                        </div>
+
+                        <button id="signInWithPhone">Login</button>
+
+                        <!-- <input type="password" name="" placeholder="Password"> -->
+                        <!-- <input type="submit" name="" value="Login"> -->
+                        <p class="signup"> <a href="#" onclick="toggleForm();">Resend code</a></p>
+                    </fieldset>
+                </div>
+                <div class="imgBx"><img src="image/loginbg4.jpeg"></div>
+            </div>
+        </div>
+    </section>
+
+    <script type="text/javascript">
+        function toggleForm() {
+            var container = document.querySelector('.container');
+            container.classList.toggle('active')
+        }
+    </script>
+
+
+
+
+    <script src="otp.js"></script>
+
+
+</body>
+
+</html>
