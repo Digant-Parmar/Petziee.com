@@ -37,7 +37,7 @@ recaptchaVerifier.render().then(widgetId => {
 })
 
 const sendVerificationCode = () => {
-    const phoneNumber = phoneNumberField.value;
+    const phoneNumber = "+91" + phoneNumberField.value;
     const appVerifier = window.recaptchaVerifier;
 
     console.log("phone number is ", phoneNumber);

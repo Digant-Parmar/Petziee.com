@@ -51,9 +51,9 @@ async function cart() {
         </div>\
         <div class="d-flex justify-content-between align-items-center">\
           <div>\
-            <a href="#!" type="button" class="card-link-secondary small text-uppercase mr-3"><i\
-                class="fas fa-trash-alt mr-1"></i> Remove item </a>\
-            <a href="#!" type="button" class="card-link-secondary small text-uppercase"><i\
+            <a type="button" class="card-link-secondary small text-uppercase mr-3" onclick = "return removeItemsFromCart(this.id)" id="removeButton"><i\
+                class="fas fa-trash-alt mr-1"  ></i> Remove item </a>\
+            <a type="button" class="card-link-secondary small text-uppercase"><i\
                 class="fas fa-heart mr-1"></i> Move to wish list </a>\
           </div>\
           <p class="mb-0"><span><strong id ="price"><i class="fas fa-rupee-sign"></i> 540.99</strong></span></p>\
@@ -112,6 +112,7 @@ async function cart() {
                 document.getElementById("isInStock").id = element.id + "isInStock";
                 document.getElementById("quantity").id = element.id + "quantity";
                 document.getElementById("price").id = element.id + "price";
+                document.getElementById("removeButton").id = element.id + "removeButton";
 
             });
         }
@@ -138,3 +139,43 @@ async function cart() {
 }
 
 document.addEventListener('DOMContentLoaded', cart);
+
+
+async function removeItemsFromCart(botttonId) {
+    console.log("Inside of the cart functions");
+    var id = botttonId.replace("removeButton", '');
+    var functions = firebase.functions();
+    console.log("Id given is", id);
+    firebase.auth().onAuthStateChanged((user) => {
+        if (user) {
+            console.log("Inside of the cart functions");
+            // User logged in already or has just logged in.
+            var removeFromCart = functions.httpsCallable("removeFromCart");
+
+            removeFromCart({
+                productId: id,
+            }).catch((error) => {
+                var code = error.code;
+                var message = error.message;
+                var details = console.error.details;
+                console.log("code : " + code + "message:" + message + "details: " + details);
+
+            });
+            // $.ajax({
+            //     type: "POST",
+            //     url: "https://us-central1-petezzie.cloudfunctions.net/addToCart",
+            //     data: `{
+            //         productId: id,
+            //         quantity: quantity.value,
+            //     }`,
+            //     success: function() {
+            //         console.log("Success");
+            //     },
+            //     dataType: "json"
+            // });
+        } else {
+            // User not logged in or has just logged out.
+            console.log("User not logged in to add to cart");
+        }
+    });
+}

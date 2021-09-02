@@ -51,3 +51,16 @@ exports.addToCart = functions.https.onCall(async(data, context) => {
     // })
 
 });
+exports.removeFromCart = functions.https.onCall(async(data, context) => {
+    // cors(data, context, async() => {
+    // your function body here - use the provided req and res from cors
+    const userId = context.auth.uid;
+    const productId = data.productId;
+    const productInCart = await admin.firestore().collection("CustomerInfo").doc(userId).collection("cart").doc(productId).get();
+    if (productInCart.exists) {
+        await admin.firestore().collection("CustomerInfo").doc(userId).collection("cart").doc(productId).delete();
+    } else {
+        return "Already removed";
+    }
+    // })
+});
