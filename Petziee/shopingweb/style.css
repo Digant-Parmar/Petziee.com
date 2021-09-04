@@ -10,6 +10,10 @@ body{
     font-family: 'Poppins', sans-serif;
 }
 
+::-webkit-input-placeholder { /* Chrome, Opera, and Safari */
+    color: rgb(0, 0, 0);
+  }
+
 .navbar{
     display: flex;
     align-items: flex-start;
@@ -17,8 +21,9 @@ body{
     justify-content: space-around;
     padding-right: 10px;
     padding-left: 20px;
-    background: rgb(19, 19, 19);
+    background: rgba(0, 0, 0, 0.37);
     z-index: 2;
+    backdrop-filter: blur(6px);
 
 }
 
@@ -1635,11 +1640,12 @@ ul{
   width: 100%;
   z-index: 2;   
   transition: all 0.3s ease;
+  background: white;
 }
 .navbar.sticky{
     backdrop-filter: blur(5px);
-    background: #313131;
-  padding: 10px 0;
+    background: rgba(255, 255, 255, 0.575);
+  /* padding: 10px 0; */
   box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.1);
 }
 .navbar .content{
@@ -1647,6 +1653,7 @@ ul{
   align-items: center;
   justify-content: space-between;
   height: 50px;
+  width: 100%;
 }
 .navbar .logo a{
   color: #fff;
@@ -1662,7 +1669,7 @@ ul{
   list-style: none;
 }
 .menu-list li a{
-  color: #fff;
+  color: rgb(0, 0, 0);
   font-size: 16px;
   font-weight: 500;
   margin-left: 25px;
@@ -1693,7 +1700,7 @@ ul{
   text-align: justify;
 }
 .icon{
-  color: #fff;
+  color: rgb(0, 0, 0);
   font-size: 20px;
   cursor: pointer;
   display: none;
@@ -1738,7 +1745,7 @@ ul{
     display: block;
     padding: 40px 0;
     text-align: center;
-    background: #222;
+    background: rgb(255, 254, 254);
     transition: all 0.3s ease;
   }
   .navbar.show .menu-list{
@@ -3010,4 +3017,11 @@ ul{
 
 .product-price .rup{
     font-size: 10px;
+}
+
+
+
+.cata{
+    width: 60px;
+    margin-bottom: 10px;
 }
