@@ -52,18 +52,19 @@ async function uploadToFirestore() {
     var docRef = await db.collection("Products").doc();
     const res = await docRef.set({
         "id": docRef.id,
-        "originalPrice": originalPrice,
-        "eachPrice": eachPrice,
-        "mainImage": mainImage,
-        "size": size,
-        "averageStar": averageStar,
-        "salePerc": salePerc,
-        "style": style,
-        "toShow": toShow,
-        "type": type,
-        "isInStock": isInStock,
-        "isSale": isSale,
-        "name": name,
+        "originalPrice": originalPrice.value,
+        "eachPrice": eachPrice.value,
+        "mainImage": mainImage.value,
+        "size": size.value,
+        "averageStar": averageStar.value,
+        "salePerc": salePerc.value,
+        "style": style.value,
+        "toShow": toShow.value,
+        "type": type.value,
+        "isInStock": isInStock.value,
+        "isSale": isSale.value,
+        "name": name.value,
+        "Date": firebase.firestore.Timestamp.now(),
     });
 
 }
