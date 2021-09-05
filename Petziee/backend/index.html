@@ -1,0 +1,155 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title></title>
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="index.css">
+
+
+    <script defer src="/__/firebase/8.9.1/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/8.9.1/firebase-auth.js"></script>
+    <script defer src="/__/firebase/8.9.1/firebase-database.js"></script>
+    <script defer src="/__/firebase/8.9.1/firebase-firestore.js"></script>
+    <script defer src="/__/firebase/8.9.1/firebase-functions.js"></script>
+    <script defer src="/__/firebase/8.9.1/firebase-messaging.js"></script>
+    <script defer src="/__/firebase/8.9.1/firebase-storage.js"></script>
+    <!-- <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase.js"></script> -->
+    <!-- <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-functions.js"></script> -->
+    <!-- <script src="https://requirejs.org/docs/release/2.3.5/minified/require.js"></script> -->
+    <script src="index.js"></script>
+
+</head>
+
+<body>
+
+    <section class="skills" id="skills">
+        <div class="max-width">
+
+            <div class="skills-content">
+
+
+                <div class="column left">
+
+
+
+
+                    <!-- 
+                    <h3>ID</h3>
+                    <input placeholder="ID" id="id"><br><br> -->
+
+                    <h3>Full name</h3>
+                    <input placeholder="Your name" id="name"><br><br>
+
+
+                    <h3>Date</h3>
+                    <input placeholder="" id="date"><br><br>
+
+                    <h3>Original price</h3>
+                    <input type="Number" placeholder="" id="originalPrice"><br><br>
+
+                    <h3>Each Price</h3>
+                    <input placeholder="" id="eachPrice"><br><br>
+
+                    <h3>main image</h3>
+                    <input placeholder="" id="mainImage"><br><br>
+
+                    <h3>Size</h3>
+                    <input type="Number" placeholder="" id="size"><br><br>
+
+                    <h3>Average star</h3>
+                    <input type="text" placeholder="" id="averageStar"><br><br>
+
+                    <h3>SalePerc</h3>
+                    <input type="Number" placeholder="" id="salePerc"><br><br>
+
+
+                    <h3>Style</h3>
+                    <input type="text" placeholder="" id="style"><br><br>
+
+
+
+
+
+
+
+                    <h1>To Show</h1>
+                    <div class="select">
+                        <select name="format" id="toShow">
+      
+      <option value=true>True</option>
+         <option value=false>False</option>
+      
+
+     
+   </select>
+                    </div><br><br>
+                    <h1>Type</h1>
+                    <div class="select">
+                        <select name="format" id="type">
+     
+      <option value="Food">Food</option>
+      <option value="Toys">Toys</option>
+      <option value="Medicine">Medicine</option>
+      <option value="Clothes">Clothes</option>
+      
+   </select>
+                    </div><br><br>
+
+                    <h1>Is in Stock</h1>
+                    <div class="select">
+                        <select name="format" id="isInStock">
+      
+      <option value=true>True</option>
+         <option value=false>False</option>
+      
+
+     
+   </select>
+                    </div><br><br>
+
+                    <h1>Is Sale</h1>
+                    <div class="select">
+                        <select name="format" id="isSale">
+      
+      <option value=true>True</option>
+         <option value=false>False</option>
+      
+
+     
+   </select>
+                    </div>
+
+
+                </div>
+
+
+
+    </section>
+
+    <button id="submit" onclick="return uploadToFirestore()">button</button>
+
+</body>
+<script type="text/javascript">
+    const selected = document.querySelector(".selected");
+    const optionsContainer = document.querySelector(".options-container");
+
+    const optionsList = document.querySelectorAll(".option");
+
+    selected.addEventListener("click", () => {
+        optionsContainer.classList.toggle("active");
+    });
+
+    optionsList.forEach(o => {
+        o.addEventListener("click", () => {
+            selected.innerHTML = o.querySelector("label").innerHTML;
+            optionsContainer.classList.remove("active");
+        });
+    });
+</script>
+
+</html>

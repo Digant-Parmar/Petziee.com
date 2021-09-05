@@ -38,10 +38,10 @@ async function cart() {
           </div>\
           <div>\
             <div class="def-number-input number-input safari_only mb-0 w-100">\
-              <button onclick="this.parentNode.querySelector(\'input[type=number]\').stepDown()"\
+              <button onclick="return quantityChange(false)"\
                 class="minus"></button>\
               <input class="quantity" min="0" name="quantity" value="1" type="number" id="quantity">\
-              <button onclick="this.parentNode.querySelector(\'input[type=number]\').stepUp()"\
+              <button onclick="return quantityChange(true)"\
                 class="plus"></button>\
             </div>\
             <small id="passwordHelpBlock" class="form-text text-muted text-center">\
@@ -178,4 +178,14 @@ async function removeItemsFromCart(botttonId) {
             console.log("User not logged in to add to cart");
         }
     });
+}
+
+
+
+async function quantityChange(isStepUp) {
+    if (isStepUp) {
+        this.parentNode.querySelector('input[type=number]').stepUp();
+    } else {
+        this.parentNode.querySelector('input[type=number]').stepDown();
+    }
 }

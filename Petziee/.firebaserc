@@ -1,5 +1,14 @@
 {
   "projects": {
     "default": "petezzie"
+  },
+  "targets": {
+    "petezzie": {
+      "hosting": {
+        "backend": [
+          "petzieedatabase"
+        ]
+      }
+    }
   }
 }
