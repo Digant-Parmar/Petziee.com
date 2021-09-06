@@ -77,44 +77,7 @@ async function cart() {
         var totalAmount = 0;
         var discountedAmount = 0;
         async function getProduct(productId, quantity) {
-            db.collection("Products").doc(productId).get().then((element) => {
-                $("#mainCartBody").append(htmlCode);
-                document.getElementById("productImage").src = element.data().mainImage;
-                document.getElementById("productImage1").src = element.data().mainImage;
-                document.getElementById("name").innerHTML = element.data().name;
-                document.getElementById("size").innerHTML = element.data().size;
-                if (element.data().isInStock) {
-                    document.getElementById("isInStock").innerHTML = "In Stock";
-                } else {
-                    document.getElementById("isInStock").innerHTML = "Currently Unavialable";
-                }
-                document.getElementById("quantity").value = quantity;
-                var op = element.data().originalPrice;
-                var discount = op * element.data().salePerc / 100;
-                var finalPrice = (op - discount) * quantity;
-                document.getElementById("price").innerHTML = finalPrice;
-                totalPriceArray[element.id] = op - discount;
-                totalAmount = totalAmount + finalPrice;
-                discountArray[element.id] = discount;
-                discountedAmount = discountedAmount + discount;
 
-                console.log("totalPrice : ", totalAmount);
-                console.log("dicount: ", discountedAmount);
-                document.getElementById("totalCost").innerHTML = totalAmount;
-                document.getElementById("totalDiscount").innerHTML = discountedAmount;
-                document.getElementById("finalCost").innerHTML = totalAmount;
-                //Change Id of the append Elements
-
-                document.getElementById("productId").id = element.id;
-                document.getElementById("productImage").id = element.id + "productImage";
-                document.getElementById("productImage1").id = element.id + "productImage1";
-                document.getElementById("size").id = element.id + "size";
-                document.getElementById("isInStock").id = element.id + "isInStock";
-                document.getElementById("quantity").id = element.id + "quantity";
-                document.getElementById("price").id = element.id + "price";
-                document.getElementById("removeButton").id = element.id + "removeButton";
-
-            });
         }
 
         if (user) {
@@ -124,7 +87,47 @@ async function cart() {
                 totalItemHtml.innerHTML = totalItems;
                 qs.forEach(async(element) => {
                     console.log(element.id, " => ", element.id);
-                    await getProduct(element.id, element.data().quantity);
+
+                    var productId = element.id;
+                    var quantity = element.data().quantity;
+                    await db.collection("Products").doc(productId).get().then((element) => {
+                        $("#mainCartBody").append(htmlCode);
+                        document.getElementById("productImage").src = element.data().mainImage;
+                        document.getElementById("productImage1").src = element.data().mainImage;
+                        document.getElementById("name").innerHTML = element.data().name;
+                        document.getElementById("size").innerHTML = element.data().size;
+                        if (element.data().isInStock) {
+                            document.getElementById("isInStock").innerHTML = "In Stock";
+                        } else {
+                            document.getElementById("isInStock").innerHTML = "Currently Unavialable";
+                        }
+                        document.getElementById("quantity").value = quantity;
+                        var op = element.data().originalPrice;
+                        var discount = op * element.data().salePerc / 100;
+                        var finalPrice = (op - discount) * quantity;
+                        document.getElementById("price").innerHTML = finalPrice;
+                        totalPriceArray[element.id] = op - discount;
+                        totalAmount = totalAmount + finalPrice;
+                        discountArray[element.id] = discount;
+                        discountedAmount = discountedAmount + discount;
+
+                        console.log("totalPrice : ", totalAmount);
+                        console.log("dicount: ", discountedAmount);
+                        document.getElementById("totalCost").innerHTML = totalAmount;
+                        document.getElementById("totalDiscount").innerHTML = discountedAmount;
+                        document.getElementById("finalCost").innerHTML = totalAmount;
+                        //Change Id of the append Elements
+
+                        document.getElementById("productId").id = element.id;
+                        document.getElementById("productImage").id = element.id + "productImage";
+                        document.getElementById("productImage1").id = element.id + "productImage1";
+                        document.getElementById("size").id = element.id + "size";
+                        document.getElementById("isInStock").id = element.id + "isInStock";
+                        document.getElementById("quantity").id = element.id + "quantity";
+                        document.getElementById("price").id = element.id + "price";
+                        document.getElementById("removeButton").id = element.id + "removeButton";
+
+                    });
                 });
             });
 

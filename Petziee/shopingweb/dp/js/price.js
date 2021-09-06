@@ -45,7 +45,8 @@ async function getPrice() {
             console.log(product.data().originalPrice);
             const sale = product.data().salePerc;
             const discountOff = (product.data().originalPrice * sale / 100);
-            document.getElementById("discountedPrice").innerHTML = product.data().originalPrice - discountOff;
+            const finalprice = product.data().originalPrice - discountOff;
+            document.getElementById("discountedPrice").innerHTML = finalprice;
             document.getElementById("originalPrice").innerHTML = product.data().originalPrice;
             document.getElementById("eachPrice").innerHTML = product.data().eachPrice;
         } else {

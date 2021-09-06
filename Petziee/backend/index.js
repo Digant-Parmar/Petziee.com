@@ -68,8 +68,8 @@ async function uploadToFirestore() {
     });
 
 }
-// const call = getPrice;
 
+// const call = getPrice;
 
 
 // //For add to cart
