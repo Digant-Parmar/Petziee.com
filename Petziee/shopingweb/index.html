@@ -110,13 +110,13 @@
                 </form>
                 <li style="margin: 22px;
                            margin-left: 10px;
-                           margin-right: 1px;"><a href="#"><i class="fas fa-home"></i></a></li>
+                           margin-right: 1px;"><a href="#"><i class="fas fa-home"></i><span class="pudding">Home</span></a></li>
                 <li style="margin: 22px;
                            margin-left: 10px;
-                           margin-right: 1px;"><a href="cart/cart.html"><i class="fas fa-shopping-cart pl-0"></i></a></li>
+                           margin-right: 1px;"><a href="cart/cart.html"><i class="fas fa-shopping-cart pl-0"></i><span class="pudding">Cart</span></a></li>
                 <li style="margin: 22px;
                            margin-left: 10px;
-                           margin-right: 1px;"><a href="login/login.html"><i class="far fa-user-circle"></i></a></li>
+                           margin-right: 1px;"><a href="login/login.html"><i class="far fa-user-circle"></i><span class="pudding">Login</span></a></li>
             </ul>
             <div class="icon menu-btn">
                 <i class="fas fa-bars"></i>
@@ -287,36 +287,40 @@
     <section class="section001">
         <ul class="ul">
             <!-- <li class="list active" data-filter="a">A</li> -->
-            <li class="list" data-filter="b" style="    display: grid;
-            padding: 20px 30px 10px 30px;">
-                <img class="cata" src="image/sanji.png">
-                <p>Food</p>
+            <li class="list" data-filter="b">
+                <div class="dib">
+                    <img class="cata" src="image/sanji.png">
+                    <p class="fontcat">Food</p>
+                </div>
             </li>
-            <li class="list" data-filter="c" style="    display: grid;
-            padding: 20px 33px 10px 33px;">
-                <img class="cata" src="image/sanji.png">
-                <p>Care</p>
+            <li class="list" data-filter="c">
+                <div class="dib">
+                    <img class="cata" src="image/sanji.png">
+                    <p class="fontcat">Care</p>
+                </div>
             </li>
-            <li class="list" data-filter="d" style="    display: grid;
-                padding: 20px 12px 10px 15px;">
-                <img class="cata access" src="image/sanji.png">
-                <p>accessories</p>
+            <li class="list" data-filter="d">
+                <div class="dib">
+                    <img class="cata access" src="image/sanji.png">
+                    <p class="fontcat">Others</p>
+                </div>
             </li>
-            <li class="list" data-filter="d" style="    display: grid;
-            padding: 20px 30px 10px 30px;">
-                <img class="cata clothg" src="image/sanji.png">
-                <p>Clothing</p>
+            <li class="list" data-filter="d">
+                <div class="dib">
+                    <img class="cata clothg" src="image/sanji.png">
+                    <p class="fontcat">Clothing</p>
+                </div>
             </li>
-            <li class="list" data-filter="d" style="    display: grid;
-            padding: 20px 25px 10px 30px;">
-                <img class="cata clothg" src="image/sanji.png">
-                <p>Medicine</p>
+            <li class="list" data-filter="d">
+                <div class="dib">
+                    <img class="cata clothg" src="image/sanji.png">
+                    <p class="fontcat">Medicine</p>
+                </div>
             </li>
-            <li class="list" data-filter="d" style="    display: grid;
-            padding: 20px 25px 10px 30px; display: none;">
-                <img class="cata" src="image/sanji.png">
-                <p>All</p>
-            </li>
+                <!-- <li class="list" data-filter="d">
+                    <img class="cata" src="image/sanji.png">
+                    <p class="fontcat">All</p>
+                </li> -->
 
             <!-- <li class="list" data-filter="e">E</li>
       <li class="list" data-filter="f">F</li> -->
@@ -378,7 +382,7 @@
                     <div class="product itemBox " data-item="c">
                         <div class="product-content ">
                             <div class="product-img ">
-                                <img src="image/tryleprod.png " alt="product image ">
+                                <img src="productimg/pedigri4.png" alt="product image ">
                             </div>
                             <div class="product-btns ">
                                 <button type="button " class="btn-cart "> add to cart
@@ -407,7 +411,7 @@
                                     <span><i class = "far fa-star "></i></span>
                                 </div>
                             </div>
-                            <a href="# " class="product-name ">Pedigree Adult Dry Dog Food, Chicken & Vegetables</a>
+                            <a href="# " class="product-name">Pedigree Adult Dry Dog Food, Chicken & Vegetables</a>
                             <p class="product-price "><i class="fas fa-rupee-sign "></i> 470.00</p>
                             <p class="product-price "><i class="fas fa-rupee-sign "></i> 833.00</p>
                         </div>
@@ -417,7 +421,7 @@
                     <div class="product itemBox " data-item="b">
                         <div class="product-content ">
                             <div class="product-img ">
-                                <img src="image/shoe-3.png " alt="product image ">
+                                <img src="productimg/pedigri4.png" alt="product image ">
                             </div>
                             <div class="product-btns ">
                                 <button type="button " class="btn-cart "> add to cart
@@ -456,7 +460,7 @@
                     <div class="product itemBox " data-item="b">
                         <div class="product-content ">
                             <div class="product-img ">
-                                <img src="image/shoe-4.png " alt="product image ">
+                                <img src="productimg/pedigri4.png" alt="product image ">
                             </div>
                             <div class="product-btns ">
                                 <button type="button " class="btn-cart "> add to cart
@@ -486,7 +490,7 @@
                                 </div>
                             </div>
                             <a href="# " class="product-name ">mens shoes DN 23XX, new product</a>
-                            <p class="product-price ">$ 150.00</p>
+                            <p class="product-price " style="display: none;">$ 150.00</p>
                             <p class="product-price ">$ 133.00</p>
                         </div>
 
@@ -499,7 +503,7 @@
                     <div class="product itemBox " data-item="c ">
                         <div class="product-content ">
                             <div class="product-img ">
-                                <img src="image/shoe-3.png " alt="product image ">
+                                <img src="productimg/pedigri4.png" alt="product image ">
                             </div>
                             <div class="product-btns ">
                                 <button type="button " class="btn-cart "> add to cart
@@ -538,7 +542,7 @@
                     <div class="product itemBox " data-item="b ">
                         <div class="product-content ">
                             <div class="product-img ">
-                                <img src="image/shoe-1.png " alt="product image ">
+                                <img src="productimg/pedigri4.png" alt="product image ">
                             </div>
                             <div class="product-btns ">
                                 <button type="button " class="btn-cart "> add to cart
@@ -568,7 +572,7 @@
                                 </div>
                             </div>
                             <a href="# " class="product-name ">womens shoes DN 23XX, new product</a>
-                            <p class="product-price ">$ 150.00</p>
+                            <p class="product-price " style="display: none;">$ 150.00</p>
                             <p class="product-price ">$ 133.00</p>
                         </div>
                     </div>
@@ -577,7 +581,7 @@
                     <div class="product itemBox " data-item="d ">
                         <div class="product-content ">
                             <div class="product-img ">
-                                <img src="image/shoe-4.png " alt="product image ">
+                                <img src="productimg/pedigri4.png" alt="product image ">
                             </div>
                             <div class="product-btns ">
                                 <button type="button " class="btn-cart "> add to cart
@@ -616,7 +620,7 @@
                     <div class="product itemBox " data-item="c ">
                         <div class="product-content ">
                             <div class="product-img ">
-                                <img src="image/shoe-2.png " alt="product image ">
+                                <img src="productimg/pedigri4.png" alt="product image ">
                             </div>
                             <div class="product-btns ">
                                 <button type="button " class="btn-cart "> add to cart
@@ -773,7 +777,7 @@
                 <div class="product ">
                     <div class="product-content ">
                         <div class="product-img ">
-                            <img src="image/shoe-2.png " alt="product image ">
+                            <img src="image/tryleprod.png " id="p1 " alt="product image ">
                         </div>
                         <div class="product-btns ">
                             <button type="button " class="btn-cart "> add to cart
@@ -812,7 +816,7 @@
                 <div class="product ">
                     <div class="product-content ">
                         <div class="product-img ">
-                            <img src="image/shoe-3.png " alt="product image ">
+                            <img src="productimg/pedigri4.png" alt="product image ">
                         </div>
                         <div class="product-btns ">
                             <button type="button " class="btn-cart "> add to cart
@@ -851,7 +855,7 @@
                 <div class="product ">
                     <div class="product-content ">
                         <div class="product-img ">
-                            <img src="image/shoe-4.png " alt="product image ">
+                            <img src="image/tryleprod.png " id="p1 " alt="product image ">
                         </div>
                         <div class="product-btns ">
                             <button type="button " class="btn-cart "> add to cart
@@ -894,7 +898,7 @@
                 <div class="product ">
                     <div class="product-content ">
                         <div class="product-img ">
-                            <img src="image/shoe-3.png " alt="product image ">
+                            <img src="productimg/pedigri4.png" alt="product image ">
                         </div>
                         <div class="product-btns ">
                             <button type="button " class="btn-cart "> add to cart
@@ -933,7 +937,7 @@
                 <div class="product ">
                     <div class="product-content ">
                         <div class="product-img ">
-                            <img src="image/shoe-1.png " alt="product image ">
+                            <img src="image/tryleprod.png " id="p1 " alt="product image ">
                         </div>
                         <div class="product-btns ">
                             <button type="button " class="btn-cart "> add to cart
@@ -972,7 +976,7 @@
                 <div class="product ">
                     <div class="product-content ">
                         <div class="product-img ">
-                            <img src="image/shoe-4.png " alt="product image ">
+                            <img src="productimg/pedigri4.png" alt="product image ">
                         </div>
                         <div class="product-btns ">
                             <button type="button " class="btn-cart "> add to cart
@@ -1011,7 +1015,7 @@
                 <div class="product ">
                     <div class="product-content ">
                         <div class="product-img ">
-                            <img src="image/shoe-2.png " alt="product image ">
+                            <img src="image/tryleprod.png " id="p1 " alt="product image ">
                         </div>
                         <div class="product-btns ">
                             <button type="button " class="btn-cart "> add to cart
@@ -1170,19 +1174,19 @@
         <div class="small-container1 ">
             <div class="row ">
                 <div class="col-5 ">
-                    <img src="image/logo-godrej.png ">
+                    <img src="image/pedigri logo 2.0.png ">
                 </div>
                 <div class="col-5 ">
-                    <img src="image/logo-oppo.png ">
+                    <img style="width: 72%;" src="image/royla canin logo.png">
                 </div>
                 <div class="col-5 ">
-                    <img src="image/logo-coca-cola.png ">
+                    <img style="width: 55%;" src="image/brood logo.png">
                 </div>
+                <!-- <div class="col-5 ">
+                    <img src="image/origin logo.png">
+                </div> -->
                 <div class="col-5 ">
-                    <img src="image/logo-paypal.png ">
-                </div>
-                <div class="col-5 ">
-                    <img src="image/logo-philips.png ">
+                    <img style="width: 68%;" src="image/meatup logo.png">
                 </div>
             </div>
         </div>
@@ -1415,6 +1419,20 @@
                     <div class = "product-img">\
                         <a id = "product0ImageLink" href ="#" ><img src = "image/shoe-1.png" alt = "product image" id = "product0Image"></a>\
                     </div>\
+                    <div class = "product-btns" id = "product0btns">\
+                        <button type = "button" class = "btn-cart" data-btn="addToCart"> add to cart\
+                            <span><i class = "fas fa-plus"></i></span>\
+                        </button>\
+                        <button type = "button" class = "btn-buy"> buy now\
+                            <span><i class = "fas fa-shopping-cart"></i></span>\
+                        </button>\
+                        <div class="product-icon">\
+                            <ul>\
+                                <li><a href=""><i class="fas fa-heart"></i></a> </li>\
+                              <li><a href=""><i class="fas fa-shopping-cart"></i></a> </li>\
+                            </ul>\
+                        </div>\
+                    </div>\
                 </div>\
 \
                 <div class = "product-info">\
@@ -1470,6 +1488,7 @@
                             document.getElementById("product0Image").src = element.data().mainImage;
                             document.getElementById("product0Title").innerHTML = element.data().type;
                             document.getElementById("product0Name").innerHTML = element.data().name;
+                            document.getElementById("product0OriginalPrice").innerHTML = element.data().originalPrice;
                             document.getElementById("product0ImageLink").setAttribute("href", "dp/" + element.data().id + ".html");
                             document.getElementById("product0Name").setAttribute("href", "dp/" + element.data().id + ".html");
 
@@ -1477,9 +1496,7 @@
                                 let x = element.data().salePerc;
                                 let temp = x * element.data().originalPrice / 100;
                                 let disPrice = element.data().originalPrice - temp;
-                                document.getElementById("product0OriginalPrice").innerHTML = "₹" + element.data().originalPrice;
-
-                                document.getElementById("product0DiscountedPrice").innerHTML = "₹" + disPrice;
+                                document.getElementById("product0DiscountedPrice").innerHTML = disPrice;
                                 document.getElementById("product0SalePerc").innerHTML = x + "% OFF";
                                 document.getElementById("product0DiscountedPrice").setAttribute("id", element.data().id + "DiscountedPrice");
                                 document.getElementById("product0SalePerc").setAttribute("id", element.data().id + "SalePerc");
@@ -1488,10 +1505,9 @@
                                 // // elem.classList.add('some-class'); // Add class
                                 // elem.classList.remove('discount-product-price'); // Remove class
                                 // elem.classList.remove('off-info'); // Remove class
-                                document.getElementById("product0SalePerc").innerHTML = "";
-                                document.getElementById("product0DiscountedPrice").innerHTML = "₹" + element.data().originalPrice;
+                                document.getElementById("product0SalePerc").outerHTML = "";
+                                document.getElementById("product0DiscountedPrice").outerHTML = "";
 
-                                document.getElementById("product0OriginalPrice").innerHTML = " ";
 
 
                                 // elem.classList.toggle('some-other-class'); // Add or remove class
@@ -1501,7 +1517,7 @@
                             }
                             document.getElementById("product0Id").setAttribute("id", element.data().id);
                             document.getElementById("product0Image").setAttribute("id", element.data().id + "Image");
-                            // document.getElementById("product0btns").setAttribute("id", element.data().id + "Btns");
+                            document.getElementById("product0btns").setAttribute("id", element.data().id + "Btns");
                             document.getElementById("product0ImageLink").setAttribute("id", element.data().id + "ImageLink");
 
                             document.getElementById("product0Title").setAttribute("id", element.data().id + "Title");
