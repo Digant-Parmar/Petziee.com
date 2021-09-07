@@ -48,7 +48,7 @@ async function getPrice() {
             const finalprice = product.data().originalPrice - discountOff;
             document.getElementById("discountedPrice").innerHTML = "₹" + finalprice;
             document.getElementById("originalPrice").innerHTML = "₹" + product.data().originalPrice;
-            document.getElementById("eachPrice").innerHTML = "₹" + product.data().eachPrice;
+            document.getElementById("eachPrice").innerHTML = product.data().eachPrice;
         } else {
             document.getElementById("discountedPrice").innerHTML = "₹" + product.data().originalPrice;
             document.getElementById("originalPrice").innerHTML = "";

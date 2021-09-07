@@ -33,12 +33,17 @@ async function uploadToFirestore() {
         measurementId: "G-8N4647EL3H"
     });
     let db = firebase.firestore();
+    var docRef = await db.collection("Products").doc();
 
+    // var uploader = document.getElementById("uploader");
+    // var file = document.getElementById("imageUpload").value;
+
+    // var storageRef = firebase.storage().ref('Products/'+docRef.id);
     // var id = document.getElementById("id");
     var name = document.getElementById("name");
     var originalPrice = document.getElementById("originalPrice");
     var eachPrice = document.getElementById("eachPrice");
-    var mainImage = document.getElementById("mainImage");
+    // var mainImage = document.getElementById("mainImage");
     var size = document.getElementById("size");
     var averageStar = document.getElementById("averageStar");
     var salePerc = document.getElementById("salePerc");
@@ -49,12 +54,11 @@ async function uploadToFirestore() {
     var isSale = document.getElementById("isSale");
 
 
-    var docRef = await db.collection("Products").doc();
     const res = await docRef.set({
         "id": docRef.id,
         "originalPrice": originalPrice.value,
         "eachPrice": eachPrice.value,
-        "mainImage": mainImage.value,
+        "mainImage": "https://petezzie.web.app/dp/image/" + docRef.id + ".png",
         "size": size.value,
         "averageStar": averageStar.value,
         "salePerc": salePerc.value,
