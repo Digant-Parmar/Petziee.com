@@ -1415,20 +1415,20 @@
                     <div class = "product-img">\
                         <a id = "product0ImageLink" href ="#" ><img src = "image/shoe-1.png" alt = "product image" id = "product0Image"></a>\
                     </div>\
-                    <div class = "product-btns" id = "product0btns">\
-                        <button type = "button" class = "btn-cart" data-btn="addToCart"> add to cart\
-                            <span><i class = "fas fa-plus"></i></span>\
-                        </button>\
-                        <button type = "button" class = "btn-buy"> buy now\
-                            <span><i class = "fas fa-shopping-cart"></i></span>\
-                        </button>\
-                        <div class="product-icon">\
-                            <ul>\
-                                <li><a href=""><i class="fas fa-heart"></i></a> </li>\
-                              <li><a href=""><i class="fas fa-shopping-cart"></i></a> </li>\
-                            </ul>\
-                        </div>\
-                    </div>\
+                    // <div class = "product-btns" id = "product0btns">\
+                    //     <button type = "button" class = "btn-cart" data-btn="addToCart"> add to cart\
+                    //         <span><i class = "fas fa-plus"></i></span>\
+                    //     </button>\
+                    //     <button type = "button" class = "btn-buy"> buy now\
+                    //         <span><i class = "fas fa-shopping-cart"></i></span>\
+                    //     </button>\
+                    //     <div class="product-icon">\
+                    //         <ul>\
+                    //             <li><a href=""><i class="fas fa-heart"></i></a> </li>\
+                    //           <li><a href=""><i class="fas fa-shopping-cart"></i></a> </li>\
+                    //         </ul>\
+                    //     </div>\
+                    // </div>\
                 </div>\
 \
                 <div class = "product-info">\
@@ -1484,7 +1484,6 @@
                             document.getElementById("product0Image").src = element.data().mainImage;
                             document.getElementById("product0Title").innerHTML = element.data().type;
                             document.getElementById("product0Name").innerHTML = element.data().name;
-                            document.getElementById("product0OriginalPrice").innerHTML = element.data().originalPrice;
                             document.getElementById("product0ImageLink").setAttribute("href", "dp/" + element.data().id + ".html");
                             document.getElementById("product0Name").setAttribute("href", "dp/" + element.data().id + ".html");
 
@@ -1492,7 +1491,9 @@
                                 let x = element.data().salePerc;
                                 let temp = x * element.data().originalPrice / 100;
                                 let disPrice = element.data().originalPrice - temp;
-                                document.getElementById("product0DiscountedPrice").innerHTML = disPrice;
+                                document.getElementById("product0OriginalPrice").innerHTML = "₹" + element.data().originalPrice;
+
+                                document.getElementById("product0DiscountedPrice").innerHTML = "₹" + disPrice;
                                 document.getElementById("product0SalePerc").innerHTML = x + "% OFF";
                                 document.getElementById("product0DiscountedPrice").setAttribute("id", element.data().id + "DiscountedPrice");
                                 document.getElementById("product0SalePerc").setAttribute("id", element.data().id + "SalePerc");
@@ -1501,9 +1502,10 @@
                                 // // elem.classList.add('some-class'); // Add class
                                 // elem.classList.remove('discount-product-price'); // Remove class
                                 // elem.classList.remove('off-info'); // Remove class
-                                document.getElementById("product0SalePerc").outerHTML = "";
-                                document.getElementById("product0DiscountedPrice").outerHTML = "";
+                                document.getElementById("product0SalePerc").innerHTML = "";
+                                document.getElementById("product0DiscountedPrice").innerHTML = "₹" + element.data().originalPrice;
 
+                                document.getElementById("product0OriginalPrice").innerHTML = " ";
 
 
                                 // elem.classList.toggle('some-other-class'); // Add or remove class
@@ -1513,7 +1515,7 @@
                             }
                             document.getElementById("product0Id").setAttribute("id", element.data().id);
                             document.getElementById("product0Image").setAttribute("id", element.data().id + "Image");
-                            document.getElementById("product0btns").setAttribute("id", element.data().id + "Btns");
+                            // document.getElementById("product0btns").setAttribute("id", element.data().id + "Btns");
                             document.getElementById("product0ImageLink").setAttribute("id", element.data().id + "ImageLink");
 
                             document.getElementById("product0Title").setAttribute("id", element.data().id + "Title");

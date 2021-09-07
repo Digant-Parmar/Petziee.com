@@ -92,6 +92,7 @@ async function cart() {
                     var quantity = element.data().quantity;
                     await db.collection("Products").doc(productId).get().then((element) => {
                         $("#mainCartBody").append(htmlCode);
+                        console.log("Poduct id : ", element.id);
                         document.getElementById("productImage").src = element.data().mainImage;
                         document.getElementById("productImage1").src = element.data().mainImage;
                         document.getElementById("name").innerHTML = element.data().name;
@@ -105,19 +106,21 @@ async function cart() {
                         var op = element.data().originalPrice;
                         var discount = op * element.data().salePerc / 100;
                         var finalPrice = (op - discount) * quantity;
-                        document.getElementById("price").innerHTML = finalPrice;
+                        document.getElementById("price").innerHTML = "₹" + finalPrice;
                         totalPriceArray[element.id] = op - discount;
                         totalAmount = totalAmount + finalPrice;
                         discountArray[element.id] = discount;
                         discountedAmount = discountedAmount + discount;
 
+                        var totalCost = totalAmount + discountedAmount;
                         console.log("totalPrice : ", totalAmount);
                         console.log("dicount: ", discountedAmount);
-                        document.getElementById("totalCost").innerHTML = totalAmount;
-                        document.getElementById("totalDiscount").innerHTML = discountedAmount;
-                        document.getElementById("finalCost").innerHTML = totalAmount;
+                        document.getElementById("totalCost").innerHTML = "₹" + totalCost;
+                        document.getElementById("totalDiscount").innerHTML = "₹" + discountedAmount;
+                        document.getElementById("finalCost").innerHTML = "₹" + totalAmount;
                         //Change Id of the append Elements
 
+                        document.getElementById("name").id = element.id + "name";
                         document.getElementById("productId").id = element.id;
                         document.getElementById("productImage").id = element.id + "productImage";
                         document.getElementById("productImage1").id = element.id + "productImage1";
@@ -126,7 +129,7 @@ async function cart() {
                         document.getElementById("quantity").id = element.id + "quantity";
                         document.getElementById("price").id = element.id + "price";
                         document.getElementById("removeButton").id = element.id + "removeButton";
-
+                        console.log("Completed first product");
                     });
                 });
             });

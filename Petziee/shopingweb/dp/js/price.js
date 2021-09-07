@@ -46,11 +46,11 @@ async function getPrice() {
             const sale = product.data().salePerc;
             const discountOff = (product.data().originalPrice * sale / 100);
             const finalprice = product.data().originalPrice - discountOff;
-            document.getElementById("discountedPrice").innerHTML = finalprice;
-            document.getElementById("originalPrice").innerHTML = product.data().originalPrice;
-            document.getElementById("eachPrice").innerHTML = product.data().eachPrice;
+            document.getElementById("discountedPrice").innerHTML = "₹" + finalprice;
+            document.getElementById("originalPrice").innerHTML = "₹" + product.data().originalPrice;
+            document.getElementById("eachPrice").innerHTML = "₹" + product.data().eachPrice;
         } else {
-            document.getElementById("discountedPrice").innerHTML = product.data().originalPrice;
+            document.getElementById("discountedPrice").innerHTML = "₹" + product.data().originalPrice;
             document.getElementById("originalPrice").innerHTML = "";
             document.getElementById("eachPrice").innerHTML = product.data().eachPrice;
         }
