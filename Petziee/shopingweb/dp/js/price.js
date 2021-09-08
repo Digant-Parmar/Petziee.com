@@ -111,6 +111,8 @@ function addToCart() {
         } else {
             // User not logged in or has just logged out.
             console.log("User not logged in to add to cart");
+            alert("You are not logged in to add to cart");
+
         }
     });
 
