@@ -106,7 +106,9 @@ html {
   
   
   
-  
+  .showbuys{
+    display: none;
+  }
   
   /* footer  */
   
@@ -733,6 +735,9 @@ html {
   .padlef {
     padding-left: 40px;
     padding-right: 40px;
+  }
+  .showbuys{
+    display: contents;
   }
 }
 
