@@ -317,7 +317,7 @@
                     <p class="fontcat">Medicine</p>
                 </div>
             </li>
-                <!-- <li class="list" data-filter="d">
+            <!-- <li class="list" data-filter="d">
                     <img class="cata" src="image/sanji.png">
                     <p class="fontcat">All</p>
                 </li> -->
@@ -578,43 +578,7 @@
                     </div>
                     <!-- end of single product -->
                     <!-- single product -->
-                    <div class="product itemBox " data-item="d ">
-                        <div class="product-content ">
-                            <div class="product-img ">
-                                <img src="productimg/pedigri4.png" alt="product image ">
-                            </div>
-                            <div class="product-btns ">
-                                <button type="button " class="btn-cart "> add to cart
-                                <span><i class = "fas fa-plus "></i></span>
-                            </button>
-                                <button type="button " class="btn-buy "> buy now
-                                <span><i class = "fas fa-shopping-cart "></i></span>
-                            </button>
-                                <div class="product-icon ">
-                                    <ul>
-                                        <li><a href=" "><i class="fas fa-heart "></i></a> </li>
-                                        <li><a href=" "><i class="fas fa-shopping-cart "></i></a> </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
 
-                        <div class="product-info ">
-                            <div class="product-info-top ">
-                                <h2 class="sm-title ">lifestyle D</h2>
-                                <div class="rating ">
-                                    <span><i class = "fas fa-star "></i></span>
-                                    <span><i class = "fas fa-star "></i></span>
-                                    <span><i class = "fas fa-star "></i></span>
-                                    <span><i class = "fas fa-star "></i></span>
-                                    <span><i class = "far fa-star "></i></span>
-                                </div>
-                            </div>
-                            <a href="# " class="product-name ">womens shoes DN 23XX, new product</a>
-                            <p class="product-price ">$ 150.00</p>
-                            <p class="product-price ">$ 133.00</p>
-                        </div>
-                    </div>
                     <!-- end of single product -->
                     <!-- single product -->
                     <div class="product itemBox " data-item="c ">
@@ -1414,47 +1378,33 @@
         // When clicked on food items
 
         console.log("started");
-        var code = '<div class = "product itemBox" data-item="b" id = "product0Id"> \
-                <div class = "product-content">\
-                    <div class = "product-img">\
-                        <a id = "product0ImageLink" href ="#" ><img src = "image/shoe-1.png" alt = "product image" id = "product0Image"></a>\
-                    </div>\
-                    <div class = "product-btns" id = "product0btns">\
-                        <button type = "button" class = "btn-cart" data-btn="addToCart"> add to cart\
-                            <span><i class = "fas fa-plus"></i></span>\
-                        </button>\
-                        <button type = "button" class = "btn-buy"> buy now\
-                            <span><i class = "fas fa-shopping-cart"></i></span>\
-                        </button>\
-                        <div class="product-icon">\
-                            <ul>\
-                                <li><a href=""><i class="fas fa-heart"></i></a> </li>\
-                              <li><a href=""><i class="fas fa-shopping-cart"></i></a> </li>\
-                            </ul>\
+        var code = '<div class="product itemBox " data-item="d " id = "product0Id">\
+                        <div class="product-content ">\
+                            <div class="product-img ">\
+                                <a id = "product0ImageLink" href ="#"  ><img src="" alt="product image " id = "product0Image"></a>\
+                            </div>\
+            \
                         </div>\
-                    </div>\
-                </div>\
 \
-                <div class = "product-info">\
-                    <div class = "product-info-top">\
-                        <h2 class = "sm-title" id="product0Title">This is the added item B</h2>\
-                        <div class = "rating">\
-                            <span><i class = "fas fa-star"></i></span>\
-                            <span><i class = "fas fa-star"></i></span>\
-                            <span><i class = "fas fa-star"></i></span>\
-                            <span><i class = "fas fa-star"></i></span>\
-                            <span><i class = "far fa-star"></i></span>\
+                        <div class="product-info ">\
+                            <div class="product-info-top ">\
+                                <h2 class = "sm-title" id="product0Title"></h2>\
+                                <div class="rating ">\
+                                    <span><i class = "fas fa-star "></i></span>\
+                                    <span><i class = "fas fa-star "></i></span>\
+                                    <span><i class = "fas fa-star "></i></span>\
+                                    <span><i class = "fas fa-star "></i></span>\
+                                    <span><i class = "far fa-star "></i></span>\
+                                </div>\
+                            </div>\
+                            <a id = "product0Name" href = "#" class = "product-name"></a>\
+                            <p class="product-price "id="product0OriginalPrice"></p>\
+                            <p class="product-price " id="product0DiscountedPrice"></p>\
                         </div>\
-                    </div>\
-                    <a id = "product0Name" href = "#" class = "product-name">mens shoes DN 23XX, new product</a>\
-                    <p class = "product-price" id="product0OriginalPrice">$ 150.00</p>\
-                    <p class = "discount-product-price" id="product0DiscountedPrice">$ 133.00</p>\
-                </div>\
-\
-                <div class = "off-info">\
-                    <h2 class = "sm-title"id="product0SalePerc">25% off</h2>\
-                </div>\
-            </div>';
+                        <div class = "off-info">\
+                            <h2 class = "sm-title"id="product0SalePerc"></h2>\
+                        </div>\
+                    </div>';
 
         console.log("Compelted");
 
@@ -1488,7 +1438,6 @@
                             document.getElementById("product0Image").src = element.data().mainImage;
                             document.getElementById("product0Title").innerHTML = element.data().type;
                             document.getElementById("product0Name").innerHTML = element.data().name;
-                            document.getElementById("product0OriginalPrice").innerHTML = element.data().originalPrice;
                             document.getElementById("product0ImageLink").setAttribute("href", "dp/" + element.data().id + ".html");
                             document.getElementById("product0Name").setAttribute("href", "dp/" + element.data().id + ".html");
 
@@ -1496,7 +1445,9 @@
                                 let x = element.data().salePerc;
                                 let temp = x * element.data().originalPrice / 100;
                                 let disPrice = element.data().originalPrice - temp;
-                                document.getElementById("product0DiscountedPrice").innerHTML = disPrice;
+                                document.getElementById("product0OriginalPrice").innerHTML = "₹" + element.data().originalPrice;
+
+                                document.getElementById("product0DiscountedPrice").innerHTML = "₹" + disPrice;
                                 document.getElementById("product0SalePerc").innerHTML = x + "% OFF";
                                 document.getElementById("product0DiscountedPrice").setAttribute("id", element.data().id + "DiscountedPrice");
                                 document.getElementById("product0SalePerc").setAttribute("id", element.data().id + "SalePerc");
@@ -1505,8 +1456,10 @@
                                 // // elem.classList.add('some-class'); // Add class
                                 // elem.classList.remove('discount-product-price'); // Remove class
                                 // elem.classList.remove('off-info'); // Remove class
+                                document.getElementById("product0OriginalPrice").innerHTML = "";
+
                                 document.getElementById("product0SalePerc").outerHTML = "";
-                                document.getElementById("product0DiscountedPrice").outerHTML = "";
+                                document.getElementById("product0DiscountedPrice").outerHTML = "₹" + element.data().originalPrice;
 
 
 
@@ -1517,7 +1470,7 @@
                             }
                             document.getElementById("product0Id").setAttribute("id", element.data().id);
                             document.getElementById("product0Image").setAttribute("id", element.data().id + "Image");
-                            document.getElementById("product0btns").setAttribute("id", element.data().id + "Btns");
+                            // document.getElementById("product0btns").setAttribute("id", element.data().id + "Btns");
                             document.getElementById("product0ImageLink").setAttribute("id", element.data().id + "ImageLink");
 
                             document.getElementById("product0Title").setAttribute("id", element.data().id + "Title");
