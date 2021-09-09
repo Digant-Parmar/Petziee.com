@@ -1,3 +1,10 @@
+var totalPriceArray = {};
+var discountArray = {};
+var quantityArray = {};
+var totalAmount = 0;
+var discountedAmount = 0;
+var finalAmount = 0;
+
 async function cart() {
     firebase.initializeApp({
         apiKey: "AIzaSyC5EHyg7Y5InbSGerMutlDBSrpRRQf3o5c",
@@ -38,10 +45,10 @@ async function cart() {
           </div>\
           <div>\
             <div class="def-number-input number-input safari_only mb-0 w-100">\
-              <button onclick="return quantityChange(false)"\
+              <button onclick="return quantityChange(false,this.parentNode.querySelector(\'input[type=number]\'))"\
                 class="minus"></button>\
-              <input class="quantity" min="0" name="quantity" value="1" type="number" id="quantity">\
-              <button onclick="return quantityChange(true)"\
+              <input class="quantity" min="0" name="quantity" value="1" type="number" id="quantity" min = 0 onchange = valueChanged(this.id,this.value)>\
+              <button onclick="return quantityChange(true,this.parentNode.querySelector(\'input[type=number]\'))"\
                 class="plus"></button>\
             </div>\
             <small id="passwordHelpBlock" class="form-text text-muted text-center">\
@@ -72,10 +79,7 @@ async function cart() {
             }
         }
 
-        var totalPriceArray = {};
-        var discountArray = {};
-        var totalAmount = 0;
-        var discountedAmount = 0;
+
         async function getProduct(productId, quantity) {
 
         }
@@ -90,6 +94,7 @@ async function cart() {
 
                     var productId = element.id;
                     var quantity = element.data().quantity;
+                    quantityArray[productId] = quantity;
                     await db.collection("Products").doc(productId).get().then((element) => {
                         $("#mainCartBody").append(htmlCode);
                         console.log("Poduct id : ", element.id);
@@ -106,18 +111,23 @@ async function cart() {
                         var op = element.data().originalPrice;
                         var discount = op * element.data().salePerc / 100;
                         var finalPrice = (op - discount) * quantity;
-                        document.getElementById("price").innerHTML = "₹" + finalPrice;
+                        document.getElementById("price").innerHTML = finalPrice;
+
                         totalPriceArray[element.id] = op - discount;
+
                         totalAmount = totalAmount + finalPrice;
+
                         discountArray[element.id] = discount;
+
                         discountedAmount = discountedAmount + discount;
+
 
                         var totalCost = totalAmount + discountedAmount;
                         console.log("totalPrice : ", totalAmount);
                         console.log("dicount: ", discountedAmount);
-                        document.getElementById("totalCost").innerHTML = "₹" + totalCost;
-                        document.getElementById("totalDiscount").innerHTML = "₹" + discountedAmount;
-                        document.getElementById("finalCost").innerHTML = "₹" + totalAmount;
+                        document.getElementById("totalCost").innerHTML = totalCost;
+                        document.getElementById("totalDiscount").innerHTML = discountedAmount;
+                        document.getElementById("finalCost").innerHTML = totalAmount;
                         //Change Id of the append Elements
 
                         document.getElementById("name").id = element.id + "name";
@@ -133,6 +143,12 @@ async function cart() {
                     });
                 });
             });
+
+
+            console.log("Totol Price Array : ", totalPriceArray);
+            console.log("discount Array: ", discountArray);
+            console.log("total Amount : ", totalAmount);
+            console.log("dicounted Amount : ", discountArray);
 
 
 
@@ -189,10 +205,79 @@ async function removeItemsFromCart(botttonId) {
 
 
 
-async function quantityChange(isStepUp) {
+async function quantityChange(isStepUp, doc) {
     if (isStepUp) {
-        this.parentNode.querySelector('input[type=number]').stepUp();
+        doc.stepUp();
+        var qid = doc.id;
+        var id = qid.replace("quantity", '');
+        var fp = totalPriceArray[id];
+        var dp = discountArray[id];
+        // var currentquantity = document.getElementById(qid).value
+        totalAmount = totalAmount + fp;
+        discountedAmount = discountedAmount + dp;
+        var totalCost = totalAmount + discountedAmount;
+        quantityArray[id] = quantityArray[id] + 1;
+
+        var productPrice = fp * quantityArray[id];
+
+        document.getElementById("totalCost").innerHTML = totalCost;
+        document.getElementById("totalDiscount").innerHTML = discountedAmount;
+        document.getElementById("finalCost").innerHTML = totalAmount;
+
+        const obj = document.getElementById(id + "price");
+        animateValue(obj, Number(obj.innerHTML), productPrice, 500);
     } else {
-        this.parentNode.querySelector('input[type=number]').stepDown();
+        doc.stepDown();
+        var qid = doc.id;
+        var id = qid.replace("quantity", '');
+        var fp = totalPriceArray[id];
+        var dp = discountArray[id];
+        quantityArray[id] = quantityArray[id] - 1;
+
+        // var currentquantity = document.getElementById(qid).value
+        if (quantityArray[id] >= 0) {
+            totalAmount = totalAmount - fp;
+            discountedAmount = discountedAmount - dp;
+            var totalCost = totalAmount + discountedAmount;
+            var productPrice = fp * quantityArray[id];
+
+            document.getElementById("totalCost").innerHTML = totalCost;
+            document.getElementById("totalDiscount").innerHTML = discountedAmount;
+            document.getElementById("finalCost").innerHTML = totalAmount;
+            const obj = document.getElementById(id + "price");
+            animateValue(obj, Number(obj.innerHTML), productPrice, 500);
+        }
     }
+}
+
+function animateValue(obj, start, end, duration) {
+    let startTimestamp = null;
+    const step = (timestamp) => {
+        if (!startTimestamp) startTimestamp = timestamp;
+        const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+        obj.innerHTML = Math.floor(progress * (end - start) + start);
+        if (progress < 1) {
+            window.requestAnimationFrame(step);
+        }
+    };
+    window.requestAnimationFrame(step);
+}
+
+
+function valueChanged(qid, value) {
+    var id = qid.replace("quantity", '');
+    var fp = totalPriceArray[id];
+    var dp = discountArray[id];
+    // var currentquantity = document.getElementById(qid).value
+    quantityArray[id] = value;
+
+    totalAmount = totalAmount - fp;
+    discountedAmount = discountedAmount - dp;
+    var totalCost = totalAmount + discountedAmount;
+    var productPrice = fp * quantityArray[id];
+    document.getElementById("totalCost").innerHTML = totalCost;
+    document.getElementById("totalDiscount").innerHTML = discountedAmount;
+    document.getElementById("finalCost").innerHTML = totalAmount;
+    const obj = document.getElementById(id + "price");
+    animateValue(obj, Number(obj.innerHTML), productPrice, 500);
 }
