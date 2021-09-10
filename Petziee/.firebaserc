@@ -1,17 +1,20 @@
 {
-  "projects": {
-    "default": "petezzie"
-  },
-  "targets": {
-    "petezzie": {
-      "hosting": {
-        "backend": [
-          "petzieedatabase"
-        ],
-        "web": [
-          "petezzie"
-        ]
-      }
+    "projects": {
+        "default": "petzieee"
+    },
+    "targets": {
+        "petzieee": {
+            "hosting": {
+                "main": [
+                    "petzieee"
+                ],
+                "backend": [
+                    "petziee-backend"
+                ],
+                "dev": [
+                    "petziee-dev"
+                ]
+            }
+        }
     }
-  }
 }
