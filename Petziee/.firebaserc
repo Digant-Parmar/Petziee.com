@@ -2,7 +2,6 @@
     "projects": {
         "default": "petzieee"
     },
-
     "targets": {
         "petzieee": {
             "hosting": {
