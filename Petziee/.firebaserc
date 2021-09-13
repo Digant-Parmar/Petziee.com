@@ -5,15 +5,9 @@
     "targets": {
         "petzieee": {
             "hosting": {
-                "main": [
-                    "petzieee"
-                ],
-                "backend": [
-                    "petziee-backend"
-                ],
-                "dev": [
-                    "petziee-dev"
-                ]
+                "main": ["petzieee"],
+                "dev": ["petziee-dev"],
+                "backend": ["petziee-backend"]
             }
         }
     }
