@@ -69,4 +69,5 @@ node_modules/
 # For images and extra files
 /shopingweb/image/*
 /shopingweb/extraProducts/*
+/shopingweb/dp/image/*
 

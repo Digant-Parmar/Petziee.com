@@ -21,7 +21,7 @@
     <!-- <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase.js"></script> -->
     <!-- <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-functions.js"></script> -->
     <!-- <script src="https://requirejs.org/docs/release/2.3.5/minified/require.js"></script> -->
-    <script src="index.js"></script>
+
 
 </head>
 
@@ -86,12 +86,17 @@
 
                     <h3>Style</h3>
                     <input type="text" placeholder="" id="style"><br><br>
-
-
-
-
-
-
+                    <h1>Brand</h1>
+                    <div class="select">
+                        <select name="format" id="brand">
+ 
+  <option value="Drools">Drools</option>
+  <option value="Royal Canin">Royal Canin</option>
+  <option value="Pedigree">Pedigree</option>
+  <option value="Farmina">Farmina</option>
+  
+</select>
+                    </div><br><br>
 
                     <h1>To Show</h1>
                     <div class="select">
@@ -103,7 +108,8 @@
 
      
    </select>
-                    </div><br><br>
+                    </div>
+                    <br><br>
                     <h1>Type</h1>
                     <div class="select">
                         <select name="format" id="type">
@@ -138,6 +144,23 @@
 
      
    </select>
+
+                    </div><br><br>
+
+                    <br> </br>
+                    <p id="pro"></p>
+
+
+                    <h1>Is Each Price</h1>
+                    <div class="select">
+                        <select name="format" id="isEachPrice">
+
+<option value=true>True</option>
+<option value=false>False</option>
+
+
+
+</select>
                     </div>
 
 
@@ -150,6 +173,8 @@
     <button id="submit" onclick="return uploadToFirestore()">button</button>
 
 </body>
+<script src="index.js"></script>
+
 <script type="text/javascript">
     const selected = document.querySelector(".selected");
     const optionsContainer = document.querySelector(".options-container");
