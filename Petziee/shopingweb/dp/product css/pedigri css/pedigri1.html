@@ -4,10 +4,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Product</title>
+    <title>Pedigri</title>
     <!-- Roboto Font -->x
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700&display=swap">
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
@@ -19,11 +20,11 @@
     <!-- Material Design Bootstrap Ecommerce -->
     <link rel="stylesheet" href="css/mdb.ecommerce.min.css">
     <!-- Your custom styles (optional) -->
-    <link rel="stylesheet" href="tryle.css">
+    <link rel="stylesheet" href="pedigri1.css">
 
 </head>
 
-<body class="skin-light">
+<body class="skin-light" id="A3cGJfszX6DpySVaPBUz">
 
     <!--Main Navigation-->
     <header>
@@ -44,7 +45,7 @@
                 <form action="" class="helll" style="    width: 68%;
         padding-left: 139px;">
 
-                    <div class="md-form md-outline input-group md-input-group w-100">
+                    <div class="md-form md-outline input-group md-input-group w-100" style="margin-bottom: -15px;">
 
 
                         <input type="text" class="form-control mb-0" placeholder="Search" style="    height: 31px;
@@ -153,7 +154,7 @@
         <div class="jumbotron color-grey-light mt-70">
             <div class="d-flex align-items-center h-100 paras">
                 <div class="container text-center py-5">
-                    <h3 class="mb-0">Product page <i class="fas fa-paw"></i></h3>
+                    <h3 class="mb-0">Pedigree <i class="fas fa-paw"></i></h3>
                 </div>
             </div>
         </div>
@@ -181,8 +182,8 @@
 
                                     <div class="col-12 mb-0">
                                         <figure class="view overlay rounded z-depth-1 main-img">
-                                            <a href="image/dogf1.jpg" data-size="710x823">
-                                                <img src="image/dogf1.jpg" class="img-fluid z-depth-1 imgbox">
+                                            <a href="../productimg/pedigri4.png" data-size="710x823">
+                                                <img src="../productimg/pedigri4.png" class="img-fluid z-depth-1 imgbox">
                                             </a>
                                         </figure>
                                         <figure class="view overlay rounded z-depth-1" style="visibility: hidden;">
@@ -205,25 +206,25 @@
                                         <div class="row">
                                             <div class="col-3">
                                                 <div class="view overlay rounded z-depth-1 gallery-item hoverable">
-                                                    <img src="image/dogf1.jpg" class="img-fluid">
+                                                    <img src="../productimg/pedigri4.png" class="img-fluid">
                                                     <div class="mask rgba-white-slight"></div>
                                                 </div>
                                             </div>
                                             <div class="col-3">
                                                 <div class="view overlay rounded z-depth-1 gallery-item hoverable">
-                                                    <img src="image/dogf2.jpg" class="img-fluid">
+                                                    <img src="../productimg/pedigri5.png" class="img-fluid">
                                                     <div class="mask rgba-white-slight"></div>
                                                 </div>
                                             </div>
                                             <div class="col-3">
                                                 <div class="view overlay rounded z-depth-1 gallery-item hoverable">
-                                                    <img src="image/dogf3.jpg" class="img-fluid">
+                                                    <img src="../productimg/pedigri6.jpg" class="img-fluid">
                                                     <div class="mask rgba-white-slight"></div>
                                                 </div>
                                             </div>
                                             <div class="col-3">
                                                 <div class="view overlay rounded z-depth-1 gallery-item hoverable">
-                                                    <img src="image/dogf4.jpg" class="img-fluid">
+                                                    <img src="../productimg/pedigri7.jpg" class="img-fluid">
                                                     <div class="mask rgba-white-slight"></div>
                                                 </div>
                                             </div>
@@ -236,8 +237,8 @@
                         </div>
                         <div class="col-md-6 padleft">
 
-                            <h5>Chappi Adult Dry Dog Food, Chicken & Rice</h5>
-                            <p class="mb-2 text-muted text-uppercase small">Compney : Chappi</p>
+                            <h5>Royal Canin Golden Retriver Adult, 12 kg</h5>
+                            <p class="mb-2 text-muted text-uppercase small">Compney : Royal Canin</p>
                             <ul class="rating">
                                 <li>
                                     <i class="fas fa-star fa-sm text-primary"></i>
@@ -255,13 +256,31 @@
                                     <i class="far fa-star fa-sm text-primary"></i>
                                 </li>
                             </ul>
-                            <p><span class="mr-1"><strong><i class="fas fa-rupee-sign"></i> 540.99</strong></span></p>
+                            <p style="margin-bottom: 5px;"><span class="mr-1">M.R.P : <strong style="text-decoration: line-through;" id="originalPrice">740.99</strong></span></p>
+                            <p><span class="mr-1">Deal Price : <strong id="discountedPrice"><i class="fas fa-rupee-sign"></i> 540.99</strong><strong id="eachPrice"> <span style="font-size: 13px;"> (₹540.99 / count)</h3></strong></span></p>
                             <p class="pt-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, sapiente illo. Sit error voluptas repellat rerum quidem, soluta enim perferendis voluptates laboriosam. Distinctio, officia quis dolore quos sapiente tempore
                                 alias.
                             </p>
+
+                            <script defer src="/__/firebase/8.9.1/firebase-app.js"></script>
+                            <!-- include only the Firebase features as you need -->
+                            <script defer src="/__/firebase/8.9.1/firebase-auth.js"></script>
+                            <script defer src="/__/firebase/8.9.1/firebase-database.js"></script>
+                            <script defer src="/__/firebase/8.9.1/firebase-firestore.js"></script>
+                            <script defer src="/__/firebase/8.9.1/firebase-functions.js"></script>
+                            <script defer src="/__/firebase/8.9.1/firebase-messaging.js"></script>
+                            <script defer src="/__/firebase/8.9.1/firebase-storage.js"></script>
+                            <!-- <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase.js"></script> -->
+                            <!-- <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-functions.js"></script> -->
+                            <!-- <script src="https://requirejs.org/docs/release/2.3.5/minified/require.js"></script> -->
+                            <script src="js/price.js"></script>
                             <div class="table-responsive">
                                 <table class="table table-sm table-borderless mb-0">
                                     <tbody>
+                                        <tr>
+                                            <th class="pl-0 w-25" scope="row"><strong>Model</strong></th>
+                                            <td style="">Shirt 5407X</td>
+                                        </tr>
                                         <tr>
                                             <th class="pl-0 w-25" scope="row"><strong>Model</strong></th>
                                             <td>Shirt 5407X</td>
@@ -279,35 +298,7 @@
                             </div>
 
 
-                            <div class="cont">
-                                </ul>
-                                <div class="tab-content" id="advancedTabContent">
-                                    <div class="tab-pane fade show active" id="description" role="tabpanel" aria-labelledby="description-tab">
-                                        <h5 class="bottom">Product Description</h5>
-                                        <p class="small text-muted text-uppercase mb-2">Shirts</p>
-                                        <ul class="rating">
-                                            <li>
-                                                <i class="fas fa-star fa-sm text-primary"></i>
-                                            </li>
-                                            <li>
-                                                <i class="fas fa-star fa-sm text-primary"></i>
-                                            </li>
-                                            <li>
-                                                <i class="fas fa-star fa-sm text-primary"></i>
-                                            </li>
-                                            <li>
-                                                <i class="fas fa-star fa-sm text-primary"></i>
-                                            </li>
-                                            <li>
-                                                <i class="far fa-star fa-sm text-primary"></i>
-                                            </li>
-                                        </ul>
-                                        <h6><i class="fas fa-rupee-sign"></i> 540.99</h6>
-                                        <p class="pt-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, sapiente illo. Sit error voluptas repellat rerum quidem, soluta enim perferendis voluptates laboriosam. Distinctio, officia quis dolore quos sapiente
-                                            tempore alias.</p>
-                                    </div>
-                                </div>
-                            </div>
+
 
                             <!-- <li class="nav-item">
                 <a class="nav-link" id="info-tab" data-toggle="tab" href="#info" role="tab" aria-controls="info"
@@ -315,43 +306,42 @@
               </li> -->
                             <div class="cont">
                                 <div class="tab-pane fade margin-top" id="info" role="tabpanel" aria-labelledby="info-tab">
-                                    <h5 class="bottom">Additional Information</h5>
+                                    <h5 class="bottom">About this item</h5>
                                     <table class="table table-striped table-bordered mt-3">
                                         <thead>
                                             <tr>
-                                                <th scope="row" class="w-150 dark-grey-text h6 wh">Weight</th>
-                                                <td><em>3000.0 grams</em></td>
+                                                <th scope="row" class="w-150 dark-grey-text h6 wh">Target Species</th>
+                                                <td><em>Meat</em></td>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <th scope="row" class="w-150 dark-grey-text h6">Dimensions</th>
-                                                <td><em>50 × 60 cm</em></td>
+                                                <th scope="row" class="w-150 dark-grey-text h6">Item Form</th>
+                                                <td><em>Pellet</em></td>
                                             </tr>
                                         </tbody>
                                         <thead>
                                             <tr>
-                                                <th scope="row" class="w-150 dark-grey-text h6 wh">Country of Origin</th>
-                                                <td><em>India</em></td>
+                                                <th scope="row" class="w-150 dark-grey-text h6 wh">Breed</th>
+                                                <td><em>Golden retriver</em></td>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <th scope="row" class="w-150 dark-grey-text h6">Generic Name</th>
-                                                <td><em> Adult Dry Dog Food, Chicken & Rice</em></td>
+                                                <th scope="row" class="w-150 dark-grey-text h6">Age Range</th>
+                                                <td><em>Adult</em></td>
                                             </tr>
                                         </tbody>
                                         <thead>
                                             <tr>
-                                                <th scope="row" class="w-150 dark-grey-text h6 wh">Manufacturer</th>
-                                                <td style="font-size: 13px;"><em>Mars International Ind pvt Ltd, Mars International India PVT. LTD., Mars International India Pvt Ltd , Survey No 2099-2103, Village Wargal, Siddepet Highway , District Medak 502279 , Telangana , Toll Free Number – 1800 407 11 21 21 Landline +91 84523 06691 / 
-                          92</em></td>
+                                                <th scope="row" class="w-150 dark-grey-text h6 wh">Specific Uses For Product</th>
+                                                <td style="font-size: 13px;"><em>Active</em></td>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <th scope="row" class="w-150 dark-grey-text h6">Item part number</th>
-                                                <td><em>8906002480029</em></td>
+                                                <th scope="row" class="w-150 dark-grey-text h6">Item Weight</th>
+                                                <td><em>12 Kilograms</em></td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -359,6 +349,56 @@
                             </div>
 
 
+                            <div class="cont">
+                                </ul>
+                                <div class="tab-content" id="advancedTabContent">
+                                    <div class="tab-pane fade show active" id="description" role="tabpanel" aria-labelledby="description-tab">
+                                        <h5 class="bottom">Product Description</h5>
+                                        <!-- <p class="small text-muted text-uppercase mb-2">Shirts</p> -->
+                                        <!-- <ul class="rating">
+                                        <li>
+                                            <i class="fas fa-star fa-sm text-primary"></i>
+                                        </li>
+                                        <li>
+                                            <i class="fas fa-star fa-sm text-primary"></i>
+                                        </li>
+                                        <li>
+                                            <i class="fas fa-star fa-sm text-primary"></i>
+                                        </li>
+                                        <li>
+                                            <i class="fas fa-star fa-sm text-primary"></i>
+                                        </li>
+                                        <li>
+                                            <i class="far fa-star fa-sm text-primary"></i>
+                                        </li>
+                                    </ul> -->
+                                        <!-- <h6><i class="fas fa-rupee-sign"></i> 540.99</h6> -->
+                                        <ul class="topics">
+                                            <li>
+                                                <p> Ideal weight helps maintain the adult golden retriever’s ideal weight thanks to an adapted calorie content</p>
+                                            </li>
+                                        </ul>
+
+                                        <ul class="topics">
+                                            <li>
+                                                <p> Exclusive kibble : The kibble's shape, size, texture and formula are adapted to the golden retriever</p>
+                                            </li>
+                                        </ul>
+
+                                        <ul class="topics">
+                                            <li>
+                                                <p> Healthy cardiac function this formula contains specific nutrients to help support good cardiac function</p>
+                                            </li>
+                                        </ul>
+
+                                        <ul class="topics">
+                                            <li>
+                                                <p> Enriched with taurine and EPA-DHA</p>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
 
                             <!-- <li class="nav-item">
                 <a class="nav-link" id="reviews-tab" data-toggle="tab" href="#reviews" role="tab" aria-controls="reviews"
@@ -381,7 +421,7 @@
                                     <td class="pl-0">
                                         <div class="def-number-input number-input safari_only mb-0">
                                             <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus"></button>
-                                            <input class="quantity" min="0" name="quantity" value="1" type="number">
+                                            <input class="quantity" min="0" name="quantity" value="1" type="number" id="quantity">
                                             <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
                                         </div>
                                     </td>
@@ -408,8 +448,8 @@
                             </tbody>
                         </table>
                         <div class="buton">
-                            <button type="button" class="btn btn-primary btn-md mr-1 mb-2">Buy now</button>
-                            <button type="button" class="btn btn-light btn-md mr-1 mb-2" style="margin-top: 10px;"><i class="fas fa-shopping-cart pr-2"></i>Add to
+                            <button type="button" id="buyBtn" class="btn btn-primary btn-md mr-1 mb-2">Buy now</button>
+                            <button type="button" id="cartBtn" class="btn btn-light btn-md mr-1 mb-2" style="margin-top: 10px;"><i class="fas fa-shopping-cart pr-2"></i>Add to
               cart</button>
                         </div>
                         </tr>
@@ -562,7 +602,244 @@
                     <!-- Grid column -->
 
                 </div>
+
+                <div class="cont">
+                    </ul>
+                    <div class="tab-content" id="advancedTabContent">
+                        <div class="tab-pane fade show active" id="description" role="tabpanel" aria-labelledby="description-tab" style="text-align: left;">
+                            <h5 class="bottom">Product Description</h5>
+                            <div class="descrip">
+                                <h4>Is Discontinued By Manufacturer ‏ : <span class="pt-1"> ‎ No</span></h4>
+                            </div>
+
+                            <div class="descrip">
+                                <h4>Product Dimensions ‏ :<span class="pt-1"> ‎ 36.9 x 15 x 89.3 cm; 12 Kilograms</span></h4>
+                            </div>
+
+                            <div class="descrip">
+                                <h4>Date First Available ‏ : <span class="pt-1">  1 April 2012</span></h4>
+                            </div>
+
+                            <div class="descrip">
+                                <h4>Manufacturer ‏ : <span class="pt-1"> ‎ Royal Canin</span></h4>
+                            </div>
+
+                            <div class="descrip">
+                                <h4>ASIN ‏ : ‎ ‏<span class="pt-1">‎ B001AW07UU</span></h4>
+                            </div>
+
+                            <div class="descrip">
+                                <h4>Item model number ‏ : ‎<span class="pt-1">‎ 02RCGR12</span></h4>
+                            </div>
+
+                            <div class="descrip">
+                                <h4>Manufacturer ‏ : <span class="pt-1"> ‎Royal Canin, Royal Canin SAS, 650, Avenue, De La Petile, Aimargues, Camargues-BP4-30470, France & Royal Canin South Africa, Epson Avenue, North Riding, Randb Gautenq, South 
+                                Africa</span></h4>
+                            </div>
+
+                            <div class="descrip">
+                                <h4>Packer ‏ : <span class="pt-1"> Royal Canin SAS, 650, Avenue, De La Petile, Aimargues, Camargues-BP4-30470, France & Royal Canin South Africa, Epson Avenue, North Riding, Randb Gautenq, South 
+                                Africa</span></h4>
+                            </div>
+
+                            <div class="descrip">
+                                <h4>Item Weight : <span class="pt-1"> 12 kg</span></h4>
+                            </div>
+
+                            <div class="descrip">
+                                <h4>Item Dimensions LxWxH ‏ : <span class="pt-1"> 36.9 x 15 x 89.3 Centimeters</span></h4>
+                            </div>
+
+                            <div class="descrip">
+                                <h4>Net Quantity ‏ : ‎ <span class="pt-1"> 1 count</span></h4>
+                            </div>
+
+                            <div class="descrip">
+                                <h4>Included Components ‏ : <span class="pt-1"> 1 Pack Dry Dog Food</span></h4>
+                            </div>
+
+                            <div class="descrip">
+                                <h4>Generic Name ‏ : <span class="pt-1"> 36.9 x 15 x 89.3 Centimeters</span></h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+
+                    <!-- Grid column -->
+                    <div class="col-md-6 col-lg-3 mb-5">
+
+                        <!-- Card -->
+                        <div class="">
+
+                            <div class="view zoom overlay z-depth-2 rounded">
+                                <img class="img-fluid w-100" src="image/dogf1.jpg " alt="Sample">
+                                <a href="#!">
+                                    <div class="mask">
+                                        <img class="img-fluid w-100" src="image/dogf1.jpg">
+                                        <div class="mask rgba-black-slight"></div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="pt-4">
+
+                                <h5>Blue denim shirt</h5>
+                                <p><span><strong><i class="fas fa-rupee-sign"></i> 460.00</strong></span></p>
+
+                            </div>
+
+                        </div>
+                        <!-- Card -->
+
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-6 col-lg-3 mb-5">
+
+                        <!-- Card -->
+                        <div class="">
+
+                            <div class="view zoom overlay z-depth-2 rounded">
+                                <img class="img-fluid w-100" src="image/dog2.jpg" alt="Sample">
+                                <a href="#!">
+                                    <div class="mask">
+                                        <img class="img-fluid w-100" src="image/dog2.jpg">
+                                        <div class="mask rgba-black-slight"></div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="pt-4">
+
+                                <h5>Red hoodie</h5>
+                                <p><span><strong><i class="fas fa-rupee-sign"></i> 620.99</strong></span></p>
+
+                            </div>
+
+                        </div>
+                        <!-- Card -->
+
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-6 col-lg-3 mb-5">
+
+                        <!-- Card -->
+                        <div class="">
+
+                            <div class="view zoom overlay z-depth-2 rounded">
+                                <img class="img-fluid w-100" src="image/dog3.jpg" alt="Sample">
+                                <h4 class="mb-0"><span class="badge badge-primary badge-pill badge-news">Sale</span></h4>
+                                <a href="#!">
+                                    <div class="mask">
+                                        <img class="img-fluid w-100" src="image/dog3.jpg">
+                                        <div class="mask rgba-black-slight"></div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="pt-4">
+
+                                <h5>Grey sweater</h5>
+                                <p><span class="text-danger mr-1"><strong><i class="fas fa-rupee-sign"></i> 399.99</strong></span><span class="text-grey"><strong><s><i class="fas fa-rupee-sign"></i> 549.99</s></strong></span></p>
+
+                            </div>
+
+                        </div>
+                        <!-- Card -->
+
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-6 col-lg-3 mb-5">
+
+                        <!-- Card -->
+                        <div class="">
+
+                            <div class="view zoom overlay z-depth-2 rounded">
+                                <img class="img-fluid w-100" src="image/dog4.jpg" alt="Sample">
+                                <a href="#!">
+                                    <div class="mask">
+                                        <img class="img-fluid w-100" src="image/dog4.jpg">
+                                        <div class="mask rgba-black-slight"></div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="pt-4">
+
+                                <h5>Black denim jacket</h5>
+                                <p><strong>$99.99</strong></p>
+
+                            </div>
+
+                        </div>
+                        <!-- Card -->
+
+                    </div>
+                    <!-- Grid column -->
+
+                </div>
                 <!-- Grid row -->
+
+
+    <!-- pedigri bio -->
+                <div class="prod">
+                    <div class="prduimg">
+                        <img class="mainpro" src="../productimg/pedigri8.jpg" alt="">
+                    </div>
+                    <div class="gridlines">
+                        <div class="textp">
+                            <img src="../productimg/pedigri10.png.jpg" alt="">
+                            <div class="text101">
+                                <h5 class="bioheder">COMPLETE AND BALANCED NUTRITION</h5>
+                                <p style="margin-top: 10px; font-size: 13px; width: 88%;">Made with ingredient, Pedigree lets your pet indulge in a happy mealtime, while providing him with a complete and balanced nutritious 
+                                    meal.</p>
+                            </div>
+                        </div>
+                        <div class="textp">
+                            <img src="../productimg/pedigri9.jpg" alt="">
+                            <div class="text101">
+                                <h5 class="bioheder">5 SIGNS OF GOOD HEALTH IN 6 WEEKS*</h5>
+                                <p style="margin-top: 10px; font-size: 13px; width: 88%;">Formulated by research done by the Waltham Centre for pet nutrition, Pedigree is proven to provide a shinier coat to dogs and other signs 
+                                    of good health.</p>
+                            </div>
+                        </div>
+                        <div class="textp differentimg">
+                            <img src="../productimg/pedigri11.jpg" alt="">
+                            <div class="text101">
+                                <h5 class="bioheder">NUTRITION FOR A HEALTHY DOG</h5>
+                                <p style="margin-top: 10px; font-size: 14px;">Pedigree, made with high quality ingredients, provides the dog with Min Protein 20%, Min Fat 10% & Max Fiber 
+                                    5%.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tbox">
+                        <div class="fst">
+                            <img class="onionpic" src="../productimg/pedigri12.jpg" alt="">
+                        </div>
+                        <div class="snd">
+                            <h5>What Not to Feed?</h5>
+                            <h5 style="margin-top: 15px; font-weight: 350;">Why can’t I Feed him what I Eat or Cook?</h5>
+                            <p style="font-size: 13px;">Dogs are different and human food can be harmful for them. Home-cooked meals are usually deficient or unbalanced in nutrients, while prepared pet food offers guaranteed nutrition, palatability, digestibility, safety and 
+                                convenience.</p>
+                        </div>
+                        
+                        <div class="trd" style="display: grid;">
+                            <img src="../productimg/pedigri13.jpg" alt=""> 
+                            <p>Dog vs. Human *per 1000 Kcal
+                                Dogs often need:</p>
+                                <p>· 2x more Calcium</p>
+                                <p style="margin-top: -10px;">· 2.5x more Iron</p>
+                                <p style="margin-top: -10px;">· 9x more Vitamin B12</p>
+                        </div>
+                    </div>
+                </div>
 
                 <div class="cont" style="margin-bottom: 35px;">
                     <div class="tab-pane fade margin-top " id="info" role="tabpanel" aria-labelledby="info-tab">
@@ -602,35 +879,6 @@
                             <hr>
                             <h6 class="mt-4">Add a review</h6>
                             <p>Your email address will not be published.</p>
-                            <div class="my-3">
-                                <ul class="rating mb-0">
-                                    <li>
-                                        <a href="#!">
-                                            <i class="fas fa-star fa-sm text-primary"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#!">
-                                            <i class="fas fa-star fa-sm text-primary"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#!">
-                                            <i class="fas fa-star fa-sm text-primary"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#!">
-                                            <i class="fas fa-star fa-sm text-primary"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#!">
-                                            <i class="far fa-star fa-sm text-primary"></i>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
                             <div>
                                 <!-- Your review -->
                                 <div class="md-form md-outline">
@@ -751,7 +999,7 @@
             $(function() {
                 $("#mdb-lightbox-ui").load("mdb-addons/mdb-lightbox-ui.html");
             });
-        });
+        }); 
     </script> -->
 
     <!-- <script>

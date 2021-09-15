@@ -1,11 +1,19 @@
 html {
   scroll-behavior: smooth;
 }
+
+.col-3 {
+  -ms-flex: 0 0 25%;
+  flex: 0 0 15%;
+  max-width: 25%;
+}
+
 .imgbox{
   height:377px;
 }
 .side{
     width: 25%;
+    padding-left: 25px;
 }
 .mb-5{
     width: 75%;
@@ -43,12 +51,12 @@ html {
   font-size: 18px;
 }
 .padleft{
-  padding-left: 30px;
+  /* padding-left: 30px; */
   margin-top: 60px;
 }
-.padlef{
+/* .padlef{
   padding-left: 30px;
-}
+} */
 /* img.sticky{
   position: -webkit-sticky;
   position: sticky;
@@ -363,13 +371,23 @@ ul{
 .mtop{
   font-size: 13px;
   margin-top: -10px;
+  border-bottom: 1px solid #181818;
+}
+
+.stock{
+  color: green;
+  font-weight: 500;
+  font-size: 20px;
+  margin-bottom: -45px;
 }
 
 
-
 .paras{
-  background: url(image/pexels-photo-62693.jpeg);
+  /* background: url(../productimg/lemon.jpeg); */
   background-size: cover;
+  color: white;
+  background: #fec516;
+  height: 90px;
 }
 
 main::before{
@@ -385,6 +403,10 @@ main::before{
   list-style: disc;
 }
 
+.topics li p{
+  font-size: 15px;
+}
+
 .descrip{
   display: flex;
 }
@@ -396,6 +418,7 @@ main::before{
 
 .descrip span{
   font-weight: 300;
+  line-height: 22px;
 }
 
 
@@ -455,13 +478,13 @@ input[type=text] {
 
 .inpu2{
   /* padding-top: 1px; */
+  padding-top: 10px;
   padding-bottom: 15px;
   background: rgb(230, 230, 230);
-  position: fixed;
+  /* position: fixed; */
   z-index: 20;
-  margin-top: -25px;
+  /* margin-top: 50px; */
   width: 100%;
-  opacity: 0;
 }
 
 .skin-light .md-form.md-outline label {
@@ -505,7 +528,238 @@ input[type=text] {
   }
 
   .skin-light .mt-70 {
-    margin-top: 48px;
-    padding-top: 70px;
+    margin-top: 0px;
+    /* padding-top: 70px; */
   }
+}
+
+
+
+/* COLOR CHANGING */
+
+.skin-light .text-primary {
+  color: #fbbd1e !important;
+}
+
+.skin-light .form-check-input[type=radio]:checked+label:after {
+  border: 2px solid #fbbd1e;
+}
+.skin-light .form-check-input[type=radio]:checked+label:after {
+  background-color: #fbbd1e;
+}
+
+.skin-light .btn-primary {
+  color: #fff;
+  background-color: #fbbd1e !important;
+}
+
+/* prduct BIO  */
+
+.photopad{
+  width: 100%;
+  padding: 120px;
+}
+
+.pt-1{
+  text-align: left;
+}
+
+.main-im{
+      overflow: hidden;
+}
+
+.gridlines{
+  display: flex;
+  padding: 100px;
+  text-align: left;
+}
+
+.tbox{
+  display: flex;
+  padding-left: 100px;
+  padding-right: 100px;
+  text-align: left;
+}
+
+.trd{
+  display: grid;
+  margin-bottom: 180px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-left: 1px solid #c8c8c8;
+}
+
+.trd p,li{
+  font-size: 13px;
+}
+
+.bioheder{
+font-size: 17px;
+padding-right: 68px;
+margin-top: 30px;
+}
+
+.trd img{
+width: 160px;
+}
+
+.showcontant{
+display: none;
+}
+
+
+.skin-light .w-150 {
+width: 150px;
+width: 50%;
+}
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 1200px){
+.prduimg img{
+  width: -webkit-fill-available;
+}
+
+.differentimg img{
+  width: 265px;
+  height: 265px;
+  margin-top: 15px;
+}
+
+.textp img{
+  width: 270px;
+  height: 270px;
+  margin-right: 25px;
+}
+
+.gridlines{
+  padding: 0px;
+  padding-top: 25px;
+}
+
+.tbox {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+
+}
+
+@media (max-width: 991px){
+.textp img{
+  width: 198px;
+  height: 198px;
+  margin-right: 30px;
+}
+
+.fst img{
+  width: 230px;
+}
+}
+
+@media (max-width: 767px){
+
+.textp img{
+  width: 160px;
+  height: 160px;
+}
+.differentimg img{
+  width: 140px;
+  height: 140px;
+  margin-top: 8px;
+}
+.bioheder {
+  font-size: 15px;
+  padding-right: 15px;
+  margin-top: 15px;
+}
+.onionpic img{
+  width: 230px;
+}
+.fst img {
+  width: 150px;
+  margin-right: 10px;
+}
+.trd img{
+  width: 110px;
+}
+
+}
+
+@media (max-width: 575px){
+.textp img {
+  margin-right: 5px;
+}
+.differentimg img {
+  width: 103px;
+  height: 103px;
+  margin-top: 7px;
+}
+.textp img {
+  width: 100%;
+  height: auto;
+}
+.gridlines{
+  display: grid;
+}
+.tbox{
+  display: grid;
+  /* text-align: center; */
+}
+.fst{
+  text-align: center;
+}
+.fst img{
+  width: 215px;
+}
+.trd{
+  border: none;
+}
+.trd img{
+  width: 21 2px;
+}
+.trd img {
+  width: 100%;
+}
+.showcontant{
+  display: contents;
+}
+.hidecontent{
+  display: none;
+}
+.inpu2{
+  margin-top: 50px;
+}
+.side{
+  padding-left: 0px;
+  padding-right: 10px;
+}
+
+.trd{
+  margin-bottom: 180px;
+}
+}
+
+
+
+
+
+
+.skin-light .number-input.number-input button:before, .skin-light .number-input.number-input button:after {
+width: 10px;
+background-color: #495057;
+margin-top: -5px;
+}
+
+.md-form.md-outline {
+position: relative;
+margin-top: 0rem;
+margin-bottom: 0;
 }
