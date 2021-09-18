@@ -1,5 +1,8 @@
 const functions = require("firebase-functions");
 const admin = require("firebase-admin");
+// var request = require('request');
+const cors = require('cors')({ origin: true });
+
 // const cors = require('cors')({ origin: true });
 
 admin.initializeApp();
@@ -63,4 +66,27 @@ exports.removeFromCart = functions.https.onCall(async(data, context) => {
         return "Already removed";
     }
     // })
+});
+
+
+
+exports.createOrder = functions.https.onCall(async(data, context) => {
+    console.log("data: ", data);
+    // context.set('Access-Control-Allow-Origin', '*');
+    // cors(data, context, () => {
+    var instance = new Razorpay({ key_id: 'rzp_test_EQavvp4sNxxG6W', key_secret: 'NyrBxjP43twshRqwKZgG5sMu' });
+
+    var options = {
+        amount: data.amount, // amount in the smallest currency unit
+        currency: "INR",
+        receipt: data.receiptId,
+    };
+    instance.orders.create(options, function(err, order) {
+        if (err) return new Error;
+
+        console.log(order);
+        return JSON.stringify(order);;
+    });
+
+    // });
 });

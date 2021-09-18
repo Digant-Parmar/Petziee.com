@@ -23,14 +23,13 @@ async function getPrice() {
     // var bodyId = document.getElementsByTagName("body")[0].id;
     var id = document.body.id;
     firebase.initializeApp({
-        apiKey: "AIzaSyC5EHyg7Y5InbSGerMutlDBSrpRRQf3o5c",
-        authDomain: "petezzie.firebaseapp.com",
-        databaseURL: "https://petezzie.firebaseio.com",
-        projectId: "petezzie",
-        storageBucket: "petezzie.appspot.com",
-        messagingSenderId: "232300058192",
-        appId: "1:232300058192:web:d1868e4351b3142dd46355",
-        measurementId: "G-8N4647EL3H"
+        apiKey: "AIzaSyDHBFSULRYjuXw2YRE9lqxki2C_Cc7-s6A",
+        authDomain: "petzieee.firebaseapp.com",
+        projectId: "petzieee",
+        storageBucket: "petzieee.appspot.com",
+        messagingSenderId: "779568120586",
+        appId: "1:779568120586:web:3e5e2e3ff2746a1bffb0f3",
+        measurementId: "G-ZNDJHXSXES"
     });
     let db = firebase.firestore();
 
