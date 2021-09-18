@@ -60,7 +60,7 @@ const signInWithPhone = async sentCodeId => {
     auth.signInWithCredential(credential)
         .then(() => {
             console.log("Loged in");
-            window.location.replace("https://petezzie.web.app/");
+            window.location.replace("https://petziee-dev.web.app/");
         })
         .catch(error => {
             console.error(error);

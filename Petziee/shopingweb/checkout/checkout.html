@@ -11,13 +11,17 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
     <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="all css/bootstrap.min.css">
+    <link rel="stylesheet" href="../cart/all css/bootstrap.min.css">
     <!-- Material Design Bootstrap -->
-    <link rel="stylesheet" href="all css/mdb-pro.min.css">
+    <link rel="stylesheet" href="../cart/all css/mdb-pro.min.css">
     <!-- Material Design Bootstrap Ecommerce -->
-    <link rel="stylesheet" href="all css/mdb.ecommerce.min.css">
+    <link rel="stylesheet" href="../cart/all css/mdb.ecommerce.min.css">
     <!-- Your custom styles (optional) -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="checkout.css">
+    <!-- For paytm -->
+
+    <!-- <script type="application/javascript" crossorigin="anonymous" src="https://securegw-stage.paytm.in/merchantpgpui/checkoutjs/merchants/AOTaKS60821089230337.js"></script> -->
+
 
 
 
@@ -78,7 +82,7 @@
                 </a>
                         </li>
                         <li class="nav-item">
-                            <a href="../login/login.html" class="nav-link waves-effect">
+                            <a href="#!" class="nav-link waves-effect">
                   Login
                 </a>
                         </li>
@@ -237,7 +241,8 @@
                                     </li>
                                 </ul>
 
-                                <button type="button" class="btn btn-primary btn-block waves-effect waves-light" id="checkout">Checkout</button>
+                                <button type="button" class="btn btn-primary btn-block waves-effect waves-light">go to
+                  checkout</button>
 
                             </div>
                         </div>
@@ -338,35 +343,113 @@
     </div> -->
         <div class="footer-copyright text-center py-3 mtop">© 2022 Copyright:
             <a href="#"> Made with love and time</a>
+            <p>hello</p>
         </div>
     </footer>
     <!-- Footer -->
 
     <!-- SCRIPTS -->
     <!-- JQuery -->
+
+    <div id="card"></div>
+    <!-- include only the Firebase features as you need -->
+
+    <!-- <script>
+        /*
+         * import checksum generation utility
+         * You can get this utility from https://developer.paytm.com/docs/checksum/
+         */
+
+
+        function onScriptLoad() {
+            firebase.initializeApp({
+                apiKey: "AIzaSyDHBFSULRYjuXw2YRE9lqxki2C_Cc7-s6A",
+                authDomain: "petzieee.firebaseapp.com",
+                projectId: "petzieee",
+                storageBucket: "petzieee.appspot.com",
+                messagingSenderId: "779568120586",
+                appId: "1:779568120586:web:3e5e2e3ff2746a1bffb0f3",
+                measurementId: "G-ZNDJHXSXES"
+            });
+            var functions = firebase.functions();
+            var removeFromCart = functions.httpsCallable("paymentRequest");
+
+            removeFromCart().catch((error) => {
+                var code = error.code;
+                var message = error.message;
+                var details = console.error.details;
+                console.log("code : " + code + "message:" + message + "details: " + details);
+            });
+
+            //Check if CheckoutJS is available
+            if (window.Paytm && window.Paytm.CheckoutJS) {
+
+                //Add callback function to CheckoutJS onLoad function
+                window.Paytm.CheckoutJS.onLoad(function excecuteAfterCompleteLoad() {
+                    //Config
+                    var config = {
+                        flow: "DEFAULT",
+                        hidePaymodeLabel: true,
+                        data: {
+                            orderId: "1",
+                            amount: 1,
+                            token: "token",
+                            tokenType: "TXN_TOKEN"
+                        },
+                        merchant: {
+                            mid: "AOTaKS60821089230337"
+                        },
+                        handler: {
+                            notifyMerchant: function(eventType, data) {
+                                console.log("notify merchant called", eventType, data);
+                            }
+                        }
+                    };
+
+                    //Create elements instance
+                    var elements = window.Paytm.CheckoutJS.elements(config);
+                    //Create card element
+                    var cardElement = elements.createElement(window.Paytm.CheckoutJS.ELEMENT_PAYMODE.CARD, {
+                        root: "#card",
+                        style: {
+                            bodyBackgroundColor: "blue"
+                        }
+                    });
+                    //Render element
+                    cardElement.invoke();
+                });
+            }
+        }
+    </script> -->
+    <!-- <script type="application/javascript" crossorigin="anonymous" src="https://securegw-stage.paytm.in/merchantpgpui/checkoutjs/merchants/AOTaKS60821089230337.js" onload="onScriptLoad();"></script> -->
+
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- Bootstrap tooltips -->
-    <script type="text/javascript" src="../dp/js/popper.min.js"></script>
+    <script type="text/javascript" src="../cart/product js/js/popper.min.js"></script>
     <!-- Bootstrap core JavaScript -->
-    <script type="text/javascript" src="../dp/js/bootstrap.js"></script>
+    <script type="text/javascript" src="../cart/product js/js/bootstrap.js"></script>
     <!-- MDB core JavaScript -->
-    <script type="text/javascript" src="../dp/js/mdb.min.js"></script>
+    <script type="text/javascript" src="../cart/product js/js/mdb.min.js"></script>
     <!-- MDB Ecommerce JavaScript -->
-    <script type="text/javascript" src="../dp/js/mdb.ecommerce.min.js"></script>
+    <script type="text/javascript" src="../cart/product js/js/mdb.ecommerce.min.js"></script>
     <script>
-    </script>
+    </script>.
     <script defer src="/__/firebase/8.9.1/firebase-app.js"></script>
-    <!-- include only the Firebase features as you need -->
+
     <script defer src="/__/firebase/8.9.1/firebase-auth.js"></script>
     <script defer src="/__/firebase/8.9.1/firebase-database.js"></script>
     <script defer src="/__/firebase/8.9.1/firebase-firestore.js"></script>
     <script defer src="/__/firebase/8.9.1/firebase-functions.js"></script>
     <script defer src="/__/firebase/8.9.1/firebase-messaging.js"></script>
     <script defer src="/__/firebase/8.9.1/firebase-storage.js"></script>
+    <script src="checkout.js"></script>
+
+
     <!-- <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase.js"></script> -->
     <!-- <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-functions.js"></script> -->
     <!-- <script src="https://requirejs.org/docs/release/2.3.5/minified/require.js"></script> -->
-    <script src="cart.js"></script>
+    <!-- <script src="cart.js"></script> -->
 </body>
 
 </html>

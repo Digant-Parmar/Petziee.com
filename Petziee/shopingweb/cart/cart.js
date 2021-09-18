@@ -4,17 +4,17 @@ var quantityArray = {};
 var totalAmount = 0;
 var discountedAmount = 0;
 var finalAmount = 0;
+var currentUser;
 
 async function cart() {
     firebase.initializeApp({
-        apiKey: "AIzaSyC5EHyg7Y5InbSGerMutlDBSrpRRQf3o5c",
-        authDomain: "petezzie.firebaseapp.com",
-        databaseURL: "https://petezzie.firebaseio.com",
-        projectId: "petezzie",
-        storageBucket: "petezzie.appspot.com",
-        messagingSenderId: "232300058192",
-        appId: "1:232300058192:web:d1868e4351b3142dd46355",
-        measurementId: "G-8N4647EL3H"
+        apiKey: "AIzaSyDHBFSULRYjuXw2YRE9lqxki2C_Cc7-s6A",
+        authDomain: "petzieee.firebaseapp.com",
+        projectId: "petzieee",
+        storageBucket: "petzieee.appspot.com",
+        messagingSenderId: "779568120586",
+        appId: "1:779568120586:web:3e5e2e3ff2746a1bffb0f3",
+        measurementId: "G-ZNDJHXSXES"
     });
     let db = firebase.firestore();
 
@@ -73,6 +73,8 @@ async function cart() {
 
 
     firebase.auth().onAuthStateChanged(async(user) => {
+        currentUser = user;
+
         function removeAllChildNodes(parent) {
             while (parent.firstChild) {
                 parent.removeChild(parent.firstChild);
@@ -204,7 +206,6 @@ async function removeItemsFromCart(botttonId) {
 }
 
 
-
 async function quantityChange(isStepUp, doc) {
     if (isStepUp) {
         doc.stepUp();
@@ -280,4 +281,66 @@ function valueChanged(qid, value) {
     document.getElementById("finalCost").innerHTML = totalAmount;
     const obj = document.getElementById(id + "price");
     animateValue(obj, Number(obj.innerHTML), productPrice, 500);
+}
+
+
+
+
+
+document.getElementById('checkout').onclick = async function(e) {
+
+    var db = firebase.firestore();
+    var ref = await db.collection("CustomerInfo").doc(currentUser.id).collection("orders").doc();
+    var functions = firebase.functions();
+
+    var createOrder = functions.httpsCallable("createOrder");
+
+    createOrder({
+        amount: finalAmount,
+        receiptId: ref.id,
+
+    }).then((result) => {
+        console.log("resule", result);
+        var options = {
+            "key": "rzp_test_EQavvp4sNxxG6W", // Enter the Key ID generated from the Dashboard
+            "amount": finalAmount, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+            "currency": "INR",
+            "name": "Acme Corp",
+            "description": "Test Transaction",
+            "image": "https://example.com/your_logo",
+            "order_id": result.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+            "handler": function(response) {
+                alert(response.razorpay_payment_id);
+                alert(response.razorpay_order_id);
+                alert(response.razorpay_signature)
+            },
+            "prefill": {
+                "name": "Gaurav Kumar",
+                "email": "gaurav.kumar@example.com",
+                "contact": "9999999999"
+            },
+            "notes": {
+                "address": "Razorpay Corporate Office"
+            },
+            "theme": {
+                "color": "#3399cc"
+            }
+        };
+
+
+        var rzp1 = new Razorpay(options);
+        rzp1.on('payment.failed', function(response) {
+            alert(response.error.code);
+            alert(response.error.description);
+            alert(response.error.source);
+            alert(response.error.step);
+            alert(response.error.reason);
+            alert(response.error.metadata.order_id);
+            alert(response.error.metadata.payment_id);
+        });
+        rzp1.open();
+        e.preventDefault();
+    });
+
+
 }
