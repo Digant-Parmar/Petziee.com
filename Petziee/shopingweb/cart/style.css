@@ -163,3 +163,22 @@
   font-size: 13px;
   margin-top: -10px;
 }
+
+/* update 17.9.21 */
+
+.skin-light .number-input.number-input button:before, .skin-light .number-input.number-input button:after {
+    width: 0.7rem;
+    background-color: #495057;
+    margin-top: -5px;
+}
+
+.skin-light .number-input.number-input {
+    border: 1px solid #ced4da;
+    width: 8.6rem;
+    border-radius: .25rem;
+}
+
+.skin-light .number-input.number-input button.minus {
+    padding-left: 10px;
+    width: 29%;
+}

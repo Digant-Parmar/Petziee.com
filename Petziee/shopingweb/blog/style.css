@@ -310,7 +310,7 @@ p{
 main .site-title{
     background: url('image/bg3.jpeg');
     background-size: cover;
-    height: 110vh;
+    height: 75vh;
     display: flex;
     justify-content: center;
     
