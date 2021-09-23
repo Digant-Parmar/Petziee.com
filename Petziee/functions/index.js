@@ -3,10 +3,15 @@ const admin = require("firebase-admin");
 const Razorpay = require('razorpay');
 const crypto = require("crypto");
 
+
 // var request = require('request');
 // const cors = require('cors')({ origin: true });
 
 // const cors = require('cors')({ origin: true });
+
+let Promise = require('promise');
+const request = require('request');
+const algoliasearch = require('algoliasearch');
 
 admin.initializeApp();
 
@@ -193,3 +198,134 @@ exports.confirmPayment = functions.https.onCall(async(data, context) => {
     }
 
 });
+
+
+
+
+// For algoia Search
+
+
+
+
+// listen for creating a piece of equipment in Firestore
+exports.addEquipmentToAlgolia = functions.firestore.document('Products/{document}')
+    .onCreate((event, context) => {
+        console.log('ADD EQUIP EVENT IS', event);
+        const active = event.data().toShow
+        const data = {
+            objectID: event.data().id,
+            name: event.data().name,
+            brand: event.data().brand,
+            isInSale: event.data().isInSale,
+            size: event.data().size,
+            style: event.data().style,
+            type: event.data().type,
+            // category_id: event.data.data().category_id,
+            originalPrice: event.data().originalPrice,
+            // group: event.data.data().group,
+            // hourly: event.data.data().hourly,
+            toShow: active,
+            // bundleItem: event.data.data().bundleItem,
+            // daily: event.data.data().daily,
+            // weekly: event.data.data().weekly,
+            // monthly: event.data.data().monthly,
+            // bulkItem: event.data.data().bulkItem
+        };
+        return addToAlgolia(data, 'Products')
+            .then(res => console.log('SUCCESS ALGOLIA equipment ADD', res))
+            .catch(err => console.log('ERROR ALGOLIA equipment ADD', err));
+    });
+// listen for editing a piece of equipment in Firestore
+exports.editEquipmentToAlgolia = functions.firestore.document('Products/{document}')
+    .onUpdate((event, context) => {
+        console.log('edit event', event.after.data())
+        const active = event.after.data().toShow
+        const data = {
+            objectID: event.after.data().id,
+            name: event.after.data().name,
+            brand: event.after.data().brand,
+            isInSale: event.after.data().isInSale,
+            size: event.after.data().size,
+            style: event.after.data().style,
+            type: event.after.data().type,
+            // category_id: event.data.data().category_id,
+            originalPrice: event.after.data().originalPrice,
+            // group: event.data.data().group,
+            // hourly: event.data.data().hourly,
+            toShow: active,
+            // bundleItem: event.data.data().bundleItem,
+            // daily: event.data.data().daily,
+            // weekly: event.data.data().weekly,
+            // monthly: event.data.data().monthly,
+            // bulkItem: event.data.data().bulkItem
+        };
+        console.log('DATA in is', data)
+        return editToAlgolia(data, 'Products')
+            .then(res => console.log('SUCCESS ALGOLIA EQUIPMENT EDIT', res))
+            .catch(err => console.log('ERROR ALGOLIA EQUIPMENT EDIT', err));
+    });
+// listen for a delete of a piece of equipment in Firestore
+exports.removeEquipmentFromAlgolia = functions.firestore.document('Products/{document}')
+    .onDelete((event, context) => {
+        const objectID = event.data().id;
+        return removeFromAlgolia(objectID, 'Products')
+            .then(res => console.log('SUCCESS ALGOLIA equipment ADD', res))
+            .catch(err => console.log('ERROR ALGOLIA equipment ADD', err));
+    })
+    // helper functions for create, edit and delete in Firestore to replicate this in Algolia
+function addToAlgolia(object, indexName) {
+    console.log('GETS IN addToAlgolia')
+    console.log('object', object)
+    console.log('indexName', indexName)
+    const ALGOLIA_ID = functions.config().algolia.app_id;
+    const ALGOLIA_ADMIN_KEY = functions.config().algolia.api_key;
+    const client = algoliasearch(ALGOLIA_ID, ALGOLIA_ADMIN_KEY);
+    const index = client.initIndex(indexName);
+    return new Promise((resolve, reject) => {
+        index.addObject(object)
+            .then(res => {
+                console.log('res GOOD', res);
+                resolve(res)
+            })
+            .catch(err => {
+                console.log('err BAD', err);
+                reject(err)
+            });
+    });
+}
+
+function editToAlgolia(object, indexName) {
+    const ALGOLIA_ID = functions.config().algolia.app_id;
+    const ALGOLIA_ADMIN_KEY = functions.config().algolia.api_key;
+    const client = algoliasearch(ALGOLIA_ID, ALGOLIA_ADMIN_KEY);
+    const index = client.initIndex(indexName);
+    return new Promise((resolve, reject) => {
+        index.saveObject(object)
+            .then(res => {
+                console.log('res GOOD', res);
+                resolve(res)
+            })
+            .catch(err => {
+                console.log('err BAD', err);
+                reject(err)
+            });
+    });
+}
+
+function removeFromAlgolia(objectID, indexName) {
+    const ALGOLIA_ID = functions.config().algolia.app_id;
+    const ALGOLIA_ADMIN_KEY = functions.config().algolia.api_key;
+    const client = algoliasearch(ALGOLIA_ID, ALGOLIA_ADMIN_KEY);
+    const index = client.initIndex(indexName);
+    return new Promise((resolve, reject) => {
+        index.deleteObject(objectID)
+            .then(res => {
+                console.log('res GOOD', res);
+                resolve(res)
+            })
+            .catch(err => {
+                console.log('err BAD', err);
+                reject(err)
+            });
+    });
+}
