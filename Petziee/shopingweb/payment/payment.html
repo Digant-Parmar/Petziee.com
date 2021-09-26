@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="../dp/product css/all css/mdb.ecommerce.min.css">
     <!-- Your custom styles (optional) -->
     <link rel="stylesheet" href="payment.css">
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 
 
 
@@ -130,13 +131,11 @@
                                         <h5 class="mb-4">Most recently used</h5>
 
                                         <div class="label">
-                                            <input type="radio" id="html" name="fav_language" value="HTML">
-                                <label for="html">First Address</label>
+                                            <input type="radio" id="html" name="fav_language" value="HTML">   <label for="html">First Address</label>
                                         </div>
 
                                         <div class="label">
-                                            <input type="radio" id="html" name="fav_language" value="HTML">
-                                <label for="html">Second Address</label>
+                                            <input type="radio" id="html" name="fav_language" value="HTML">   <label for="html">Second Address</label>
                                         </div>
                                     </div>
                                 </form>
@@ -147,18 +146,16 @@
                                         <h5 class="mb-4">Other addresses</h5>
 
                                         <div class="label">
-                                            <input type="radio" id="html" name="fav_language" value="HTML">
-                                <label for="html">First Address</label>
+                                            <input type="radio" id="html" name="fav_language" value="HTML">   <label for="html">First Address</label>
                                         </div>
 
                                         <div class="label">
-                                            <input type="radio" id="html" name="fav_language" value="HTML">
-                                <label for="html">Second Address</label>
+                                            <input type="radio" id="html" name="fav_language" value="HTML">   <label for="html">Second Address</label>
                                         </div>
                                     </div>
                                 </form>
                                 <br>
-                                <button class="addbtn"  onclick="myFunction()">+ Add a new address</button>
+                                <button class="addbtn" onclick="myFunction()">+ Add a new address</button>
                                 <p id="demo"></p>
                                 <!-- <div class="row mb-4">
                   <div class="col-md-5 col-lg-3 col-xl-3">
@@ -228,7 +225,7 @@
 
                                 <h5 class="mb-4">We accept</h5>
 
-                               <div class="sole">
+                                <div class="sole">
                                     <div class="smallbio" style="width: 15%;">
                                         <img src="../image/banner1.jpg" alt="" style="width: 90%;">
                                     </div>
@@ -237,24 +234,24 @@
                                         <h5 style="font-size: 12px;">product bio</h5>
                                         <p>more..</p>
                                     </div>
-                               </div>
+                                </div>
 
-                               <div class="sole" style="margin-top: 20px;">
-                                <div class="smallbio" style="width: 15%;">
-                                    <img src="../image/banner1.jpg" alt="" style="width: 90%;">
+                                <div class="sole" style="margin-top: 20px;">
+                                    <div class="smallbio" style="width: 15%;">
+                                        <img src="../image/banner1.jpg" alt="" style="width: 90%;">
+                                    </div>
+                                    <div class="bigbio" style="padding-left: 20px;">
+                                        <h3 style="font-size: 14px;">Name</h3>
+                                        <h5 style="font-size: 12px;">product bio</h5>
+                                        <p>more..</p>
+                                    </div>
+
                                 </div>
-                                <div class="bigbio" style="padding-left: 20px;">
-                                    <h3 style="font-size: 14px;">Name</h3>
-                                    <h5 style="font-size: 12px;">product bio</h5>
-                                    <p>more..</p>
-                                </div>
-                                
-                           </div>
                             </div>
                         </div>
 
 
-                        
+
                         <!-- Card -->
 
                     </div>
@@ -289,8 +286,7 @@
                                     </li>
                                 </ul>
 
-                                <button type="button" class="btn btn-primary btn-block waves-effect waves-light">go to
-                  checkout</button>
+                                <button type="button" class="btn btn-primary btn-block waves-effect waves-light" id="paynow">Pay Now</button>
 
                             </div>
                         </div>
@@ -329,12 +325,12 @@
 
         <script>
             function myFunction() {
-              document.getElementById("demo").innerHTML = "Hello World";
+                document.getElementById("demo").innerHTML = "Hello World";
             }
         </script>
     </main>
 
-    
+
     <!--Main layout-->
 
     <!-- Footer -->
@@ -427,7 +423,7 @@
     <!-- <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase.js"></script> -->
     <!-- <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-functions.js"></script> -->
     <!-- <script src="https://requirejs.org/docs/release/2.3.5/minified/require.js"></script> -->
-    <script src="cart.js"></script>
+    <script src="payment.js"></script>
 </body>
 
 </html>

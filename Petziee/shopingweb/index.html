@@ -41,6 +41,7 @@
     <script defer src="/__/firebase/8.9.1/firebase-functions.js"></script>
     <script defer src="/__/firebase/8.9.1/firebase-messaging.js"></script>
     <script defer src="/__/firebase/8.9.1/firebase-storage.js"></script>
+    <script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
     <!-- <script defer src="/__/firebase/8.9.1/firebase-analytics.js"></script> -->
     <!-- <script defer src="/__/firebase/8.9.1/firebase-remote-config.js"></script> -->
     <!-- <script defer src="/__/firebase/8.9.1/firebase-performance.js"></script> -->
@@ -70,7 +71,7 @@
                     margin: 15px;    border: 1px solid rgb(133, 133, 133); border-radius: 30px;">
 
 
-                        <input type="text" class="form-control mb-0" placeholder="Search" style="    height: 31px;
+                        <input type="text" class="form-control mb-0" placeholder="Search" onchange="searchQuery(this.value)" oninput="this.onchange();" style="    height: 31px;
                       border-top-left-radius: 20px;
                       border-bottom-left-radius: 20px;
                       font-family: Roboto,sans-serif;
@@ -332,7 +333,7 @@
                 <!-- <h1 class = "lg-title" style="font-family: 'Quicksand', sans-serif;">Special Offers</h1>
             <p class = "text-light" style="font-family: 'Quicksand', sans-serif;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur quos sit consectetur, ipsa voluptatem vitae necessitatibus dicta veniam, optio, possimus assumenda laudantium. Temporibus, quis cum.</p>
      -->
-                <div class="product-items" id="productitems" >
+                <div class="product-items" id="productitems">
                     <!-- single product -->
                     <!-- Product 0 -->
 
@@ -1134,7 +1135,7 @@
 
 
     <!-- ----------BRANDS----------->
-<!--     <div class="brands ">
+    <!--     <div class="brands ">
         <div class="small-container1 ">
             <div class="row ">
                 <div class="col-5 ">
@@ -1295,6 +1296,18 @@
     </script>
 
 
+    <script>
+        const client = algoliasearch('7CB1R7HJ4I', '2ba1e42e4b7c79038ed92e7a18274425');
+        const index = client.initIndex('Products');
+
+        function searchQuery(x) {
+            console.log("x is ", x);
+            index.search(x).then((hints) => {
+                console.log(hints);
+            });
+
+        }
+    </script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const loadEl = document.querySelector('#load');
@@ -1501,55 +1514,55 @@
         })
     </script>
 
-<script type="text/javascript">
-    const cardImages = document.querySelectorAll(".loading");
-    const cardTitles = document.querySelectorAll(".loading");
-    const cardDescriptions = document.querySelectorAll(".card-description");
-    const cardMediaIcons = document.querySelectorAll(".card-mediaIcons a");
-    const cardImgs = document.querySelectorAll(".loading img");
-    const cardTitleSpans = document.querySelectorAll(".loading span");
-    const cardDescSpans = document.querySelectorAll(".card-description span");
-    const mediaIcons = document.querySelectorAll(".card-mediaIcons a i");
+    <script type="text/javascript">
+        const cardImages = document.querySelectorAll(".loading");
+        const cardTitles = document.querySelectorAll(".loading");
+        const cardDescriptions = document.querySelectorAll(".card-description");
+        const cardMediaIcons = document.querySelectorAll(".card-mediaIcons a");
+        const cardImgs = document.querySelectorAll(".loading img");
+        const cardTitleSpans = document.querySelectorAll(".loading span");
+        const cardDescSpans = document.querySelectorAll(".card-description span");
+        const mediaIcons = document.querySelectorAll(".card-mediaIcons a i");
 
-    const renderCard = () => {
-      //Remove the skeleton loading effect
-      cardImages.forEach((cardImage) => {
-        cardImage.classList.remove("loading");
-      });
-      cardTitles.forEach((cardTitle) => {
-        cardTitle.classList.remove("loading");
-      });
-      cardDescriptions.forEach((cardDescription) => {
-        cardDescription.classList.remove("loading");
-      });
-      cardMediaIcons.forEach((cardMediaIcon) => {
-        cardMediaIcon.classList.remove("loading");
-      });
+        const renderCard = () => {
+            //Remove the skeleton loading effect
+            cardImages.forEach((cardImage) => {
+                cardImage.classList.remove("loading");
+            });
+            cardTitles.forEach((cardTitle) => {
+                cardTitle.classList.remove("loading");
+            });
+            cardDescriptions.forEach((cardDescription) => {
+                cardDescription.classList.remove("loading");
+            });
+            cardMediaIcons.forEach((cardMediaIcon) => {
+                cardMediaIcon.classList.remove("loading");
+            });
 
-      //Show the hidden html elements
-      cardImgs.forEach((cardImg) => {
-        cardImg.style.visibility = "visible";
-      });
-      cardTitleSpans.forEach((cardTitleSpan) => {
-        cardTitleSpan.style.visibility = "visible";
-      });
-      cardDescSpans.forEach((cardDescSpan) => {
-        cardDescSpan.style.visibility = "visible";
-      });
-      mediaIcons.forEach((mediaIcon) => {
-        mediaIcon.style.visibility = "visible";
-      });
-    }
+            //Show the hidden html elements
+            cardImgs.forEach((cardImg) => {
+                cardImg.style.visibility = "visible";
+            });
+            cardTitleSpans.forEach((cardTitleSpan) => {
+                cardTitleSpan.style.visibility = "visible";
+            });
+            cardDescSpans.forEach((cardDescSpan) => {
+                cardDescSpan.style.visibility = "visible";
+            });
+            mediaIcons.forEach((mediaIcon) => {
+                mediaIcon.style.visibility = "visible";
+            });
+        }
 
-    //Execute renderCard on setTimeout
-    setTimeout(() => {
-      renderCard();
-    }, 2000);
+        //Execute renderCard on setTimeout
+        setTimeout(() => {
+            renderCard();
+        }, 2000);
 
-    //Execute renderCard after the page loaded
-    //window.addEventListener("load", () => {
-      //renderCard();
-    //});
+        //Execute renderCard after the page loaded
+        //window.addEventListener("load", () => {
+        //renderCard();
+        //});
     </script>
 </body>
 
