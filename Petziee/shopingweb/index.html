@@ -1445,7 +1445,7 @@
                     qs.forEach(element => {
                         makeProduct(element);
                         async function makeProduct(element) {
-                            await $('.product-items').append(code);
+                            await $('#productitems').append(code);
                             console.log(element.id, " => ", element.data());
                             document.getElementById("product0Image").src = element.data().mainImage;
                             document.getElementById("product0Title").innerHTML = element.data().type;

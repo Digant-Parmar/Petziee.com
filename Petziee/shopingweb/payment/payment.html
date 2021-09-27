@@ -22,6 +22,8 @@
 
 
 
+
+
 </head>
 
 <body class="skin-light">
@@ -98,6 +100,7 @@
         </nav>
         <!-- Navbar -->
 
+
         <div class="jumbotron color-grey-light mt-70">
             <div class="d-flex align-items-center h-100">
                 <div class="container text-center py-5">
@@ -112,6 +115,8 @@
     <!--Main layout-->
     <main>
         <div class="container">
+            <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+            <lottie-player src="https://assets3.lottiefiles.com/private_files/lf30_ex6xbay5.json" id="lottie" background="transparent" speed="1" style="width: 300px; height: 300px;z-index: 10; margin:auto;display:none;" loop autoplay></lottie-player>
 
             <!--Section: Block Content-->
             <section class="mt-5 mb-4">
@@ -127,34 +132,10 @@
                             <div class="card-body" id="mainCartBody">
 
                                 <form action="lol">
-                                    <div class="form">
-                                        <h5 class="mb-4">Most recently used</h5>
+                                    <div class="form" id="addresses">
 
-                                        <div class="label">
-                                            <input type="radio" id="html" name="fav_language" value="HTML">   <label for="html">First Address</label>
-                                        </div>
-
-                                        <div class="label">
-                                            <input type="radio" id="html" name="fav_language" value="HTML">   <label for="html">Second Address</label>
-                                        </div>
                                     </div>
                                 </form>
-                                <br>
-
-                                <form action="lol">
-                                    <div class="form">
-                                        <h5 class="mb-4">Other addresses</h5>
-
-                                        <div class="label">
-                                            <input type="radio" id="html" name="fav_language" value="HTML">   <label for="html">First Address</label>
-                                        </div>
-
-                                        <div class="label">
-                                            <input type="radio" id="html" name="fav_language" value="HTML">   <label for="html">Second Address</label>
-                                        </div>
-                                    </div>
-                                </form>
-                                <br>
                                 <button class="addbtn" onclick="myFunction()">+ Add a new address</button>
                                 <p id="demo"></p>
                                 <!-- <div class="row mb-4">
@@ -220,11 +201,9 @@
                         <!-- Card -->
 
                         <!-- Card -->
-                        <div class="card mb-4" id=>
+                        <div class="card mb-4">
                             <div class="card-body">
-
                                 <h5 class="mb-4">We accept</h5>
-
                                 <div class="sole">
                                     <div class="smallbio" style="width: 15%;">
                                         <img src="../image/banner1.jpg" alt="" style="width: 90%;">
