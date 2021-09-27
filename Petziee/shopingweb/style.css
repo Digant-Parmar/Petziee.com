@@ -2612,7 +2612,7 @@ ul{
 @media(max-width: 360px){
     .product-items {
         display: grid;
-        grid-template-columns: repeat(2, 160px);
+/*         grid-template-columns: repeat(2, 160px); */
     }
     .product {
         margin: 4px;
