@@ -37,3 +37,21 @@
         
     })
     </script>
+
+
+
+        AND CSS::
+        
+        
+.svg {
+  width: 10%;
+  position: fixed;
+  margin-top: 150px;
+  margin-left: 47%;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.hide {
+  display: none;
+}
