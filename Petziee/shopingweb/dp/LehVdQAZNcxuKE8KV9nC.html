@@ -30,9 +30,11 @@
     <link rel="stylesheet" href="product css/drools css/drools.css">
 </head>
 
-<body class="skin-light" id="A3cGJfszX6DpySVaPBUz">
+<body class="skin-light" id="LehVdQAZNcxuKE8KV9nC">
     <!--Main Navigation-->
-
+    <div class="width1">
+        <div class="svg hide" id="svg"></div>
+    </div>
     <header>
         <!-- Navbar -->
         <nav class="navbar navbar-expand-md navbar-light fixed-top scrolling-navbar">
@@ -463,37 +465,36 @@
                             </tbody>
                         </table>
 
-                            <div class="buton"> 
-        
-        <button type="button" id="buyBtn" class="btn btn-primary btn-md mr-1 mb-2">Buy now</button>
-        <button type="button" id="cartBtn" class="btn btn-light btn-md mr-1 mb-2" style="margin-top: 10px;"><i class="fas fa-shopping-cart pr-2"></i>Add to cart</button> 
-    </div> 
+                        <div class="buton">
+
+                            <button type="button" id="buyBtn" class="btn btn-primary btn-md mr-1 mb-2">Buy now</button>
+                            <button type="button" id="cartBtn" class="btn btn-light btn-md mr-1 mb-2" style="margin-top: 10px;"><i class="fas fa-shopping-cart pr-2"></i>Add to cart</button>
+                        </div>
 
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.3/lottie.min.js" integrity="sha512-35O/v2b9y+gtxy3HK+G3Ah60g1hGfrxv67nL6CJ/T56easDKE2TAukzxW+/WOLqyGE7cBg0FR2KhiTJYs+FKrw==" crossorigin="anonymous"></script>
-    <script>
+                        <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.3/lottie.min.js" integrity="sha512-35O/v2b9y+gtxy3HK+G3Ah60g1hGfrxv67nL6CJ/T56easDKE2TAukzxW+/WOLqyGE7cBg0FR2KhiTJYs+FKrw==" crossorigin="anonymous"></script>
+                        <script>
+                            const play = document.getElementById('cartBtn');
 
-    const play = document.getElementById('cartBtn');
+                            const svgContainer = document.getElementById('svg');
+                            const animItem = bodymovin.loadAnimation({
+                                wrapper: svgContainer,
+                                animType: 'svg',
+                                loop: false,
+                                autoplay: false,
+                                path: 'https://assets5.lottiefiles.com/temp/lf20_q6KowU.json'
+                            });
 
-    const svgContainer = document.getElementById('svg');
-    const animItem = bodymovin.loadAnimation({
-        wrapper: svgContainer,
-        animType: 'svg',
-        loop: false,
-        autoplay: false,
-        path: 'https://assets5.lottiefiles.com/temp/lf20_q6KowU.json'
-    });
+                            play.addEventListener('click', () => {
+                                svgContainer.classList.remove('hide');
+                                animItem.goToAndPlay(0, true);
+                            })
 
-    play.addEventListener('click', () => {
-        svgContainer.classList.remove('hide');
-        animItem.goToAndPlay(0,true);
-    })
+                            animItem.addEventListener('complete', () => {
+                                svgContainer.classList.add('hide');
 
-    animItem.addEventListener('complete', () => {
-        svgContainer.classList.add('hide');
-        
-    })
-    </script>
+                            })
+                        </script>
                         <!-- showcontant -->
 
                         <div class="showcontant">

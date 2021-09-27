@@ -39,27 +39,31 @@ async function uploadToFirestore() {
 
     // var docRef = await db.collection("Products").doc();
 
-    // await db.collection("Products").get().then((qs) => {
-    //     qs.forEach(async(element) => {
-    //         await db.collection("Products").doc(element.id).update({
-    //             "mainImage": "https://petzieee.web.app/dp/image/" + element.id + "/" + "main.png",
-    //         });
-    //     });
-    // });
+    await db.collection("Products").get().then((qs) => {
+        qs.forEach(async(element) => {
+            await db.collection("Products").doc(element.id).update({
+                "temp": "temp",
+            });
+
+            await db.collection("Products").doc(element.id).update({
+                "temp": firebase.firestore.FieldValue.delete(),
+            });
+        });
+    });
 
     var text = "";
 
 
-    await db.collection("Products").get().then((qs) => {
-        qs.forEach(async(element) => {
-            var name = element.data().name.replace(/,/g, '-');
-            var id = element.id;
+    // await db.collection("Products").get().then((qs) => {
+    //     qs.forEach(async(element) => {
+    //         var name = element.data().name.replace(/,/g, '-');
+    //         var id = element.id;
 
-            text = text + "<br> " + name + "," + id + "," + "</br> ";
-        });
-    });
+    //         text = text + "<br> " + name + "," + id + "," + "</br> ";
+    //     });
+    // });
 
-    document.getElementById("pro").innerHTML = text;
+    // document.getElementById("pro").innerHTML = text;
 
 
     // var uploader = document.getElementById("uploader");
