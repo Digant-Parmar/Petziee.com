@@ -2640,7 +2640,7 @@ ul{
 @media(max-width: 320px){
     .product-items {
         display: grid;
-        grid-template-columns: repeat(2, 140px);
+/*         grid-template-columns: repeat(2, 140px); */
     }
     .product-content {
         padding: 1.5rem 0.5rem 5px 0.5rem;
