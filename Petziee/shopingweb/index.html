@@ -62,18 +62,21 @@
                 <div class="icon cancel-btn">
                     <i class="fas fa-times"></i>
                 </div>
-<!--                 searchbar start -->
-             <form autocomplete="off" action="/action_page.php">
-                        <div class="autocomplete" style="width:300px;">
-                          <input id="myInput" type="text" name="myCountry" placeholder="Search">
-                          <button class="searchb"><i class="fas fa-search"></i></button>
-                        </div>
-                        
-                      </form>   
-                      <script src="searchbar.js"></script>
-             
-<!--              searchbar end -->
-             
+                <!--                 searchbar start -->
+                <form autocomplete="off" action="/action_page.php" class="showof">
+                    <div class="autocomplete" style="width:300px;">
+                        <input id="myInput" type="text" name="myCountry" placeholder="Search">
+                        <button class="searchb"><i class="fas fa-search"></i></button>
+                    </div>
+
+                </form>
+                <script src="searchbar.js"></script>
+
+
+
+
+                <!--              searchbar end -->
+
                 <li style="margin: 22px;
                            margin-left: 10px;
                            margin-right: 1px;"><a href="#"><i class="fas fa-home"></i><span class="pudding">Home</span></a></li>
@@ -90,6 +93,16 @@
         </div>
     </nav>
 
+    <!-- SECOND SEARCHBAR  -->
+
+    <!-- <form autocomplete="off" action="/action_page.php">
+        <div class="autocomplete" style="width:300px;">
+            <input id="myInput" type="text" name="myCountry" placeholder="Search">
+            <button class="searchb"><i class="fas fa-search"></i></button>
+        </div>
+
+    </form>
+    <script src="searchbar.js"></script> -->
 
 
     <script>
@@ -111,6 +124,35 @@
             this.scrollY > 20 ? navbar.classList.add("sticky") : navbar.classList.remove("sticky");
         }
     </script>
+
+    <div class="showoff">
+
+        <div class="sticky" id="header">
+            <form autocomplete="off" action="/action_page.php" class="showon">
+                <div class="autocomplete showon1">
+                    <input id="myInput" type="text" name="myCountry" placeholder="Search">
+                    <button class="searchb"><i class="fas fa-search"></i></button>
+                </div>
+
+            </form>
+            <script src="searchbar.js"></script>
+            <script>
+                // When the user scrolls down 50px from the top of the document, resize the header's font size
+                window.onscroll = function() {
+                    scrollFunction()
+                };
+
+                function scrollFunction() {
+                    if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+                        document.getElementById("header").style.paddingTop = "1px";
+                    } else {
+                        document.getElementById("header").style.paddingTop = "1px";
+                    }
+                }
+            </script>
+        </div>
+    </div>
+
 
     <div class="carousel" data-flickity='{ "wrapAround": true, "autoPlay": true, "imagesLoaded":true }' style="    padding-top: 50px;">
         <div class="carousel-cell">
@@ -1261,7 +1303,7 @@
     </script>
 
 
-    <script>
+    <!-- <script>
         const client = algoliasearch('7CB1R7HJ4I', '2ba1e42e4b7c79038ed92e7a18274425');
         const index = client.initIndex('Products');
 
@@ -1272,7 +1314,7 @@
             });
 
         }
-    </script>
+    </script> -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const loadEl = document.querySelector('#load');
