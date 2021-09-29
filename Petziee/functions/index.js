@@ -128,7 +128,7 @@ exports.razorpay = functions.https.onCall(async(data, context) => {
 
                 admin.firestore().collection("CustomerInfo").doc(userId).collection("orders").doc(ref.id).set({
                     "orderId": order.id,
-                    "amount": totalPrice,
+                    "amount": totalPrice * 100,
                     "status": "created",
                     "created_at": order.created_at,
                 });

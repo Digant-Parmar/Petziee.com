@@ -1,9 +1,12 @@
-var totalPriceArray = {};
+var priceWithDiscountArray = {};
 var discountArray = {};
 var quantityArray = {};
-var totalAmount = 0;
+var totalDiscountArray = {}
+
+var totalAmountWithDiscountAndQuantity = 0;
 var discountedAmount = 0;
-var finalAmount = 0;
+var totalCostWithoutDiscount = 0;
+
 
 
 async function cart() {
@@ -48,7 +51,7 @@ async function cart() {
             <div class="def-number-input number-input safari_only mb-0 w-100">\
               <button onclick="return quantityChange(false,this.parentNode.querySelector(\'input[type=number]\'))"\
                 class="minus"></button>\
-              <input class="quantity" min="0" name="quantity" value="1" type="number" id="quantity" min = 0 onchange = valueChanged(this.id,this.value)>\
+              <input class="quantity" min="1" name="quantity" value="1" type="number" id="quantity" min = 0 onchange = valueChanged(this.id,this.value) oninput = "return this.onchange()">\
               <button onclick="return quantityChange(true,this.parentNode.querySelector(\'input[type=number]\'))"\
                 class="plus"></button>\
             </div>\
@@ -64,7 +67,7 @@ async function cart() {
             <a type="button" class="card-link-secondary small text-uppercase"><i\
                 class="fas fa-heart mr-1"></i> Move to wish list </a>\
           </div>\
-          <p class="mb-0"><span><strong id ="price"><i class="fas fa-rupee-sign"></i> 540.99</strong></span></p>\
+          <p class="mb-0"><span><strong><i class="fas fa-rupee-sign"></strong></i> <strong id ="price"></strong></span></p>\
         </div>\
       </div>\
     </div>\
@@ -111,26 +114,33 @@ async function cart() {
                             document.getElementById("isInStock").innerHTML = "Currently Unavialable";
                         }
                         document.getElementById("quantity").value = quantity;
+                        //Original price = op
                         var op = element.data().originalPrice;
                         var discount = op * element.data().salePerc / 100;
+                        //dicount = productdiscount withiut quantity
                         var finalPrice = (op - discount) * quantity;
+                        //finalPrice = price with discount and quantity
+
                         document.getElementById("price").innerHTML = finalPrice;
 
-                        totalPriceArray[element.id] = op - discount;
+                        //priceWithDiscountArray = array without quantity
+                        priceWithDiscountArray[element.id] = op - discount;
 
-                        totalAmount = totalAmount + finalPrice;
-
+                        totalAmountWithDiscountAndQuantity = totalAmountWithDiscountAndQuantity + finalPrice;
+                        //discountArray only the discount without quntity
                         discountArray[element.id] = discount;
 
-                        discountedAmount = discountedAmount + discount;
+                        //discountammount  = overall discount with product quantity
+                        discountedAmount = discountedAmount + discount * quantity;
+                        //totalDiscountArray  = product discount with quantity
+                        totalDiscountArray[element.id] = discount * quantity;
 
 
-                        var totalCost = totalAmount + discountedAmount;
-                        console.log("totalPrice : ", totalAmount);
-                        console.log("dicount: ", discountedAmount);
-                        document.getElementById("totalCost").innerHTML = totalCost;
+                        totalCostWithoutDiscount = totalCostWithoutDiscount + discount * quantity + finalPrice;
+
+                        document.getElementById("totalCost").innerHTML = totalCostWithoutDiscount;
                         document.getElementById("totalDiscount").innerHTML = discountedAmount;
-                        document.getElementById("finalCost").innerHTML = totalAmount;
+                        document.getElementById("finalCost").innerHTML = totalAmountWithDiscountAndQuantity;
                         //Change Id of the append Elements
 
                         document.getElementById("name").id = element.id + "name";
@@ -142,16 +152,17 @@ async function cart() {
                         document.getElementById("quantity").id = element.id + "quantity";
                         document.getElementById("price").id = element.id + "price";
                         document.getElementById("removeButton").id = element.id + "removeButton";
+
                         console.log("Completed first product");
                     });
                 });
             });
 
 
-            console.log("Totol Price Array : ", totalPriceArray);
+            console.log("priceWithDiscountArray : ", priceWithDiscountArray);
             console.log("discount Array: ", discountArray);
-            console.log("total Amount : ", totalAmount);
-            console.log("dicounted Amount : ", discountArray);
+            console.log("Quantity Price Array : ", quantityArray);
+
 
 
 
@@ -208,48 +219,58 @@ async function removeItemsFromCart(botttonId) {
 
 
 async function quantityChange(isStepUp, doc) {
+    var quantitydoc = document.getElementById(doc.id);
     if (isStepUp) {
         doc.stepUp();
         var qid = doc.id;
         var id = qid.replace("quantity", '');
-        var fp = totalPriceArray[id];
+        var fp = priceWithDiscountArray[id];
         var dp = discountArray[id];
         // var currentquantity = document.getElementById(qid).value
-        totalAmount = totalAmount + fp;
+        totalAmountWithDiscountAndQuantity = totalAmountWithDiscountAndQuantity + fp;
         discountedAmount = discountedAmount + dp;
-        var totalCost = totalAmount + discountedAmount;
+        totalCostWithoutDiscount = totalCostWithoutDiscount + dp + fp;
         quantityArray[id] = quantityArray[id] + 1;
+        totalDiscountArray[id] = totalDiscountArray[id] + dp;
 
         var productPrice = fp * quantityArray[id];
 
-        document.getElementById("totalCost").innerHTML = totalCost;
+        document.getElementById("totalCost").innerHTML = totalCostWithoutDiscount;
         document.getElementById("totalDiscount").innerHTML = discountedAmount;
-        document.getElementById("finalCost").innerHTML = totalAmount;
+        document.getElementById("finalCost").innerHTML = totalAmountWithDiscountAndQuantity;
 
         const obj = document.getElementById(id + "price");
         animateValue(obj, Number(obj.innerHTML), productPrice, 500);
     } else {
         doc.stepDown();
-        var qid = doc.id;
-        var id = qid.replace("quantity", '');
-        var fp = totalPriceArray[id];
-        var dp = discountArray[id];
-        quantityArray[id] = quantityArray[id] - 1;
+        if (quantitydoc.value >= 1) {
+            var qid = doc.id;
+            var id = qid.replace("quantity", '');
+            var fp = priceWithDiscountArray[id];
+            var dp = discountArray[id];
 
-        // var currentquantity = document.getElementById(qid).value
-        if (quantityArray[id] >= 0) {
-            totalAmount = totalAmount - fp;
+            // var currentquantity = document.getElementById(qid).value
+
+            quantityArray[id] = quantityArray[id] - 1;
+
+            totalAmountWithDiscountAndQuantity = totalAmountWithDiscountAndQuantity - fp;
             discountedAmount = discountedAmount - dp;
-            var totalCost = totalAmount + discountedAmount;
             var productPrice = fp * quantityArray[id];
+            totalDiscountArray[id] = totalDiscountArray[id] - dp;
+            totalCostWithoutDiscount = totalCostWithoutDiscount - dp - fp;
 
-            document.getElementById("totalCost").innerHTML = totalCost;
+
+
+            document.getElementById("totalCost").innerHTML = totalCostWithoutDiscount;
             document.getElementById("totalDiscount").innerHTML = discountedAmount;
-            document.getElementById("finalCost").innerHTML = totalAmount;
+            document.getElementById("finalCost").innerHTML = totalAmountWithDiscountAndQuantity;
             const obj = document.getElementById(id + "price");
             animateValue(obj, Number(obj.innerHTML), productPrice, 500);
+
         }
     }
+    console.log("Quantity Price Array : ", quantityArray);
+
 }
 
 function animateValue(obj, start, end, duration) {
@@ -267,20 +288,32 @@ function animateValue(obj, start, end, duration) {
 
 
 function valueChanged(qid, value) {
+    console.log("initial discount: ", totalCost);
+    console.log("initial totalamount: ", discountedAmount);
+
     var id = qid.replace("quantity", '');
-    var fp = totalPriceArray[id];
+    var pwd = priceWithDiscountArray[id];
     var dp = discountArray[id];
     // var currentquantity = document.getElementById(qid).value
-    quantityArray[id] = value;
+    var initialQuantity = quantityArray[id];
+    quantityArray[id] = Number(value);
 
-    totalAmount = totalAmount - fp;
-    discountedAmount = discountedAmount - dp;
-    var totalCost = totalAmount + discountedAmount;
-    var productPrice = fp * quantityArray[id];
-    document.getElementById("totalCost").innerHTML = totalCost;
+    totalAmountWithDiscountAndQuantity = totalAmountWithDiscountAndQuantity + pwd * (quantityArray[id] - initialQuantity);
+    var x = 0;
+    x = x - totalDiscountArray[id];
+    x = x + (dp * quantityArray[id]);
+    discountedAmount = discountedAmount + x;
+    var productPrice = pwd * quantityArray[id];
+
+    totalCostWithoutDiscount = totalCostWithoutDiscount + (pwd + dp) * (quantityArray[id] - initialQuantity);
+    totalDiscountArray[id] = dp * quantityArray[id];
+
+    document.getElementById("totalCost").innerHTML = totalCostWithoutDiscount;
     document.getElementById("totalDiscount").innerHTML = discountedAmount;
-    document.getElementById("finalCost").innerHTML = totalAmount;
+    document.getElementById("finalCost").innerHTML = totalAmountWithDiscountAndQuantity;
     const obj = document.getElementById(id + "price");
+    console.log("Quantity Price Array : ", quantityArray);
+
     animateValue(obj, Number(obj.innerHTML), productPrice, 500);
 }
 
