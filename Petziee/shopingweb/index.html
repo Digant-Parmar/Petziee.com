@@ -41,6 +41,7 @@
     <script defer src="/__/firebase/8.9.1/firebase-functions.js"></script>
     <script defer src="/__/firebase/8.9.1/firebase-messaging.js"></script>
     <script defer src="/__/firebase/8.9.1/firebase-storage.js"></script>
+    <script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
     <!-- <script defer src="/__/firebase/8.9.1/firebase-analytics.js"></script> -->
     <!-- <script defer src="/__/firebase/8.9.1/firebase-remote-config.js"></script> -->
     <!-- <script defer src="/__/firebase/8.9.1/firebase-performance.js"></script> -->
@@ -61,53 +62,21 @@
                 <div class="icon cancel-btn">
                     <i class="fas fa-times"></i>
                 </div>
-                <!-- <li><a href="#">Home</a></li>
-                <li><a href="login/login.html">Login</a></li>
-                <li><a href="event/event.html">Offers</a></li> -->
-                <form action="" class="helll" style="width: 100%;">
-
-                    <div class="md-for md-outline input-group md-input-group w-100" style="display: flex;
-                    margin: 15px;    border: 1px solid rgb(133, 133, 133); border-radius: 30px;">
-
-
-                        <input type="text" class="form-control mb-0" placeholder="Search" style="    height: 31px;
-                      border-top-left-radius: 20px;
-                      border-bottom-left-radius: 20px;
-                      font-family: Roboto,sans-serif;
-                      letter-spacing: 1px;
-                      width: 80%;
-                      border: 0px;
-                      padding-left: 25px;
-                      color: rgb(0, 0, 0);
-    background: transparent;
-    padding-left: 25px;
-    border-right-color: transparent;
-">
-
-                        <div class="input-group-append" style="margin-top: 2px;">
-                            <button class="botoms" type="submit" style="box-shadow: none;    box-shadow: none;
-                        border-top-right-radius: 20px;
-                        border-bottom-right-radius: 20px;
-                        border: 0ch;
-                        padding-right: 12px;
-                        padding-left: 10px;
-                        background: white;
-                        color: rgba(0,0,0,0.6);
-                        margin-top: -2px;
-    padding: 3.5px;
-    padding-left: 20px;
-    padding-right: 20px;
-    background: transparent;
-    color: rgb(0, 0, 0);
-    margin-left: -1px;
-    border-left-color: transparent;">
-                          <i class="fa fa-search"></i>
-                        </button>
-                        </div>
-
+                <!--                 searchbar start -->
+                <form autocomplete="off" action="/action_page.php" class="showof">
+                    <div class="autocomplete" style="width:300px;">
+                        <input id="myInput" type="text" name="myCountry" placeholder="Search">
+                        <button class="searchb"><i class="fas fa-search"></i></button>
                     </div>
 
                 </form>
+                <script src="searchbar.js"></script>
+
+
+
+
+                <!--              searchbar end -->
+
                 <li style="margin: 22px;
                            margin-left: 10px;
                            margin-right: 1px;"><a href="#"><i class="fas fa-home"></i><span class="pudding">Home</span></a></li>
@@ -124,6 +93,16 @@
         </div>
     </nav>
 
+    <!-- SECOND SEARCHBAR  -->
+
+    <!-- <form autocomplete="off" action="/action_page.php">
+        <div class="autocomplete" style="width:300px;">
+            <input id="myInput" type="text" name="myCountry" placeholder="Search">
+            <button class="searchb"><i class="fas fa-search"></i></button>
+        </div>
+
+    </form>
+    <script src="searchbar.js"></script> -->
 
 
     <script>
@@ -145,6 +124,35 @@
             this.scrollY > 20 ? navbar.classList.add("sticky") : navbar.classList.remove("sticky");
         }
     </script>
+
+    <div class="showoff">
+
+        <div class="sticky" id="header">
+            <form autocomplete="off" action="/action_page.php" class="showon">
+                <div class="autocomplete showon1">
+                    <input id="myInput" type="text" name="myCountry" placeholder="Search">
+                    <button class="searchb"><i class="fas fa-search"></i></button>
+                </div>
+
+            </form>
+            <script src="searchbar.js"></script>
+            <script>
+                // When the user scrolls down 50px from the top of the document, resize the header's font size
+                window.onscroll = function() {
+                    scrollFunction()
+                };
+
+                function scrollFunction() {
+                    if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+                        document.getElementById("header").style.paddingTop = "1px";
+                    } else {
+                        document.getElementById("header").style.paddingTop = "1px";
+                    }
+                }
+            </script>
+        </div>
+    </div>
+
 
     <div class="carousel" data-flickity='{ "wrapAround": true, "autoPlay": true, "imagesLoaded":true }' style="    padding-top: 50px;">
         <div class="carousel-cell">
@@ -332,7 +340,7 @@
                 <!-- <h1 class = "lg-title" style="font-family: 'Quicksand', sans-serif;">Special Offers</h1>
             <p class = "text-light" style="font-family: 'Quicksand', sans-serif;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur quos sit consectetur, ipsa voluptatem vitae necessitatibus dicta veniam, optio, possimus assumenda laudantium. Temporibus, quis cum.</p>
      -->
-                <div class="product-items" id="productitems" >
+                <div class="product-items" id="productitems">
                     <!-- single product -->
                     <!-- Product 0 -->
 
@@ -1134,7 +1142,7 @@
 
 
     <!-- ----------BRANDS----------->
-<!--     <div class="brands ">
+    <!--     <div class="brands ">
         <div class="small-container1 ">
             <div class="row ">
                 <div class="col-5 ">
@@ -1295,6 +1303,18 @@
     </script>
 
 
+    <!-- <script>
+        const client = algoliasearch('7CB1R7HJ4I', '2ba1e42e4b7c79038ed92e7a18274425');
+        const index = client.initIndex('Products');
+
+        function searchQuery(x) {
+            console.log("x is ", x);
+            index.search(x).then((hints) => {
+                console.log(hints);
+            });
+
+        }
+    </script> -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const loadEl = document.querySelector('#load');
@@ -1432,7 +1452,7 @@
                     qs.forEach(element => {
                         makeProduct(element);
                         async function makeProduct(element) {
-                            await $('.product-items').append(code);
+                            await $('#productitems').append(code);
                             console.log(element.id, " => ", element.data());
                             document.getElementById("product0Image").src = element.data().mainImage;
                             document.getElementById("product0Title").innerHTML = element.data().type;
@@ -1501,55 +1521,55 @@
         })
     </script>
 
-<script type="text/javascript">
-    const cardImages = document.querySelectorAll(".loading");
-    const cardTitles = document.querySelectorAll(".loading");
-    const cardDescriptions = document.querySelectorAll(".card-description");
-    const cardMediaIcons = document.querySelectorAll(".card-mediaIcons a");
-    const cardImgs = document.querySelectorAll(".loading img");
-    const cardTitleSpans = document.querySelectorAll(".loading span");
-    const cardDescSpans = document.querySelectorAll(".card-description span");
-    const mediaIcons = document.querySelectorAll(".card-mediaIcons a i");
+    <script type="text/javascript">
+        const cardImages = document.querySelectorAll(".loading");
+        const cardTitles = document.querySelectorAll(".loading");
+        const cardDescriptions = document.querySelectorAll(".card-description");
+        const cardMediaIcons = document.querySelectorAll(".card-mediaIcons a");
+        const cardImgs = document.querySelectorAll(".loading img");
+        const cardTitleSpans = document.querySelectorAll(".loading span");
+        const cardDescSpans = document.querySelectorAll(".card-description span");
+        const mediaIcons = document.querySelectorAll(".card-mediaIcons a i");
 
-    const renderCard = () => {
-      //Remove the skeleton loading effect
-      cardImages.forEach((cardImage) => {
-        cardImage.classList.remove("loading");
-      });
-      cardTitles.forEach((cardTitle) => {
-        cardTitle.classList.remove("loading");
-      });
-      cardDescriptions.forEach((cardDescription) => {
-        cardDescription.classList.remove("loading");
-      });
-      cardMediaIcons.forEach((cardMediaIcon) => {
-        cardMediaIcon.classList.remove("loading");
-      });
+        const renderCard = () => {
+            //Remove the skeleton loading effect
+            cardImages.forEach((cardImage) => {
+                cardImage.classList.remove("loading");
+            });
+            cardTitles.forEach((cardTitle) => {
+                cardTitle.classList.remove("loading");
+            });
+            cardDescriptions.forEach((cardDescription) => {
+                cardDescription.classList.remove("loading");
+            });
+            cardMediaIcons.forEach((cardMediaIcon) => {
+                cardMediaIcon.classList.remove("loading");
+            });
 
-      //Show the hidden html elements
-      cardImgs.forEach((cardImg) => {
-        cardImg.style.visibility = "visible";
-      });
-      cardTitleSpans.forEach((cardTitleSpan) => {
-        cardTitleSpan.style.visibility = "visible";
-      });
-      cardDescSpans.forEach((cardDescSpan) => {
-        cardDescSpan.style.visibility = "visible";
-      });
-      mediaIcons.forEach((mediaIcon) => {
-        mediaIcon.style.visibility = "visible";
-      });
-    }
+            //Show the hidden html elements
+            cardImgs.forEach((cardImg) => {
+                cardImg.style.visibility = "visible";
+            });
+            cardTitleSpans.forEach((cardTitleSpan) => {
+                cardTitleSpan.style.visibility = "visible";
+            });
+            cardDescSpans.forEach((cardDescSpan) => {
+                cardDescSpan.style.visibility = "visible";
+            });
+            mediaIcons.forEach((mediaIcon) => {
+                mediaIcon.style.visibility = "visible";
+            });
+        }
 
-    //Execute renderCard on setTimeout
-    setTimeout(() => {
-      renderCard();
-    }, 2000);
+        //Execute renderCard on setTimeout
+        setTimeout(() => {
+            renderCard();
+        }, 2000);
 
-    //Execute renderCard after the page loaded
-    //window.addEventListener("load", () => {
-      //renderCard();
-    //});
+        //Execute renderCard after the page loaded
+        //window.addEventListener("load", () => {
+        //renderCard();
+        //});
     </script>
 </body>
 

@@ -18,19 +18,19 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
     <!-- Bootstrap core CSS -->
 
-    <link rel="stylesheet" href="../product css/all css/bootstrap.min.css">
+    <link rel="stylesheet" href="product css/all css/bootstrap.min.css">
     <!-- 
 
 <link rel="stylesheet" href="css/1.min.css"> -->
     <!-- Material Design Bootstrap -->
 
-    <link rel="stylesheet" href="../product css/all css/mdb-pro.min.css">
+    <link rel="stylesheet" href="product css/all css/mdb-pro.min.css">
     <!-- Material Design Bootstrap Ecommerce -->
 
-    <link rel="stylesheet" href="../product css/all css/mdb.ecommerce.min.css">
+    <link rel="stylesheet" href="product css/all css/mdb.ecommerce.min.css">
     <!-- Your custom styles (optional) -->
 
-    <link rel="stylesheet" href="../product css/n & d css/Farmmina N & D.css">
+    <link rel="stylesheet" href="product css/n & d css/Farmmina N & D.css">
 </head>
 
 <body class="skin-light" id="246FNqIC6nryIVGeLIvd">
@@ -116,6 +116,10 @@
             </div>
         </div>
     </header>
+
+    <div class="width1">
+        <div class="svg hide" id="svg"></div>
+    </div>
     <!--Main Navigation-->
     <!--Main layout-->
     <main style=" background: rgb(255, 255, 255); margin: 15px; border-radius: 15px;">
@@ -434,8 +438,34 @@
                             </tbody>
                         </table>
 
-                        <div class="buton"> <button type="button" id="buyBtn" class="btn btn-primary btn-md mr-1 mb-2">Buy now</button> <button type="button" id="cartBtn" class="btn btn-light btn-md mr-1 mb-2" style="margin-top: 10px;"><i class="fas fa-shopping-cart pr-2"></i>Add to cart</button>
+                        <div class="buton">
+
+                            <button type="button" id="buyBtn" class="btn btn-primary btn-md mr-1 mb-2">Buy now</button>
+                            <button type="button" id="cartBtn" class="btn btn-light btn-md mr-1 mb-2" style="margin-top: 10px;"><i class="fas fa-shopping-cart pr-2"></i>Add to cart</button>
                         </div>
+                        <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.3/lottie.min.js" integrity="sha512-35O/v2b9y+gtxy3HK+G3Ah60g1hGfrxv67nL6CJ/T56easDKE2TAukzxW+/WOLqyGE7cBg0FR2KhiTJYs+FKrw==" crossorigin="anonymous"></script>
+                        <script>
+                            const play = document.getElementById('cartBtn');
+
+                            const svgContainer = document.getElementById('svg');
+                            const animItem = bodymovin.loadAnimation({
+                                wrapper: svgContainer,
+                                animType: 'svg',
+                                loop: false,
+                                autoplay: false,
+                                path: 'https://assets5.lottiefiles.com/temp/lf20_q6KowU.json'
+                            });
+
+                            play.addEventListener('click', () => {
+                                svgContainer.classList.remove('hide');
+                                animItem.goToAndPlay(0, true);
+                            })
+
+                            animItem.addEventListener('complete', () => {
+                                svgContainer.classList.add('hide');
+
+                            })
+                        </script>
                         <!-- showcontant -->
 
                         <div class="showcontent">
