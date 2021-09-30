@@ -242,8 +242,8 @@ async function quantityChange(isStepUp, doc) {
         const obj = document.getElementById(id + "price");
         animateValue(obj, Number(obj.innerHTML), productPrice, 500);
     } else {
-        doc.stepDown();
-        if (quantitydoc.value >= 1) {
+        if (quantitydoc.value > 1) {
+            doc.stepDown();
             var qid = doc.id;
             var id = qid.replace("quantity", '');
             var fp = priceWithDiscountArray[id];
@@ -288,33 +288,35 @@ function animateValue(obj, start, end, duration) {
 
 
 function valueChanged(qid, value) {
-    console.log("initial discount: ", totalCost);
-    console.log("initial totalamount: ", discountedAmount);
+    if (value > 0) {
+        console.log("initial discount: ", totalCost);
+        console.log("initial totalamount: ", discountedAmount);
 
-    var id = qid.replace("quantity", '');
-    var pwd = priceWithDiscountArray[id];
-    var dp = discountArray[id];
-    // var currentquantity = document.getElementById(qid).value
-    var initialQuantity = quantityArray[id];
-    quantityArray[id] = Number(value);
+        var id = qid.replace("quantity", '');
+        var pwd = priceWithDiscountArray[id];
+        var dp = discountArray[id];
+        // var currentquantity = document.getElementById(qid).value
+        var initialQuantity = quantityArray[id];
+        quantityArray[id] = Number(value);
 
-    totalAmountWithDiscountAndQuantity = totalAmountWithDiscountAndQuantity + pwd * (quantityArray[id] - initialQuantity);
-    var x = 0;
-    x = x - totalDiscountArray[id];
-    x = x + (dp * quantityArray[id]);
-    discountedAmount = discountedAmount + x;
-    var productPrice = pwd * quantityArray[id];
+        totalAmountWithDiscountAndQuantity = totalAmountWithDiscountAndQuantity + pwd * (quantityArray[id] - initialQuantity);
+        var x = 0;
+        x = x - totalDiscountArray[id];
+        x = x + (dp * quantityArray[id]);
+        discountedAmount = discountedAmount + x;
+        var productPrice = pwd * quantityArray[id];
 
-    totalCostWithoutDiscount = totalCostWithoutDiscount + (pwd + dp) * (quantityArray[id] - initialQuantity);
-    totalDiscountArray[id] = dp * quantityArray[id];
+        totalCostWithoutDiscount = totalCostWithoutDiscount + (pwd + dp) * (quantityArray[id] - initialQuantity);
+        totalDiscountArray[id] = dp * quantityArray[id];
 
-    document.getElementById("totalCost").innerHTML = totalCostWithoutDiscount;
-    document.getElementById("totalDiscount").innerHTML = discountedAmount;
-    document.getElementById("finalCost").innerHTML = totalAmountWithDiscountAndQuantity;
-    const obj = document.getElementById(id + "price");
-    console.log("Quantity Price Array : ", quantityArray);
+        document.getElementById("totalCost").innerHTML = totalCostWithoutDiscount;
+        document.getElementById("totalDiscount").innerHTML = discountedAmount;
+        document.getElementById("finalCost").innerHTML = totalAmountWithDiscountAndQuantity;
+        const obj = document.getElementById(id + "price");
+        console.log("Quantity Price Array : ", quantityArray);
 
-    animateValue(obj, Number(obj.innerHTML), productPrice, 500);
+        animateValue(obj, Number(obj.innerHTML), productPrice, 500);
+    }
 }
 
 

@@ -398,7 +398,7 @@ ul {
     /* background: url(../productimg/lemon.jpeg); */
     background-size: cover;
     color: white;
-    background: #ea0d2c;
+    background: #0068b1;
 }
 
 main::before {
@@ -563,20 +563,20 @@ input[type=text] {
 /* COLOR CHANGING */
 
 .skin-light .text-primary {
-    color: #ea0d2c !important;
+    color: #006ab4 !important;
 }
 
 .skin-light .form-check-input[type=radio]:checked+label:after {
-    border: 2px solid #ea0d2c;
+    border: 2px solid #006ab4;
 }
 
 .skin-light .form-check-input[type=radio]:checked+label:after {
-    background-color: #ea0d2c;
+    background-color: #006ab4;
 }
 
 .skin-light .btn-primary {
     color: #fff;
-    background-color: #ea0d2c !important;
+    background-color: #006ab4 !important;
 }
 
 
@@ -641,8 +641,18 @@ li {
     width: 80%;
 } */
 
+.fobox{
+    display: flex;
+    padding-left: 100px;
+    padding-right: 100px;
+    text-align: left;
+    margin-top: 45px;
+}
+
+
 .text101 {
     text-align: left;
+    padding-left: 25px;
 }
 
 .bioimg {
@@ -667,7 +677,7 @@ li {
     margin-top: 10px;
     font-size: 12px;
     width: 88%;
-    line-height: 20px;
+    line-height: 17px;
     /* padding-left: 25px; */
     font-weight: 400;
 }
@@ -685,6 +695,34 @@ li {
     width: 10%;
     filter: brightness(30);
 }
+
+.svg {
+    width: 10%;
+    position: fixed;
+    margin-top: 25%;
+    margin-left: 45%;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.hide {
+    display: none;
+}
+
+.fst img{
+    width: 90%;
+}
+.snd{
+    margin-top: 5%;
+}
+.forth{
+    width: 50%;
+}
+
+
+
+
+
 
 @media (max-width: 1200px) {
     .prduimg img {
@@ -828,6 +866,14 @@ li {
     .logoimg {
         width: 30%;
     }
+    .svg {
+        width: 20%;
+        position: fixed;
+        margin-top: 58%;
+        margin-left: 42%;
+        pointer-events: none;
+        z-index: 10;
+    }
 }
 
 .skin-light .number-input.number-input button:before,
@@ -842,3 +888,5 @@ li {
     margin-top: 0rem;
     margin-bottom: 0;
 }
+
+
