@@ -701,6 +701,21 @@ li {
     filter: brightness(30);
 }
 
+.svg {
+    width: 10%;
+    position: fixed;
+    margin-top: 20%;
+    margin-left: 47%;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.hide {
+    display: none;
+}
+
+
+
 @media (max-width: 1200px) {
     .prduimg img {
         width: -webkit-fill-available;
@@ -851,6 +866,14 @@ li {
     .my-5 {
         margin-bottom: 0rem!important;
     }
+    .svg {
+    width: 20%;
+    position: fixed;
+    margin-top: 50%;
+    margin-left: 42%;
+    pointer-events: none;
+    z-index: 10;
+}
 }
 
 .skin-light .number-input.number-input button:before,
@@ -866,15 +889,3 @@ li {
     margin-bottom: 0;
 }
 
-.svg {
-    width: 10%;
-    position: fixed;
-    margin-top: 20%;
-    margin-left: 47%;
-    pointer-events: none;
-    z-index: 10;
-}
-
-.hide {
-    display: none;
-}
