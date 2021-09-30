@@ -828,6 +828,14 @@ li {
     .logoimg {
         width: 30%;
     }
+    .svg {
+        width: 20%;
+        position: fixed;
+        margin-top: 58%;
+        margin-left: 42%;
+        pointer-events: none;
+        z-index: 10;
+    }
 }
 
 .skin-light .number-input.number-input button:before,
