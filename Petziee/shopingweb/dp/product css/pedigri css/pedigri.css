@@ -628,10 +628,10 @@ li {
 }
 
 .svg {
-    width: 10%;
+    width: 8%;
     position: fixed;
-    margin-top: 25%;
-    margin-left: 45%;
+    margin-top: 15%;
+    margin-left: 50%;
     pointer-events: none;
     z-index: 10;
 }
