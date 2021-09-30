@@ -308,7 +308,7 @@ p{
 
 /* --------------- Site title ---------------- */
 main .site-title{
-    background: url('image/bg3.jpeg');
+    background: url('image/back1.jpg');
     background-size: cover;
     height: 75vh;
     display: flex;
