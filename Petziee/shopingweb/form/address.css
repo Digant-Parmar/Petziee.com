@@ -10,9 +10,18 @@
   margin-top: 3px;
 }
 
-/* .backg{
-  background: url(image/300x300.jpg);
+.backg{
+  background: url(image/web3.jpg);
   background-size: contain;
+}
+
+.skin-light .md-form.md-outline input[type="text"], .skin-light .md-form.md-outline input[type="password"], .skin-light .md-form.md-outline input[type="email"], .skin-light .md-form.md-outline input[type="url"], .skin-light .md-form.md-outline input[type="time"], .skin-light .md-form.md-outline input[type="date"], .skin-light .md-form.md-outline input[type="datetime-local"], .skin-light .md-form.md-outline input[type="tel"], .skin-light .md-form.md-outline input[type="number"], .skin-light .md-form.md-outline input[type="search-md"], .skin-light .md-form.md-outline input[type="search"], .skin-light .md-form.md-outline textarea.md-textarea {
+  background-color: #ffffffba;
+}
+
+
+/* .align-items-center {
+  background: url;
 } */
 
 .stic {
