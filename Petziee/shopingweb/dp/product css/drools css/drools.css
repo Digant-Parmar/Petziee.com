@@ -702,10 +702,10 @@ li {
 }
 
 .svg {
-    width: 10%;
+    width: 8%;
     position: fixed;
-    margin-top: 20%;
-    margin-left: 47%;
+    margin-top: 15%;
+    margin-left: 50%;
     pointer-events: none;
     z-index: 10;
 }
