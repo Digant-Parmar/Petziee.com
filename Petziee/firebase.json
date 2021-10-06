@@ -44,5 +44,12 @@
             "npm --prefix \"$RESOURCE_DIR\" run lint"
         ],
         "source": "functions"
-    }
+    },
+    "headers": [{
+        "source": "*",
+        "headers": [{
+            "key": "Access-Control-Allow-Origin",
+            "value": "*"
+        }]
+    }]
 }

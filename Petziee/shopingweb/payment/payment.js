@@ -162,55 +162,38 @@ async function getAddresses() {
     // </div>
 
     var db = firebase.firestore();
-    const userId = "GVyUWRXPPnUcnD6hKNXh2efmrxR2";
-    db.collection("CustomerInfo").doc(userId).get().then(async(element) => {
+    firebase.auth().onAuthStateChanged(async(user) => {
+        var userId = user.uid;
         const qs = await db.collection("CustomerInfo").doc(userId).collection("addresses").get();
+        if (qs.size) {
+            var inital = '<h5 class="mb-4">Choose an Addresses</h5>';
+            await $('#addresses').append(inital);
+            qs.forEach(docs => {
+                var temp = '<div class="label">';
+                var add = docs.data();
+                temp = temp + '<input type="radio" name="addrRadio" value = ' + docs.id + ' id=' + docs.id + '>';
+                temp = temp + '<label for=' + docs.id + '><strong>' + add.firstName + '</strong></label>'
+                temp = temp + '<label for=' + docs.id + '><strong>' + add.lastName + '</strong></label>   '
+                temp = temp + '<label for=' + docs.id + '><strong>          ' + add.phone + '</strong></label><br>'
+                temp = temp + '<label for=' + docs.id + '>' + add.email + '</label><br>'
+                if (add.add1 != "") temp = temp + '<label for=' + docs.id + '>' + add.add1 + '</label><br>';
+                if (add.add2 != "") temp = temp + '<label for=' + docs.id + '>' + add.add2 + '</label><br>';
+                if (add.landmark != "") temp = temp + '<label for=' + docs.id + '>' + add.firstName + '</label><br>';
 
-        if (element.address != null) {
-            var code = '<h5 class="mb-4">Most recently used</h5> \
-            <div class="label">\
-                <input type="radio" name="addrRadio" value="HTML">   <label for="html" id="mostRecentValue"></label>\
-            </div>\
-        \
-            <br></br>';
-            await $('#addresses').append(code);
-
-            document.getElementById("mostRecentValue").innerHTML = element.address;
-
-            if (qs.size) {
-                var inital = '<h5 class="mb-4">Other Addresses</h5>';
-                await $('#addresses').append(inital);
-                var temp = ' <div class="label">\
-                <input type="radio"  name="addrRadio" value="HTML">   <label for="html" id="othaddr0"></label>\
-            </div>';
-
-                qs.forEach(docs => {
-                    $('#addresses').append(inital);
-                    document.getElementById("othaddr0").innerHTML = docs.data().address;
-                    document.getElementById("othaddr0").id = docs.id;
-                });
-            }
+                temp = temp + '<label for=' + docs.id + '>' + add.city + ',</label>';
+                temp = temp + '<label for=' + docs.id + '>' + add.state + '-</label>';
+                temp = temp + '<label for=' + docs.id + '>' + add.pin + '</label><br>'
+                temp = temp + '</div>'
+                $('#addresses').append(temp);
+            });
         } else {
             console.log("most recent Addresses doesnt exits");
-            if (qs.size) {
-                var inital = '<h5 class="mb-4">Choose a address</h5>';
-                await $('#addresses').append(inital);
-                var temp = ' <div class="label">\
-                <input type="radio"  name="addrRadio" value="HTML">   <label for="html" id="othaddr0"></label>\
-            </div>';
+            var inital = '<h5 class="mb-4">No Addresses found please all an Address</h5>';
+            await $('#addresses').append(inital);
 
-                qs.forEach(docs => {
-                    $('#addresses').append(inital);
-                    document.getElementById("othaddr0").innerHTML = docs.data().address;
-                    document.getElementById("othaddr0").id = docs.id;
-                });
-            }
         }
 
     });
-
-
-
 }
 
 

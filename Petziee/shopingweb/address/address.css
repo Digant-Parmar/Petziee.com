@@ -4,10 +4,68 @@
     -webkit-box-flex: 1;
 }
 
+.md-form.md-outline input[type=date],
+.md-form.md-outline input[type=datetime-local],
+.md-form.md-outline input[type=tel],
+.md-form.md-outline input[type=number],
+.md-form.md-outline input[type=search],
+.md-form.md-outline input[type=search-md],
+.md-form.md-outline input[type=text],
+.md-form.md-outline input[type=password],
+.md-form.md-outline input[type=email],
+.md-form.md-outline input[type=url],
+.md-form.md-outline input[type=time],
+.md-form.md-outline textarea.md-textarea {
+    border: 1px solid #9f9f9f;
+}
+
+.skin-light .md-form.md-outline label.active {
+    border-radius: 4px;
+    font-size: 12px;
+    margin-top: 3px;
+}
+
+.backg {
+    background: url(image/web3.jpg);
+    background-size: cover;
+}
+
+.skin-light .md-form.md-outline input[type="text"],
+.skin-light .md-form.md-outline input[type="password"],
+.skin-light .md-form.md-outline input[type="email"],
+.skin-light .md-form.md-outline input[type="url"],
+.skin-light .md-form.md-outline input[type="time"],
+.skin-light .md-form.md-outline input[type="date"],
+.skin-light .md-form.md-outline input[type="datetime-local"],
+.skin-light .md-form.md-outline input[type="tel"],
+.skin-light .md-form.md-outline input[type="number"],
+.skin-light .md-form.md-outline input[type="search-md"],
+.skin-light .md-form.md-outline input[type="search"],
+.skin-light .md-form.md-outline textarea.md-textarea {
+    background-color: #ffffffad;
+}
+
+
+/* .align-items-center {
+  background: url;
+} */
+
 .stic {
     position: sticky;
     top: 400px;
     -webkit-box-flex: 1;
+}
+
+.md-form.md-outline {
+    margin-bottom: 0px !important;
+}
+
+.text-center {
+    text-align: left !important;
+}
+
+.text-cen {
+    text-align: center;
 }
 
 
@@ -52,8 +110,8 @@
 .form-element .form-control {
     font-family: inherit;
     /* height: 100%;
-      width: 100%;
-      padding: 0 18px; */
+    width: 100%;
+    padding: 0 18px; */
     border: none;
 }
 
@@ -176,4 +234,31 @@
 .mtop {
     font-size: 13px;
     margin-top: -10px;
+}
+
+
+/* update 17.9.21 */
+
+.skin-light .number-input.number-input button:before,
+.skin-light .number-input.number-input button:after {
+    width: 0.7rem;
+    background-color: #495057;
+    margin-top: -5px;
+}
+
+.skin-light .number-input.number-input {
+    border: 1px solid #ced4da;
+    width: 8.6rem;
+    border-radius: .25rem;
+}
+
+.skin-light .number-input.number-input button.minus {
+    padding-left: 10px;
+    width: 29%;
+}
+
+@media (min-width: 767px) {
+    .col22 {
+        display: flex;
+    }
 }

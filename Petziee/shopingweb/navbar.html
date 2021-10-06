@@ -1,0 +1,58 @@
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
+<nav class="navbar">
+    <div class="content">
+        <div class="logo">
+            <a href="#" style="color: black;">PETZIEE</a>
+        </div>
+        <ul class="menu-list">
+            <div class="icon cancel-btn">
+                <i class="fas fa-times"></i>
+            </div>
+            <!--                 searchbar start -->
+            <form autocomplete="off" action="/action_page.php" class="showof">
+                <div class="autocomplete" style="width:300px;">
+                    <input id="myInput" type="text" name="myCountry" placeholder="Search">
+                    <button class="searchb"><i class="fas fa-search"></i></button>
+                </div>
+
+            </form>
+
+            <script src="searchbar.js"></script>
+
+
+
+
+            <!--              searchbar end -->
+
+            <li style="margin: 22px;
+                     margin-left: 10px;
+                     margin-right: 1px;"><a href="#"><i class="fas fa-home"></i><span class="pudding">Home</span></a></li>
+            <li style="margin: 22px;
+                     margin-left: 10px;
+                     margin-right: 1px;"><a href="cart/cart.html"><i class="fas fa-shopping-cart pl-0"></i><span class="pudding">Cart</span></a></li>
+            <li style="margin: 22px;
+                     margin-left: 10px;
+                     margin-right: 1px;"><a href="login/login.html"><i class="far fa-user-circle"></i><span class="pudding">Login</span></a></li>
+        </ul>
+        <div class="icon menu-btn">
+            <i class="fas fa-bars"></i>
+        </div>
+    </div>
+</nav>
+
+
+<!-- ----------TOGGLE FOR MENU------------>
+<script>
+    var MenuItems = document.getElementById('MenuItems');
+    MenuItems.style.maxHeight = "0px ";
+    // FUNCTION FOR TOGGLE 
+    function menutoggle() {
+        if (MenuItems.style.maxHeight == "0px ") {
+            MenuItems.style.maxHeight = "200px ";
+        } else {
+            MenuItems.style.maxHeight = "0px ";
+        }
+    }
+</script>
