@@ -132,6 +132,8 @@ document.getElementById('paynow').onclick = async function(e) {
 document.addEventListener('DOMContentLoaded', getInfo);
 
 function getInfo() {
+
+
     firebase.initializeApp({
         apiKey: "AIzaSyDHBFSULRYjuXw2YRE9lqxki2C_Cc7-s6A",
         authDomain: "petzieee.firebaseapp.com",
@@ -275,14 +277,27 @@ async function cart() {
 
                     var productId = element.id;
                     var quantity = element.data().quantity;
+
                     quantityArray[productId] = quantity;
                     await db.collection("Products").doc(productId).get().then((element) => {
-                        // $("#mainCartBody").append(htmlCode);
+                        var htmlCode = ' <div class="sole">\
+                        <div class="smallbio" style="width: 15%;">\
+                            <img src="" id="productImage" alt="" style="width: 90%;">\
+                        </div>\
+                        <div class="bigbio" style="padding-left: 20px;">\
+                            <h3 style="font-size: 14px;" id="productName"></h3>\
+                            <h5 style="font-size: 12px;" id="productSize"></h5>\
+                            <p id="price"></p>\
+                        </div>\
+                    </div>';
+                        $("#productList").append(htmlCode);
                         console.log("Poduct id : ", element.id);
-                        // document.getElementById("productImage").src = element.data().mainImage;
-                        // document.getElementById("productImage1").src = element.data().mainImage;
-                        // document.getElementById("name").innerHTML = element.data().name;
-                        // document.getElementById("size").innerHTML = element.data().size;
+                        document.getElementById("productImage").src = element.data().mainImage;
+                        document.getElementById("productName").innerHTML = element.data().name;
+                        document.getElementById("productSize").innerHTML = element.data().size;
+                        document.getElementById("productImage").id = element.id + "Image";
+                        document.getElementById("productName").id = element.id + "Name";
+                        document.getElementById("productSize").id = element.id + "Size";
                         if (element.data().isInStock) {
                             var op = element.data().originalPrice;
                             var discount = op * element.data().salePerc / 100;
