@@ -169,7 +169,7 @@ async function cart() {
         } else {
             // User not logged in or has just logged out.
             console.log("User not logged in to add to cart");
-            alert("You are not logged in to add to cart");
+            // window.location.assign("https://petziee-dev.web.app/login/login.html");
         }
     });
 
