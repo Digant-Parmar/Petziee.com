@@ -18,7 +18,15 @@
     <link rel="stylesheet" href="../dp/product css/all css/mdb.ecommerce.min.css">
     <!-- Your custom styles (optional) -->
     <link rel="stylesheet" href="payment.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
+    <script src="../include.js"></script>
     <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
 
 
 
@@ -28,77 +36,13 @@
 
 <body class="skin-light">
 
+
     <!--Main Navigation-->
+    <div data-include="navbar"></div>
+
     <header>
 
-        <!-- Navbar -->
-        <nav class="navbar navbar-expand-md navbar-light fixed-top scrolling-navbar">
-            <div class="container-fluid">
 
-                <!-- Brand -->
-                <a class="navbar-brand" href="https://mdbecommerce.com/">
-                    <span class="petziee">PETZIEE</span>
-                </a>
-
-                <!-- Collapse button -->
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav" aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-
-                <!-- Links -->
-                <div class="collapse navbar-collapse margin-right" id="basicExampleNav">
-
-                    <!-- Right -->
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item" style="display: flex;">
-                            <a href="../index.html" class="nav-link navbar-link-2 waves-effect">
-                                <i class="fas fa-home"></i>
-                            </a>
-                            <a href="../cart/cart.html" class="nav-link navbar-link-2 waves-effect">
-                                <i class="fas fa-shopping-cart pl-0"></i>
-                            </a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle waves-effect" id="navbarDropdownMenuLink3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                  Shop
-                </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item" href="#!">Food</a>
-                                <a class="dropdown-item" href="#!">Care</a>
-                                <a class="dropdown-item" href="#!">Accessories</a>
-                                <a class="dropdown-item" href="#!">Clothing</a>
-                                <a class="dropdown-item" href="#!">Medicine</a>
-                            </div>
-                        </li>
-                        <!-- <li class="nav-item">
-                <a href="#!" class="nav-link waves-effect">
-                  Shop
-                </a>
-              </li> -->
-                        <li class="nav-item">
-                            <a href="#!" class="nav-link waves-effect">
-                  Contact
-                </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="../login/login.html" class="nav-link waves-effect">
-                  Login
-                </a>
-                        </li>
-                        <li class="nav-item pl-2 mb-2 mb-md-0">
-                            <!-- <a href="#!" type="button"
-                  class="btn btn-outline-info btn-md btn-rounded btn-navbar waves-effect waves-light"><i class="far fa-user"></i></a>
-              </li> -->
-                            <a href="#" class="nav-link waves-effect" style="font-size: 20px;">
-                                <i class="far fa-user-circle"></i>
-                            </a>
-                    </ul>
-
-                </div>
-                <!-- Links -->
-            </div>
-        </nav>
-        <!-- Navbar -->
 
 
         <div class="jumbotron color-grey-light mt-70">
@@ -319,80 +263,15 @@
 
         </div>
 
-        <script>
-            function myFunction() {
-                document.getElementById("demo").innerHTML = "Hello World";
-            }
-        </script>
+
     </main>
 
 
     <!--Main layout-->
 
     <!-- Footer -->
-    <footer id="footer" style="color: white; background: #181818;">
-        <div class="container ">
-            <div class="footer-list flex">
-                <div class="footer-item one">
-                    <a href="#" class="footer-logo">
-                        <h1 class="logon">PETZIEE</h1>
-                    </a>
-                    <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, aliquam expedita odit possimus a ipsam.</p>
-                    <!-- <form>
-                    <div class = "form-element flex">
-                        <input type = "email" class = "form-control" placeholder="Enter your e-mail">
-                        <button type = "submit" class = "subs-btn button">subscribe</button>
-                    </div>
-                </form> -->
-                </div>
+    <div data-include="footer"></div>
 
-                <div class="footer-item">
-                    <h2>Products</h2>
-                    <ul>
-                        <li><a href="#">Prices drop</a></li>
-                        <li><a href="#">New products</a></li>
-                        <li><a href="#">Best sales</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-item">
-                    <h2>Information</h2>
-                    <ul>
-                        <li><a href="#">Delivery</a></li>
-                        <li><a href="#">Legal Notice</a></li>
-                        <li><a href="#">Terms and Conditions of use</a></li>
-                        <li><a href="#">About us</a></li>
-                        <li><a href="#">Secure payment</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-item">
-                    <h2>Your account</h2>
-                    <ul>
-                        <li><a href="#">Addresses</a></li>
-                        <li><a href="#">Credit sales</a></li>
-                        <li><a href="#">Orders</a></li>
-                        <li><a href="#">Personal info</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="koi">
-                <hr class="whit">
-            </div>
-        </div>
-
-        <!-- <div class = "copyright-text backfooter">
-        <div class = "container">
-            <p class = "text" style="color: white;">&copy; 2021 -  Made with love and time</p>
-            <div>
-                <img src = "../image/pay_method.png" alt = "payment method">
-            </div>
-        </div>
-    </div> -->
-        <div class="footer-copyright text-center py-3 mtop">© 2022 Copyright:
-            <a href="#"> Made with love and time</a>
-        </div>
-    </footer>
     <!-- Footer -->
 
     <!-- SCRIPTS -->
