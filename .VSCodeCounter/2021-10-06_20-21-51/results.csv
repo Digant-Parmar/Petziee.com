@@ -1,0 +1,144 @@
+"filename", "language", "HTML", "CSS", "JavaScript", "JSON", "Firebase Rules", "Markdown", "YAML", "comment", "blank", "total"
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\.VSCodeCounter\2021-08-26_03-28-10\details.md", "Markdown", 0, 0, 0, 0, 0, 87, 0, 0, 6, 93
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\.VSCodeCounter\2021-08-26_03-28-10\results.md", "Markdown", 0, 0, 0, 0, 0, 28, 0, 0, 7, 35
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\.github\workflows\firebase-hosting-merge.yml", "YAML", 0, 0, 0, 0, 0, 0, 16, 2, 2, 20
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\.github\workflows\firebase-hosting-pull-request.yml", "YAML", 0, 0, 0, 0, 0, 0, 13, 2, 2, 17
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\backend\UpdateProduct.html", "HTML", 93, 0, 0, 0, 0, 0, 0, 0, 14, 107
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\backend\UpdateProduct.js", "JavaScript", 0, 0, 39, 0, 0, 0, 0, 14, 14, 67
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\backend\index.css", "CSS", 0, 423, 0, 0, 0, 0, 0, 1, 65, 489
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\backend\index.html", "HTML", 131, 0, 0, 0, 0, 0, 0, 31, 69, 231
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\backend\index.js", "JavaScript", 0, 0, 29, 0, 0, 0, 0, 138, 40, 207
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\backend\temp.htm", "HTML", 617, 0, 0, 0, 0, 0, 0, 225, 181, 1023
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\backend\temp1.html", "HTML", 504, 0, 0, 0, 0, 0, 0, 99, 3, 606
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\firebase.json", "JSON", 0, 0, 0, 12, 0, 0, 0, 43, 0, 55
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\firestore.rules", "Firebase Rules", 0, 0, 0, 0, 11, 0, 0, 0, 2, 13
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\functions\.eslintrc.js", "JavaScript", 0, 0, 14, 0, 0, 0, 0, 0, 1, 15
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\functions\index.js", "JavaScript", 0, 0, 205, 0, 0, 0, 0, 64, 62, 331
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\functions\package-lock.json", "JSON", 0, 0, 0, 3041, 0, 0, 0, 0, 1, 3042
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\functions\package.json", "JSON", 0, 0, 0, 30, 0, 0, 0, 0, 1, 31
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\shopingweb\about.html", "HTML", 81, 0, 0, 0, 0, 0, 0, 0, 5, 86
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\shopingweb\address\address.css", "CSS", 0, 210, 0, 0, 0, 0, 0, 10, 44, 264
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\shopingweb\address\address.html", "HTML", 266, 0, 0, 0, 0, 0, 0, 65, 58, 389
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\shopingweb\app.js", "JavaScript", 0, 0, 12, 0, 0, 0, 0, 0, 5, 17
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\shopingweb\blog\Jquery3.4.1.min.js", "JavaScript", 0, 0, 1, 0, 0, 0, 0, 0, 1, 2
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\shopingweb\blog\all.css", "CSS", 0, 2963, 0, 0, 0, 0, 0, 6, 1427, 4396
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\shopingweb\blog\aos.css", "CSS", 0, 1, 0, 0, 0, 0, 0, 0, 1, 2
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\shopingweb\blog\aos.js", "JavaScript", 0, 0, 1, 0, 0, 0, 0, 0, 1, 2
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\shopingweb\blog\b1.html", "HTML", 120, 0, 0, 0, 0, 0, 0, 173, 49, 342
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\shopingweb\blog\b2.html", "HTML", 131, 0, 0, 0, 0, 0, 0, 173, 61, 365
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\shopingweb\blog\b3.html", "HTML", 129, 0, 0, 0, 0, 0, 0, 173, 81, 383
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\shopingweb\blog\b4.html", "HTML", 129, 0, 0, 0, 0, 0, 0, 173, 82, 384
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\shopingweb\blog\blog.css", "CSS", 0, 703, 0, 0, 0, 0, 0, 81, 154, 938
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\shopingweb\blog\blog.html", "HTML", 156, 0, 0, 0, 0, 0, 0, 173, 61, 390
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\shopingweb\blog\blog1.html", "HTML", 132, 0, 0, 0, 0, 0, 0, 173, 57, 362
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\shopingweb\blog\blog11.html", "HTML", 120, 0, 0, 0, 0, 0, 0, 173, 49, 342
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\shopingweb\blog\blog2.html", "HTML", 131, 0, 0, 0, 0, 0, 0, 173, 70, 374
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\shopingweb\blog\blog3.html", "HTML", 122, 0, 0, 0, 0, 0, 0, 173, 52, 347
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\shopingweb\blog\font.css", "CSS", 0, 20, 0, 0, 0, 0, 0, 5, 4, 29
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\shopingweb\blog\index.html", "HTML", 312, 0, 0, 0, 0, 0, 0, 109, 42, 463
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\shopingweb\blog\main.js", "JavaScript", 0, 0, 36, 0, 0, 0, 0, 4, 8, 48
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\shopingweb\blog\owl.carousel.min.js", "JavaScript", 0, 0, 2, 0, 0, 0, 0, 5, 1, 8
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\shopingweb\blog\owl.css", "CSS", 0, 1, 0, 0, 0, 0, 0, 5, 0, 6
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\shopingweb\blog\owndefault.css", "CSS", 0, 1, 0, 0, 0, 0, 0, 5, 1, 7
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\shopingweb\blog\style.css", "CSS", 0, 683, 0, 0, 0, 0, 0, 33, 162, 878
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\shopingweb\cart\all css\bootstrap.min.css", "CSS", 0, 4, 0, 0, 0, 0, 0, 6, 3, 13
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\shopingweb\cart\all css\mdb-pro.min.css", "CSS", 0, 6, 0, 0, 0, 0, 0, 27, 0, 33
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\shopingweb\cart\all css\mdb.ecommerce.min.css", "CSS", 0, 1, 0, 0, 0, 0, 0, 9, 2, 12
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\shopingweb\cart\cart.html", "HTML", 206, 0, 0, 0, 0, 0, 0, 117, 50, 373
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\shopingweb\cart\cart.js", "JavaScript", 0, 0, 236, 0, 0, 0, 0, 28, 63, 327
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\shopingweb\cart\product js\js\bootstrap.js", "JavaScript", 0, 0, 3347, 0, 0, 0, 0, 325, 850, 4522
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\shopingweb\cart\product js\js\mdb.ecommerce.min.js", "JavaScript", 0, 0, 1, 0, 0, 0, 0, 1, 0, 2
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\shopingweb\cart\product js\js\mdb.min.js", "JavaScript", 0, 0, 1, 0, 0, 0, 0, 0, 0, 1
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\shopingweb\cart\product js\js\popper.min.js", "JavaScript", 0, 0, 1, 0, 0, 0, 0, 4, 1, 6
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\shopingweb\cart\style.css", "CSS", 0, 159, 0, 0, 0, 0, 0, 7, 34, 200
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\shopingweb\characters.json", "JSON", 0, 0, 0, 1, 0, 0, 0, 0, 0, 1
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\shopingweb\contact us\contact.css", "CSS", 0, 405, 0, 0, 0, 0, 0, 38, 78, 521
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\shopingweb\contact us\contact.html", "HTML", 216, 0, 0, 0, 0, 0, 0, 78, 74, 368
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\shopingweb\css\flickity.min.css", "CSS", 0, 1, 0, 0, 0, 0, 0, 3, 0, 4
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\shopingweb\css\w3.css", "CSS", 0, 231, 0, 0, 0, 0, 0, 4, 0, 235
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\shopingweb\dp\246FNqIC6nryIVGeLIvd.html", "HTML", 542, 0, 0, 0, 0, 0, 0, 194, 127, 863
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\shopingweb\dp\9P84VdB4lxgwMXXPLiVr.html", "HTML", 566, 0, 0, 0, 0, 0, 0, 136, 127, 829
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\shopingweb\dp\B1iMGCRSJy7tzdBWiewj.html", "HTML", 676, 0, 0, 0, 0, 0, 0, 145, 142, 963
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\shopingweb\dp\FLRcw25DSxifwqGDSHVe.html", "HTML", 415, 0, 0, 0, 0, 0, 0, 56, 3, 474
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\shopingweb\dp\GQbklfOI0xHGM1JlseyO.html", "HTML", 473, 0, 0, 0, 0, 0, 0, 74, 3, 550
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\shopingweb\dp\H6JNVtOaDlZV1C8AnOJH.html", "HTML", 417, 0, 0, 0, 0, 0, 0, 56, 3, 476
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\shopingweb\dp\H8WXGSfM9xytaSZORxq9.html", "HTML", 417, 0, 0, 0, 0, 0, 0, 56, 3, 476
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\shopingweb\dp\LRTWr4RVHTo6FIxfy91M.html", "HTML", 473, 0, 0, 0, 0, 0, 0, 74, 3, 550
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\shopingweb\dp\LehVdQAZNcxuKE8KV9nC.html", "HTML", 679, 0, 0, 0, 0, 0, 0, 145, 144, 968
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\shopingweb\dp\Mj4dcF3U7mvNeO3Sv6S7.html", "HTML", 725, 0, 0, 0, 0, 0, 0, 151, 136, 1012
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\shopingweb\dp\NKvcDapiemsb2UhT5rQy.html", "HTML", 481, 0, 0, 0, 0, 0, 0, 65, 3, 549
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\shopingweb\dp\QpraZU0K417VvLQRGumo.html", "HTML", 483, 0, 0, 0, 0, 0, 0, 65, 3, 551
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\shopingweb\dp\aV31whJvauTWgGJguWDO.html", "HTML", 417, 0, 0, 0, 0, 0, 0, 56, 3, 476
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\shopingweb\dp\dMeE1tAwy3HhZ2kzuU2Q.html", "HTML", 417, 0, 0, 0, 0, 0, 0, 56, 3, 476
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\shopingweb\dp\eas8a5ibEXCpOF3s4p2n.html", "HTML", 417, 0, 0, 0, 0, 0, 0, 56, 3, 476
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\shopingweb\dp\js\price.js", "JavaScript", 0, 0, 85, 0, 0, 0, 0, 46, 29, 160
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\shopingweb\dp\kSSbTL7wgoT1sMr31q3J.html", "HTML", 417, 0, 0, 0, 0, 0, 0, 56, 3, 476
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\shopingweb\dp\kbu4BdauMfR0ZjDLmBg2.html", "HTML", 483, 0, 0, 0, 0, 0, 0, 65, 3, 551
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\shopingweb\dp\mnAroUrCpZgQMceKKs4L.html", "HTML", 417, 0, 0, 0, 0, 0, 0, 56, 3, 476
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\shopingweb\dp\nFGYh45SVhBL8PiD8SVq.html", "HTML", 465, 0, 0, 0, 0, 0, 0, 74, 3, 542
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\shopingweb\dp\njvOIvPEtS3oVx3cvGNc.html", "HTML", 471, 0, 0, 0, 0, 0, 0, 74, 3, 548
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\shopingweb\dp\pQ3zSpRem5aGbr8JqcWC.html", "HTML", 483, 0, 0, 0, 0, 0, 0, 65, 3, 551
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\shopingweb\dp\pXly0d1kclbnnIbTnHpO.html", "HTML", 495, 0, 0, 0, 0, 0, 0, 65, 3, 563
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\shopingweb\dp\product css\all css\bootstrap.min.css", "CSS", 0, 4, 0, 0, 0, 0, 0, 6, 2, 12
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\shopingweb\dp\product css\all css\mdb-pro.min.css", "CSS", 0, 6, 0, 0, 0, 0, 0, 27, 0, 33
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\shopingweb\dp\product css\all css\mdb.ecommerce.min.css", "CSS", 0, 1, 0, 0, 0, 0, 0, 9, 2, 12
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\shopingweb\dp\product css\drools css\Drools Chicken and Egg Adult Dog Food, 18kg (15kg + 3kg Free Inside).css", "CSS", 0, 664, 0, 0, 0, 0, 0, 48, 134, 846
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\shopingweb\dp\product css\drools css\Drools Chicken and Egg Adult Dog Food, 18kg (15kg + 3kg Free Inside).html", "HTML", 804, 0, 0, 0, 0, 0, 0, 191, 200, 1195
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\shopingweb\dp\product css\drools css\drools.css", "CSS", 0, 704, 0, 0, 0, 0, 0, 49, 139, 892
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\shopingweb\dp\product css\n & d css\FARMINA ND Ancestral Grain - Chicken _ Pomegranate - Dog Dry Food - Puppy - Medium _ Maxi Breed 2.5 kg.css", "CSS", 0, 663, 0, 0, 0, 0, 0, 49, 136, 848
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\shopingweb\dp\product css\n & d css\FARMINA N_D Ancestral Grain - Chicken _ Pomegranate - Dog Dry Food - Puppy - Medium _ Maxi Breed 2.5 kg.html", "HTML", 846, 0, 0, 0, 0, 0, 0, 194, 205, 1245
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\shopingweb\dp\product css\n & d css\Farmmina N & D.css", "CSS", 0, 701, 0, 0, 0, 0, 0, 49, 143, 893
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\shopingweb\dp\product css\pedigri css\pedigri.css", "CSS", 0, 615, 0, 0, 0, 0, 0, 43, 126, 784
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\shopingweb\dp\product css\pedigri css\pedigri1.css", "CSS", 0, 573, 0, 0, 0, 0, 0, 36, 113, 722
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\shopingweb\dp\product css\pedigri css\pedigri1.html", "HTML", 689, 0, 0, 0, 0, 0, 0, 162, 168, 1019
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\shopingweb\dp\product css\royal canin css\Royal Canin Labrador Retriever Puppy Dry Dog Food.css", "CSS", 0, 596, 0, 0, 0, 0, 0, 38, 126, 760
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\shopingweb\dp\product css\royal canin css\Royal Canin Labrador Retriever Puppy Dry Dog Food.html", "HTML", 697, 0, 0, 0, 0, 0, 0, 210, 173, 1080
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\shopingweb\dp\product js\js\bootstrap.js", "JavaScript", 0, 0, 3347, 0, 0, 0, 0, 325, 850, 4522
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\shopingweb\dp\product js\js\mdb.ecommerce.min.js", "JavaScript", 0, 0, 1, 0, 0, 0, 0, 1, 0, 2
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\shopingweb\dp\product js\js\mdb.min.js", "JavaScript", 0, 0, 1, 0, 0, 0, 0, 0, 0, 1
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\shopingweb\dp\product js\js\popper.min.js", "JavaScript", 0, 0, 1, 0, 0, 0, 0, 4, 1, 6
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\shopingweb\dp\s7sBCbSff4gystEMf9aQ.html", "HTML", 471, 0, 0, 0, 0, 0, 0, 74, 3, 548
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\shopingweb\dp\templetes\droolsTemplete.html", "HTML", 599, 0, 0, 0, 0, 0, 0, 151, 135, 885
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\shopingweb\dp\templetes\pedigreeTemplete.html", "HTML", 490, 0, 0, 0, 0, 0, 0, 136, 112, 738
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\shopingweb\dp\templetes\trial.html", "HTML", 413, 0, 0, 0, 0, 0, 0, 56, 3, 472
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\shopingweb\dp\zImDO7mm7u57WebdFDtN.html", "HTML", 417, 0, 0, 0, 0, 0, 0, 56, 3, 476
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\shopingweb\eror.html", "HTML", 17, 0, 0, 0, 0, 0, 0, 0, 1, 18
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\shopingweb\event\event.html", "HTML", 87, 0, 0, 0, 0, 0, 0, 0, 15, 102
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\shopingweb\footer.html", "HTML", 46, 0, 0, 0, 0, 0, 0, 9, 12, 67
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\shopingweb\graficcard.html", "HTML", 0, 0, 0, 0, 0, 0, 0, 1, 0, 1
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\shopingweb\index.html", "HTML", 1136, 0, 0, 0, 0, 0, 0, 294, 147, 1577
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\shopingweb\js\app.js", "JavaScript", 0, 0, 1, 0, 0, 0, 0, 1, 1, 3
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\shopingweb\js\flickity.pkgd.min.js", "JavaScript", 0, 0, 8, 0, 0, 0, 0, 48, 0, 56
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\shopingweb\lightslider.css", "CSS", 0, 350, 0, 0, 0, 0, 0, 16, 26, 392
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\shopingweb\lightslider.js", "JavaScript", 0, 0, 1102, 0, 0, 0, 0, 11, 28, 1141
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\shopingweb\login\login.css", "CSS", 0, 213, 0, 0, 0, 0, 0, 256, 94, 563
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\shopingweb\login\login.html", "HTML", 65, 0, 0, 0, 0, 0, 0, 28, 19, 112
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\shopingweb\login\login.js", "JavaScript", 0, 0, 17, 0, 0, 0, 0, 6, 11, 34
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\shopingweb\login\otp.js", "JavaScript", 0, 0, 45, 0, 0, 0, 0, 66, 25, 136
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\shopingweb\main.js", "JavaScript", 0, 0, 17, 0, 0, 0, 0, 13, 14, 44
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\shopingweb\navbar.html", "HTML", 46, 0, 0, 0, 0, 0, 0, 3, 9, 58
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\shopingweb\navbar\navbar.css", "CSS", 0, 131, 0, 0, 0, 0, 0, 0, 2, 133
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\shopingweb\payment\all css\bootstrap.min.css", "CSS", 0, 4, 0, 0, 0, 0, 0, 6, 2, 12
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\shopingweb\payment\all css\mdb-pro.min.css", "CSS", 0, 6, 0, 0, 0, 0, 0, 27, 0, 33
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\shopingweb\payment\all css\mdb.ecommerce.min.css", "CSS", 0, 1, 0, 0, 0, 0, 0, 9, 2, 12
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\shopingweb\payment\payment.css", "CSS", 0, 178, 0, 0, 0, 0, 0, 8, 38, 224
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\shopingweb\payment\payment.html", "HTML", 219, 0, 0, 0, 0, 0, 0, 152, 54, 425
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\shopingweb\payment\payment.js", "JavaScript", 0, 0, 160, 0, 0, 0, 0, 125, 64, 349
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\shopingweb\product.html", "HTML", 364, 0, 0, 0, 0, 0, 0, 2, 30, 396
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\shopingweb\products\products.css", "CSS", 0, 405, 0, 0, 0, 0, 0, 38, 78, 521
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\shopingweb\products\products.html", "HTML", 573, 0, 0, 0, 0, 0, 0, 120, 167, 860
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\shopingweb\rufe.html", "HTML", 0, 0, 0, 0, 0, 0, 0, 59, 0, 59
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\shopingweb\ryzen.html", "HTML", 217, 0, 0, 0, 0, 0, 0, 8, 21, 246
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\shopingweb\searchbar.js", "JavaScript", 0, 0, 72, 0, 0, 0, 0, 33, 10, 115
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\shopingweb\security\refund policy.html", "HTML", 171, 0, 0, 0, 0, 0, 0, 33, 17, 221
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\shopingweb\security\terams.css", "CSS", 0, 716, 0, 0, 0, 0, 0, 52, 152, 920
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\shopingweb\security\terms and condition.html", "HTML", 433, 0, 0, 0, 0, 0, 0, 33, 57, 523
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\shopingweb\style.css", "CSS", 0, 2572, 0, 0, 0, 0, 0, 222, 492, 3286
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\shopingweb\style1.css", "CSS", 0, 713, 0, 0, 0, 0, 0, 15, 164, 892
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\shopingweb\try.css", "CSS", 0, 91, 0, 0, 0, 0, 0, 0, 16, 107
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\shopingweb\try.html", "HTML", 25, 0, 0, 0, 0, 0, 0, 0, 1, 26
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\shopingweb\try.js", "JavaScript", 0, 0, 113, 0, 0, 0, 0, 42, 29, 184
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\shopingweb\try2.css", "CSS", 0, 191, 0, 0, 0, 0, 0, 5, 15, 211
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\shopingweb\try2.html", "HTML", 17, 0, 0, 0, 0, 0, 0, 1, 5, 23
+"c:\Users\digan\Downloads\Petziee.com\dev\Petziee\shopingweb\tryle.css", "CSS", 0, 57, 0, 0, 0, 0, 0, 0, 9, 66
+"Total", "-", 23267, 15967, 8895, 3084, 11, 115, 29, 8693, 9458, 69519
