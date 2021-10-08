@@ -1,0 +1,13 @@
+Add this to main html file
+
+<script> 
+        $(function(){
+          $("#includedContent").load("extra/aboutus.html"); 
+        });
+    </script> 
+
+    <div id="includedContent"></div>
+
+and attech the path in script like in line:5
+
+-->edit the html in their own htmlfile not in main file
