@@ -506,7 +506,7 @@ async function cart() {
         } else {
             // User not logged in or has just logged out.
             console.log("User not logged in to add to cart");
-            // window.location.assign("https://petziee-dev.web.app/login/login.html");
+            window.location.assign("https://petzieee.web.app/login/login.html");
         }
     });
 
@@ -618,7 +618,7 @@ async function buyNow(data) {
         } else {
             // User not logged in or has just logged out.
             console.log("User not logged in to add to cart");
-            // window.location.assign("https://petziee-dev.web.app/login/login.html");
+            window.location.assign("https://petzieee.web.app/login/login.html");
         }
     });
 

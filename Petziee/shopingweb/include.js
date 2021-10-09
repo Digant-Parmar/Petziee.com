@@ -3,7 +3,7 @@ $(function() {
     $.each(includes, function() {
         var file =
             // 'http://localhost:5005/' +
-            'https://petziee-dev.web.app/' +
+            'https://petzieee.web.app/' +
             $(this).data('include') + '.html'
         $(this).load(file)
     })
