@@ -80,6 +80,44 @@ exports.removeFromCart = functions.https.onCall(async(data, context) => {
 });
 
 
+function EmptyCart(userId) {
+    deleteCollection(admin.firestore(), "/CustomerInfo/" + userId + "/cart", 10);
+}
+
+async function deleteCollection(db, collectionPath, batchSize) {
+    const collectionRef = db.collection(collectionPath);
+    const query = collectionRef.orderBy('__name__').limit(batchSize);
+
+    return new Promise((resolve, reject) => {
+        deleteQueryBatch(db, query, resolve).catch(reject);
+    });
+}
+
+async function deleteQueryBatch(db, query, resolve) {
+    const snapshot = await query.get();
+
+    const batchSize = snapshot.size;
+    if (batchSize === 0) {
+        // When there are no documents left, we are done
+        resolve();
+        return;
+    }
+
+    // Delete documents in a batch
+    const batch = db.batch();
+    snapshot.docs.forEach((doc) => {
+        batch.delete(doc.ref);
+    });
+    await batch.commit();
+
+    // Recurse on the next process tick, to avoid
+    // exploding the stack.
+    process.nextTick(() => {
+        deleteQueryBatch(db, query, resolve);
+    });
+}
+
+
 
 exports.razorpay = functions.https.onCall(async(data, context) => {
     // console.log("data: ", data);
@@ -116,7 +154,7 @@ exports.razorpay = functions.https.onCall(async(data, context) => {
 
 
             var options = {
-                amount: totalPrice, // amount in the smallest currency unit
+                amount: totalPrice * 100, // amount in the smallest currency unit
                 currency: "INR",
                 receipt: ref.id,
             };
@@ -141,8 +179,42 @@ exports.razorpay = functions.https.onCall(async(data, context) => {
 
     } else {
 
-        return Error;
+
+        await admin.firestore().collection("CustomerInfo").doc(userId).collection("orders").doc(ref.id).collection("products").doc(data.productId).set({
+            "quantity": data.quantity
+        });
+        await admin.firestore().collection("Products").doc(data.productId).get().then((value) => {
+            var op = value.data().originalPrice;
+            var discount = op * value.data().salePerc / 100;
+            var finalPrice = (op - discount) * data.quantity;
+            totalPrice = totalPrice + finalPrice;
+        });
+
+        console.log("Total Amount", totalPrice);
+
+
+        var options = {
+            amount: totalPrice * 100, // amount in the smallest currency unit
+            currency: "INR",
+            receipt: ref.id,
+        };
+        var temp = instance.orders;
+        await temp.create(options, function(err, order) {
+            console.log(JSON.stringify(order));
+            // console.log("returning to the function");
+            // console.log(order);
+
+            admin.firestore().collection("CustomerInfo").doc(userId).collection("orders").doc(ref.id).set({
+                "orderId": order.id,
+                "amount": totalPrice * 100,
+                "status": "created",
+                "created_at": order.created_at,
+            });
+            x = (JSON.stringify(order));
+        });
+        return x;
     }
+
 
 
     // });
@@ -187,8 +259,9 @@ exports.confirmPayment = functions.https.onCall(async(data, context) => {
         admin.firestore().collection("CustomerInfo").doc(userId).collection("orders").doc(data.id).update({
             "status": "Paid",
         });
-
+        EmptyCart(userId);
         console.log("PAYMENT SUCCESSFULL");
+
         return true;
     } else {
         admin.firestore().collection("CustomerInfo").doc(userId).collection("orders").doc(data.id).update({
@@ -198,6 +271,8 @@ exports.confirmPayment = functions.https.onCall(async(data, context) => {
     }
 
 });
+
+
 
 
 

@@ -1,7 +1,27 @@
+var addressesArray = [];
+var urlData;
+var cost;
 document.getElementById('paynow').onclick = async function(e) {
     // var x;
     // var totalPrice = 0;
-    const userId = "GVyUWRXPPnUcnD6hKNXh2efmrxR2";
+    if (document.querySelector('input[name="addrRadio"]:checked') == null) {
+        alert("Please select/add an address");
+        return;
+    }
+    var addressValue = document.querySelector('input[name="addrRadio"]:checked').id;
+    if (addressValue == null) {
+        alert("Please select/add an address");
+        return;
+    }
+    // const userId = "GVyUWRXPPnUcnD6hKNXh2efmrxR2";
+    console.log("Addresses selected is :", addressValue);
+
+    var selectedAddress;
+    for (i = 0, l = addressesArray.length; i < l; i++) {
+        if (addressesArray[i].id === addressValue) {
+            selectedAddress = addressesArray[i].data();
+        }
+    }
     // var db = firebase.firestore();
 
     // var ref = await db.collection("CustomerInfo").doc(currentUser.id).collection("orders").doc();
@@ -54,6 +74,11 @@ document.getElementById('paynow').onclick = async function(e) {
     //     return Error;
     // }
 
+    if (selectedAddress == null) {
+        alert("Please select/add an address");
+        return;
+    }
+
 
 
     var db = firebase.firestore();
@@ -64,76 +89,199 @@ document.getElementById('paynow').onclick = async function(e) {
     var razorpay = functions.httpsCallable("razorpay");
     $('#lottie').css('display', '');
 
-    await razorpay({
-            isCart: true,
-        })
-        .then((res) => {
-            $('#lottie').css('display', 'none');
-            result = JSON.parse(res.data);
-            console.log("resule", result);
-            var options = {
-                "key": "rzp_test_EQavvp4sNxxG6W", // Enter the Key ID generated from the Dashboard
-                "amount": "10000", // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
-                "currency": "INR",
-                "name": "Acme Corp",
-                "description": "Test Transaction",
-                "image": "https://petziee-dev.web.app/image/sanji.png",
-                "order_id": result.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
-                "handler": async function(response) {
-                    console.log(response);
-                    alert(response.razorpay_payment_id);
-                    alert(response.razorpay_order_id);
-                    alert(response.razorpay_signature);
+    if (urlData == null) {
+        await razorpay({
+                isCart: true,
+            })
+            .then((res) => {
+                $('#lottie').css('display', 'none');
+                result = JSON.parse(res.data);
+                console.log("resule", result);
+                var options = {
+                    "key": "rzp_test_EQavvp4sNxxG6W", // Enter the Key ID generated from the Dashboard
+                    "amount": "10000", // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+                    "currency": "INR",
+                    "name": "Acme Corp",
+                    "description": "Test Transaction",
+                    "image": "https://petziee-dev.web.app/image/sanji.png",
+                    "order_id": result.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+                    "handler": async function(response) {
+                        $('#lottie').css('display', '');
 
-                    var confirmPayment = functions.httpsCallable("confirmPayment");
-                    await confirmPayment({
-                        razorpay_order_id: result.id,
-                        razorpay_payment_id: response.razorpay_payment_id,
-                        razorpay_signature: response.razorpay_signature,
-                        id: result.receipt,
-                    }).then((value) => {
-                        if (value) {
-                            alert("Payment Successfull");
-                        } else {
-                            alert("Payment Unsuccessfull");
-                        }
-                    });
-                },
-                "prefill": {
-                    "name": "Gaurav Kumar",
-                    "email": "gaurav.kumar@example.com",
-                    "contact": "9999999999"
-                },
-                "notes": {
-                    "address": "Razorpay Corporate Office"
-                },
-                "theme": {
-                    "color": "#3399cc"
-                }
-            };
-            var rzp1 = new Razorpay(options);
-            rzp1.on('payment.failed', function(response) {
-                alert(response.error.code);
-                alert(response.error.description);
-                alert(response.error.source);
-                alert(response.error.step);
-                alert(response.error.reason);
-                alert(response.error.metadata.order_id);
-                alert(response.error.metadata.payment_id);
+                        console.log(response);
+                        alert(response.razorpay_payment_id);
+                        alert(response.razorpay_order_id);
+                        alert(response.razorpay_signature);
+
+                        var confirmPayment = functions.httpsCallable("confirmPayment");
+                        await confirmPayment({
+                            razorpay_order_id: result.id,
+                            razorpay_payment_id: response.razorpay_payment_id,
+                            razorpay_signature: response.razorpay_signature,
+                            id: result.receipt,
+                        }).then((value) => {
+                            if (value) {
+                                $('#lottie').css('display', 'none');
+                                alert("Payment Successfull");
+                                window.history.go(-3);
+                            } else {
+                                $('#lottie').css('display', 'none');
+
+                                alert("Payment Unsuccessfull");
+                            }
+
+
+
+                        });
+                    },
+                    "prefill": {
+                        "name": selectedAddress.firstName + " " + selectedAddress.lastName,
+                        "email": selectedAddress.email,
+                        "contact": selectedAddress.phone,
+
+                    },
+                    "notes": {
+                        "address": selectedAddress.add1 + " " + selectedAddress.add2 + " " + selectedAddress.city + " " + selectedAddress.state + "-" + selectedAddress.pin
+                    },
+                    "theme": {
+                        "color": "#3399cc"
+                    }
+                };
+                var rzp1 = new Razorpay(options);
+                rzp1.on('payment.failed', function(response) {
+                    alert(response.error.code);
+                    alert(response.error.description);
+                    alert(response.error.source);
+                    alert(response.error.step);
+                    alert(response.error.reason);
+                    alert(response.error.metadata.order_id);
+                    alert(response.error.metadata.payment_id);
+                });
+                rzp1.open();
+                e.preventDefault();
             });
-            rzp1.open();
-            e.preventDefault();
-        });
 
+    } else {
+        await razorpay({
+                isCart: false,
+                productId: urlData.name,
+                quantity: urlData.quantity,
+            })
+            .then((res) => {
+                $('#lottie').css('display', 'none');
+                result = JSON.parse(res.data);
+                console.log("resule", result);
+                var options = {
+                    "key": "rzp_test_EQavvp4sNxxG6W", // Enter the Key ID generated from the Dashboard
+                    "amount": (cost * 100) + "", // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+                    "currency": "INR",
+                    "name": "Acme Corp",
+                    "description": "Test Transaction",
+                    "image": "https://petziee-dev.web.app/image/sanji.png",
+                    "order_id": result.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+                    "handler": async function(response) {
+                        $('#lottie').css('display', '');
+
+                        console.log(response);
+                        alert(response.razorpay_payment_id);
+                        alert(response.razorpay_order_id);
+                        alert(response.razorpay_signature);
+
+                        var confirmPayment = functions.httpsCallable("confirmPayment");
+                        await confirmPayment({
+                            razorpay_order_id: result.id,
+                            razorpay_payment_id: response.razorpay_payment_id,
+                            razorpay_signature: response.razorpay_signature,
+                            id: result.receipt,
+                        }).then((value) => {
+                            if (value) {
+                                alert("Payment Successfull");
+                                $('#lottie').css('display', 'none');
+                                window.history.go(-2);
+
+                            } else {
+                                alert("Payment Unsuccessfull");
+                                $('#lottie').css('display', 'none');
+
+                            }
+                        });
+                    },
+                    "prefill": {
+                        "name": selectedAddress.firstName + " " + selectedAddress.lastName,
+                        "email": selectedAddress.email,
+                        "contact": selectedAddress.phone,
+
+                    },
+                    "notes": {
+                        "address": selectedAddress.add1 + " " + selectedAddress.add2 + " " + selectedAddress.city + " " + selectedAddress.state + "-" + selectedAddress.pin
+                    },
+                    "theme": {
+                        "color": "#3399cc"
+                    }
+                };
+                var rzp1 = new Razorpay(options);
+                rzp1.on('payment.failed', function(response) {
+                    alert(response.error.code);
+                    alert(response.error.description);
+                    alert(response.error.source);
+                    alert(response.error.step);
+                    alert(response.error.reason);
+                    alert(response.error.metadata.order_id);
+                    alert(response.error.metadata.payment_id);
+                });
+                rzp1.open();
+                e.preventDefault();
+            });
+
+
+    }
 
 }
 
+window.onload = function() {
+    var url = document.location.href;
+    if (url.split('?')[1] != null) {
+        var param = url.split('?')[1].split('&');
+        var data = {};
+        var tmp;
 
-document.addEventListener('DOMContentLoaded', getInfo);
+        for (var i = 0, l = param.length; i < l; i++) {
+            tmp = param[i].split('=');
+            data[tmp[0]] = tmp[1];
+        }
+        if (Object.keys(data).length === 0) {
+            getInfo();
+        } else {
+            urlData = data;
+            forBuyNow(data);
+        }
+    } else {
+        getInfo();
+
+    }
+
+}
+
+function forBuyNow(data) {
+    console.log("IN forby");
+    firebase.initializeApp({
+        apiKey: "AIzaSyDHBFSULRYjuXw2YRE9lqxki2C_Cc7-s6A",
+        authDomain: "petzieee.firebaseapp.com",
+        databaseURL: "https://petzieee-default-rtdb.asia-southeast1.firebasedatabase.app",
+        projectId: "petzieee",
+        storageBucket: "petzieee.appspot.com",
+        messagingSenderId: "779568120586",
+        appId: "1:779568120586:web:a44924235200039dffb0f3",
+        measurementId: "G-801X9K0951"
+    })
+    getAddresses();
+    buyNow(data);
+}
 
 function getInfo() {
 
 
+    console.log("IN getINfo");
     firebase.initializeApp({
         apiKey: "AIzaSyDHBFSULRYjuXw2YRE9lqxki2C_Cc7-s6A",
         authDomain: "petzieee.firebaseapp.com",
@@ -171,6 +319,7 @@ async function getAddresses() {
             var inital = '<h5 class="mb-4">Choose an Addresses</h5>';
             await $('#addresses').append(inital);
             qs.forEach(docs => {
+                addressesArray.push(docs);
                 var temp = '<div class="label">';
                 var add = docs.data();
                 temp = temp + '<input type="radio" name="addrRadio" value = ' + docs.id + ' id=' + docs.id + '>';
@@ -346,6 +495,118 @@ async function cart() {
                 });
             });
 
+
+            console.log("priceWithDiscountArray : ", priceWithDiscountArray);
+            console.log("discount Array: ", discountArray);
+            console.log("Quantity Price Array : ", quantityArray);
+
+
+
+
+        } else {
+            // User not logged in or has just logged out.
+            console.log("User not logged in to add to cart");
+            // window.location.assign("https://petziee-dev.web.app/login/login.html");
+        }
+    });
+
+}
+
+
+
+async function buyNow(data) {
+    let db = firebase.firestore();
+    var totalItemHtml = document.getElementById("totalItems");
+
+    var priceWithDiscountArray = {};
+    var discountArray = {};
+    var quantityArray = {};
+    var totalDiscountArray = {}
+
+    var totalAmountWithDiscountAndQuantity = 0;
+    var discountedAmount = 0;
+    var totalCostWithoutDiscount = 0;
+
+    firebase.auth().onAuthStateChanged(async(user) => {
+        currentUser = user;
+
+
+
+        if (user) {
+            var productId = data.name;
+            var quantity = Number(data.quantity);
+            console.log("quantity", data.quantity)
+            quantityArray[productId] = quantity;
+            await db.collection("Products").doc(productId).get().then((element) => {
+                var htmlCode = ' <div class="sole">\
+                        <div class="smallbio" style="width: 15%;">\
+                            <img src="" id="productImage" alt="" style="width: 90%;">\
+                        </div>\
+                        <div class="bigbio" style="padding-left: 20px;">\
+                            <h3 style="font-size: 14px;" id="productName"></h3>\
+                            <h5 style="font-size: 12px;" id="productSize"></h5>\
+                            <p id="price"></p>\
+                        </div>\
+                    </div>';
+                $("#productList").append(htmlCode);
+                console.log("Poduct id : ", element.id);
+                document.getElementById("productImage").src = element.data().mainImage;
+                document.getElementById("productName").innerHTML = element.data().name;
+                document.getElementById("productSize").innerHTML = element.data().size;
+                document.getElementById("productImage").id = element.id + "Image";
+                document.getElementById("productName").id = element.id + "Name";
+                document.getElementById("productSize").id = element.id + "Size";
+                if (element.data().isInStock) {
+                    var op = element.data().originalPrice;
+                    var discount = op * element.data().salePerc / 100;
+                    //dicount = productdiscount withiut quantity
+                    var finalPrice = (op - discount) * quantity;
+                    //finalPrice = price with discount and quantity
+
+                    // document.getElementById("price").innerHTML = finalPrice;
+
+                    //priceWithDiscountArray = array without quantity
+                    priceWithDiscountArray[element.id] = op - discount;
+
+                    totalAmountWithDiscountAndQuantity = totalAmountWithDiscountAndQuantity + finalPrice;
+                    //discountArray only the discount without quntity
+                    discountArray[element.id] = discount;
+
+                    //discountammount  = overall discount with product quantity
+                    discountedAmount = discountedAmount + discount * quantity;
+                    //totalDiscountArray  = product discount with quantity
+                    totalDiscountArray[element.id] = discount * quantity;
+
+
+                    totalCostWithoutDiscount = totalCostWithoutDiscount + discount * quantity + finalPrice;
+
+
+                    document.getElementById("totalCost").innerHTML = totalCostWithoutDiscount;
+                    document.getElementById("totalDiscount").innerHTML = discountedAmount;
+                    if (discountedAmount == 0) {
+                        document.getElementById("ifSaved").innerHTML = "";
+                        // document.getElementById("totalDiscount").innerHTML = "";
+                    }
+                    document.getElementById("finalCost").innerHTML = totalAmountWithDiscountAndQuantity;
+                    //Change Id of the append Elements
+
+                    cost = totalAmountWithDiscountAndQuantity
+                        // document.getElementById("name").id = element.id + "name";
+                        // document.getElementById("productId").id = element.id;
+                        // document.getElementById("productImage").id = element.id + "productImage";
+                        // document.getElementById("productImage1").id = element.id + "productImage1";
+                        // document.getElementById("size").id = element.id + "size";
+                        // document.getElementById("isInStock").id = element.id + "isInStock";
+                        // document.getElementById("quantity").id = element.id + "quantity";
+                        // document.getElementById("price").id = element.id + "price";
+                        // document.getElementById("removeButton").id = element.id + "removeButton";
+
+                    console.log("Completed first product");
+                }
+                // document.getElementById("quantity").value = quantity;
+                //Original price = op
+
+            });
 
             console.log("priceWithDiscountArray : ", priceWithDiscountArray);
             console.log("discount Array: ", discountArray);
