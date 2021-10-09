@@ -35,7 +35,7 @@ async function getPrice() {
 
     let product = await db.collection("Products").doc(id).get();
     document.getElementById("cartBtn").addEventListener("click", addToCart);
-    document.getElementById("buyBtn").addEventListener("click", addToCart);
+    document.getElementById("buyBtn").addEventListener("click", buyNow);
 
     console.log(product.data());
 
@@ -127,21 +127,24 @@ function buyNow() {
 
     firebase.auth().onAuthStateChanged((user) => {
         if (user) {
-            // User logged in already or has just logged in.
-            var addToCart = functions.httpsCallable("addToCart");
-            addToCart({
-                productId: id,
-                quantity: +quantity.value,
-            }).then((result) => {
-                console.log(result.data);
-            }).catch((error) => {
-                var code = error.code;
-                var message = error.message;
-                var details = console.error.details;
+            // // User logged in already or has just logged in.
+            // var addToCart = functions.httpsCallable("addToCart");
+            // addToCart({
+            //     productId: id,
+            //     quantity: +quantity.value,
+            // }).then((result) => {
+            //     console.log(result.data);
+            // }).catch((error) => {
+            //     var code = error.code;
+            //     var message = error.message;
+            //     var details = console.error.details;
 
-                console.error("code : " + code + "message:" + message + "details: " + details);
+            //     console.error("code : " + code + "message:" + message + "details: " + details);
 
-            });
+            // });
+            var url = 'https://petziee-dev.web.app/payment/payment.html?name=' + encodeURIComponent(id) + '&quantity=' + encodeURIComponent(quantity.value);
+            document.location.href = url;
+
             // $.ajax({
             //     type: "POST",
             //     url: "https://us-central1-petezzie.cloudfunctions.net/addToCart",
