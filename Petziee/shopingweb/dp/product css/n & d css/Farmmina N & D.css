@@ -6,6 +6,14 @@ html {
     height: 377px;
 }
 
+.container {
+    width: 100%;
+    padding-right: 3px;
+    padding-left: 3px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
 .side {
     width: 25%;
 }
@@ -641,14 +649,13 @@ li {
     width: 80%;
 } */
 
-.fobox{
+.fobox {
     display: flex;
     padding-left: 100px;
     padding-right: 100px;
     text-align: left;
     margin-top: 45px;
 }
-
 
 .text101 {
     text-align: left;
@@ -709,20 +716,17 @@ li {
     display: none;
 }
 
-.fst img{
+.fst img {
     width: 90%;
 }
-.snd{
+
+.snd {
     margin-top: 5%;
 }
-.forth{
+
+.forth {
     width: 50%;
 }
-
-
-
-
-
 
 @media (max-width: 1200px) {
     .prduimg img {
@@ -855,7 +859,7 @@ li {
     display: none;
   } */
     .topics {
-        margin-left: -25px;
+        margin-left: 0px;
     }
     .textp {
         width: 100%;
@@ -874,6 +878,25 @@ li {
         pointer-events: none;
         z-index: 10;
     }
+    .mdb-lightbox [class*=col-] {
+        padding: 0.21rem;
+        justify-content: center;
+        padding-top: 15px;
+        display: flex;
+    }
+    .fobox {
+        display: grid;
+        padding-left: 5%;
+        padding-right: 5%;
+        text-align: left;
+        margin-top: 45px;
+    }
+    .compny {
+        font-size: 25px;
+        text-transform: uppercase;
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
 }
 
 .skin-light .number-input.number-input button:before,
@@ -888,5 +911,3 @@ li {
     margin-top: 0rem;
     margin-bottom: 0;
 }
-
-
