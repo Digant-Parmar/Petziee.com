@@ -1263,50 +1263,52 @@
                     qs.forEach(element => {
                         makeProduct(element);
                         async function makeProduct(element) {
-                            await $('#productitems').append(code);
-                            console.log(element.id, " => ", element.data());
-                            document.getElementById("product0Image").src = element.data().mainImage;
-                            document.getElementById("product0Title").innerHTML = element.data().type;
-                            document.getElementById("product0Name").innerHTML = element.data().name;
-                            document.getElementById("product0ImageLink").setAttribute("href", "dp/" + element.data().id + ".html");
-                            document.getElementById("product0Name").setAttribute("href", "dp/" + element.data().id + ".html");
+                            if (element.data().toShow) {
+                                await $('#productitems').append(code);
+                                console.log(element.id, " => ", element.data());
+                                document.getElementById("product0Image").src = element.data().mainImage;
+                                document.getElementById("product0Title").innerHTML = element.data().type;
+                                document.getElementById("product0Name").innerHTML = element.data().name;
+                                document.getElementById("product0ImageLink").setAttribute("href", "dp/" + element.data().id + ".html");
+                                document.getElementById("product0Name").setAttribute("href", "dp/" + element.data().id + ".html");
 
-                            if (element.data().isSale) {
-                                let x = element.data().salePerc;
-                                let temp = x * element.data().originalPrice / 100;
-                                let disPrice = element.data().originalPrice - temp;
-                                document.getElementById("product0OriginalPrice").innerHTML = "₹" + element.data().originalPrice;
+                                if (element.data().isSale) {
+                                    let x = element.data().salePerc;
+                                    let temp = x * element.data().originalPrice / 100;
+                                    let disPrice = element.data().originalPrice - temp;
+                                    document.getElementById("product0OriginalPrice").innerHTML = "₹" + element.data().originalPrice;
 
-                                document.getElementById("product0DiscountedPrice").innerHTML = "₹" + disPrice;
-                                document.getElementById("product0SalePerc").innerHTML = x + "% OFF";
-                                document.getElementById("product0DiscountedPrice").setAttribute("id", element.data().id + "DiscountedPrice");
-                                document.getElementById("product0SalePerc").setAttribute("id", element.data().id + "SalePerc");
-                            } else {
-                                //                         var elem = document.getElementById( 'product0Id' );
-                                // // elem.classList.add('some-class'); // Add class
-                                // elem.classList.remove('discount-product-price'); // Remove class
-                                // elem.classList.remove('off-info'); // Remove class
-                                document.getElementById("product0OriginalPrice").innerHTML = "";
+                                    document.getElementById("product0DiscountedPrice").innerHTML = "₹" + disPrice;
+                                    document.getElementById("product0SalePerc").innerHTML = x + "% OFF";
+                                    document.getElementById("product0DiscountedPrice").setAttribute("id", element.data().id + "DiscountedPrice");
+                                    document.getElementById("product0SalePerc").setAttribute("id", element.data().id + "SalePerc");
+                                } else {
+                                    //                         var elem = document.getElementById( 'product0Id' );
+                                    // // elem.classList.add('some-class'); // Add class
+                                    // elem.classList.remove('discount-product-price'); // Remove class
+                                    // elem.classList.remove('off-info'); // Remove class
+                                    document.getElementById("product0OriginalPrice").innerHTML = "";
 
-                                document.getElementById("product0SalePerc").outerHTML = "";
-                                document.getElementById("product0DiscountedPrice").outerHTML = "₹" + element.data().originalPrice;
+                                    document.getElementById("product0SalePerc").outerHTML = "";
+                                    document.getElementById("product0DiscountedPrice").outerHTML = "₹" + element.data().originalPrice;
 
 
 
-                                // elem.classList.toggle('some-other-class'); // Add or remove class
-                                // if ( elem.classList.contains('some-third-class') ) { // Check for class
-                                //     console.log('yep!');
-                                // }
+                                    // elem.classList.toggle('some-other-class'); // Add or remove class
+                                    // if ( elem.classList.contains('some-third-class') ) { // Check for class
+                                    //     console.log('yep!');
+                                    // }
+                                }
+                                document.getElementById("product0Id").setAttribute("id", element.data().id);
+                                document.getElementById("product0Image").setAttribute("id", element.data().id + "Image");
+                                // document.getElementById("product0btns").setAttribute("id", element.data().id + "Btns");
+                                document.getElementById("product0ImageLink").setAttribute("id", element.data().id + "ImageLink");
+
+                                document.getElementById("product0Title").setAttribute("id", element.data().id + "Title");
+                                document.getElementById("product0Name").setAttribute("id", element.data().id + "Name");
+                                document.getElementById("product0OriginalPrice").setAttribute("id", element.data().id + "OriginalPrice");
+
                             }
-                            document.getElementById("product0Id").setAttribute("id", element.data().id);
-                            document.getElementById("product0Image").setAttribute("id", element.data().id + "Image");
-                            // document.getElementById("product0btns").setAttribute("id", element.data().id + "Btns");
-                            document.getElementById("product0ImageLink").setAttribute("id", element.data().id + "ImageLink");
-
-                            document.getElementById("product0Title").setAttribute("id", element.data().id + "Title");
-                            document.getElementById("product0Name").setAttribute("id", element.data().id + "Name");
-                            document.getElementById("product0OriginalPrice").setAttribute("id", element.data().id + "OriginalPrice");
-
                         }
                         // document.getElementById("product0Id").innerHTML = element.data().price;
 
