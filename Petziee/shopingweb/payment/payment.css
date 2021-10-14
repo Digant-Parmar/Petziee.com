@@ -202,6 +202,15 @@
     margin-top: -10px;
 }
 
+.svg {
+    width: 20%;
+    position: fixed;
+    margin-top: 50%;
+    margin-left: 42%;
+    display: none;
+    z-index: 10;
+}
+
 
 /* update 17.9.21 */
 
@@ -221,4 +230,15 @@
 .skin-light .number-input.number-input button.minus {
     padding-left: 10px;
     width: 29%;
+}
+
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    opacity: 0.0;
+    z-index: 100;
 }

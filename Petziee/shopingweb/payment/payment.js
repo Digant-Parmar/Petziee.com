@@ -83,18 +83,27 @@ document.getElementById('paynow').onclick = async function(e) {
 
     var db = firebase.firestore();
 
+
+    // rzp_test_EQavvp4sNxxG6W
+
+    // rzp_live_zNDp8kSiWigyQ5
+    // 8vuYp1R9DGjreC5zSWPXT5ZU
+
     // var ref = await db.collection("CustomerInfo").doc(currentUser.id).collection("orders").doc();
     var functions = firebase.functions();
 
     var razorpay = functions.httpsCallable("razorpay");
+    $("body").append('<div id="overlay"></div>');
     $('#lottie').css('display', '');
 
     if (urlData == null) {
         await razorpay({
                 isCart: true,
+                phone: selectedAddress.phone,
             })
             .then((res) => {
                 $('#lottie').css('display', 'none');
+                $('#overlay').remove();
                 result = JSON.parse(res.data);
                 console.log("resule", result);
                 var options = {
@@ -106,12 +115,13 @@ document.getElementById('paynow').onclick = async function(e) {
                     "image": "https://petziee-dev.web.app/image/sanji.png",
                     "order_id": result.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
                     "handler": async function(response) {
+                        $("body").append('<div id="overlay"></div>');
                         $('#lottie').css('display', '');
 
                         console.log(response);
-                        alert(response.razorpay_payment_id);
-                        alert(response.razorpay_order_id);
-                        alert(response.razorpay_signature);
+                        // alert(response.razorpay_payment_id);
+                        // alert(response.razorpay_order_id);
+                        // alert(response.razorpay_signature);
 
                         var confirmPayment = functions.httpsCallable("confirmPayment");
                         await confirmPayment({
@@ -122,10 +132,11 @@ document.getElementById('paynow').onclick = async function(e) {
                         }).then((value) => {
                             if (value) {
                                 $('#lottie').css('display', 'none');
-                                alert("Payment Successfull");
+                                // alert("Payment Successfull");
                                 window.history.go(-3);
                             } else {
                                 $('#lottie').css('display', 'none');
+                                $('#overlay').remove();
 
                                 alert("Payment Unsuccessfull");
                             }
@@ -166,6 +177,7 @@ document.getElementById('paynow').onclick = async function(e) {
                 isCart: false,
                 productId: urlData.name,
                 quantity: urlData.quantity,
+                phone: selectedAddress.phone,
             })
             .then((res) => {
                 $('#lottie').css('display', 'none');
@@ -180,6 +192,7 @@ document.getElementById('paynow').onclick = async function(e) {
                     "image": "https://petziee-dev.web.app/image/sanji.png",
                     "order_id": result.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
                     "handler": async function(response) {
+                        $("body").append('<div id="overlay"></div>');
                         $('#lottie').css('display', '');
 
                         console.log(response);
@@ -197,12 +210,14 @@ document.getElementById('paynow').onclick = async function(e) {
                             if (value) {
                                 alert("Payment Successfull");
                                 $('#lottie').css('display', 'none');
+                                $('#overlay').remove();
+
                                 window.history.go(-2);
 
                             } else {
                                 alert("Payment Unsuccessfull");
                                 $('#lottie').css('display', 'none');
-
+                                $('#overlay').remove();
                             }
                         });
                     },
