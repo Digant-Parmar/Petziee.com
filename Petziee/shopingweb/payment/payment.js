@@ -98,7 +98,7 @@ document.getElementById('paynow').onclick = async function(e) {
                 result = JSON.parse(res.data);
                 console.log("resule", result);
                 var options = {
-                    "key": "rzp_test_EQavvp4sNxxG6W", // Enter the Key ID generated from the Dashboard
+                    "key": "rzp_live_zNDp8kSiWigyQ5", // Enter the Key ID generated from the Dashboard
                     "amount": "10000", // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
                     "currency": "INR",
                     "name": "Acme Corp",
@@ -109,9 +109,9 @@ document.getElementById('paynow').onclick = async function(e) {
                         $('#lottie').css('display', '');
 
                         console.log(response);
-                        alert(response.razorpay_payment_id);
-                        alert(response.razorpay_order_id);
-                        alert(response.razorpay_signature);
+                        // alert(response.razorpay_payment_id);
+                        // alert(response.razorpay_order_id);
+                        // alert(response.razorpay_signature);
 
                         var confirmPayment = functions.httpsCallable("confirmPayment");
                         await confirmPayment({
@@ -122,7 +122,7 @@ document.getElementById('paynow').onclick = async function(e) {
                         }).then((value) => {
                             if (value) {
                                 $('#lottie').css('display', 'none');
-                                alert("Payment Successfull");
+                                // alert("Payment Successfull");
                                 window.history.go(-3);
                             } else {
                                 $('#lottie').css('display', 'none');
@@ -172,7 +172,7 @@ document.getElementById('paynow').onclick = async function(e) {
                 result = JSON.parse(res.data);
                 console.log("resule", result);
                 var options = {
-                    "key": "rzp_test_EQavvp4sNxxG6W", // Enter the Key ID generated from the Dashboard
+                    "key": "rzp_live_zNDp8kSiWigyQ5", // Enter the Key ID generated from the Dashboard
                     "amount": (cost * 100) + "", // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
                     "currency": "INR",
                     "name": "Acme Corp",
