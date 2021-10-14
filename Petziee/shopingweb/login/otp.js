@@ -51,18 +51,25 @@ const sendVerificationCode = () => {
 }
 
 const signInWithPhone = async sentCodeId => {
-    const code = codeField.value;
 
+    const code = codeField.value;
+    $("body").append('<div id="overlay"></div>');
+    $('#lottieLoading').css('display', '');
     const credential = await firebase.auth.PhoneAuthProvider.credential(sentCodeId, code);
     console.log("credential is ", credential);
 
 
+
     auth.signInWithCredential(credential)
         .then(() => {
+            $('#lottieLoading').css('display', 'none');
+            $('#lottieDonw').css('display', '');
             console.log("Loged in");
             window.history.go(-2);
         })
         .catch(error => {
+            $('#overlay').remove();
+            $('#lottieLoading').css('display', 'none');
             console.error(error);
         })
 }
