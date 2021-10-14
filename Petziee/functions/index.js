@@ -126,7 +126,11 @@ exports.razorpay = functions.https.onCall(async(data, context) => {
     // // context.set('Access-Control-Allow-Origin', '*');
     // // cors(data, context, () => {
 
+    // rzp_live_zNDp8kSiWigyQ5
+    //  8vuYp1R9DGjreC5zSWPXT5ZU
 
+    // rzp_test_EQavvp4sNxxG6W
+    // NyrBxjP43twshRqwKZgG5sMu
 
     var instance = new Razorpay({ key_id: 'rzp_test_EQavvp4sNxxG6W', key_secret: 'NyrBxjP43twshRqwKZgG5sMu' });
 
@@ -151,12 +155,17 @@ exports.razorpay = functions.https.onCall(async(data, context) => {
                 });
             };
             console.log("Total Amount", totalPrice);
+            var note = {
+                "userId": userId,
+                "phone": data.phone
 
+            }
 
             var options = {
                 amount: totalPrice * 100, // amount in the smallest currency unit
                 currency: "INR",
-                receipt: ref.id,
+                receipt: userId,
+                notes: note
             };
             var temp = instance.orders;
             await temp.create(options, function(err, order) {
@@ -192,11 +201,16 @@ exports.razorpay = functions.https.onCall(async(data, context) => {
 
         console.log("Total Amount", totalPrice);
 
+        var note = {
+            "userId": userId,
+            "phone": data.phone
 
+        }
         var options = {
             amount: totalPrice * 100, // amount in the smallest currency unit
             currency: "INR",
             receipt: ref.id,
+            notes: note
         };
         var temp = instance.orders;
         await temp.create(options, function(err, order) {

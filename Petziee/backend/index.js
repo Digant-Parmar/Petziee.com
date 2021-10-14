@@ -39,21 +39,22 @@ async function uploadToFirestore() {
 
     // var docRef = await db.collection("Products").doc();
 
-    await db.collection("Products").get().then((qs) => {
-        qs.forEach(async(element) => {
-            await db.collection("Products").doc(element.id).update({
-                "temp": "temp",
-            });
+    //For updating all Documents
+    // await db.collection("Products").get().then((qs) => {
+    //     qs.forEach(async(element) => {
+    //         await db.collection("Products").doc(element.id).update({
+    //             "temp": "temp",
+    //         });
 
-            await db.collection("Products").doc(element.id).update({
-                "temp": firebase.firestore.FieldValue.delete(),
-            });
-        });
-    });
+    //         await db.collection("Products").doc(element.id).update({
+    //             "temp": firebase.firestore.FieldValue.delete(),
+    //         });
+    //     });
+    // });
 
     var text = "";
 
-
+    // For changing name
     // await db.collection("Products").get().then((qs) => {
     //     qs.forEach(async(element) => {
     //         var name = element.data().name.replace(/,/g, '-');
@@ -74,39 +75,39 @@ async function uploadToFirestore() {
 
 
 
-    // var name = document.getElementById("name");
-    // var originalPrice = document.getElementById("originalPrice");
-    // var eachPrice = document.getElementById("eachPrice");
-    // // var mainImage = document.getElementById("mainImage");
-    // var size = document.getElementById("size");
-    // var averageStar = document.getElementById("averageStar");
-    // var salePerc = document.getElementById("salePerc");
-    // var style = document.getElementById("style");
-    // var toShow = document.getElementById("toShow");
-    // var type = document.getElementById("type");
-    // var isInStock = document.getElementById("isInStock");
-    // var isSale = document.getElementById("isSale");
-    // var isEachPrice = document.getElementById("isEachPrice");
-    // var brand = document.getElementById("brand");
+    var name = document.getElementById("name");
+    var originalPrice = document.getElementById("originalPrice");
+    var eachPrice = document.getElementById("eachPrice");
+    // var mainImage = document.getElementById("mainImage");
+    var size = document.getElementById("size");
+    var averageStar = document.getElementById("averageStar");
+    var salePerc = document.getElementById("salePerc");
+    var style = document.getElementById("style");
+    var toShow = document.getElementById("toShow");
+    var type = document.getElementById("type");
+    var isInStock = document.getElementById("isInStock");
+    var isSale = document.getElementById("isSale");
+    var isEachPrice = document.getElementById("isEachPrice");
+    var brand = document.getElementById("brand");
 
-    // const res = await docRef.set({
-    //     "id": docRef.id,
-    //     "originalPrice": Number(originalPrice.value),
-    //     "eachPrice": eachPrice.value,
-    //     "mainImage": "https://petezzie.web.app/dp/image/" + docRef.id + "/" + docRef.id + ".png",
-    //     "size": size.value,
-    //     "averageStar": Number(averageStar.value),
-    //     "salePerc": Number(salePerc.value),
-    //     "style": style.value,
-    //     "toShow": toShow.value == "true" ? true : false,
-    //     "type": type.value,
-    //     "isInStock": isInStock.value == "true" ? true : false,
-    //     "isSale": isSale.value == "true" ? true : false,
-    //     "name": name.value,
-    //     "Date": firebase.firestore.Timestamp.now(),
-    //     "isEachPrice": isEachPrice.value == "true" ? true : false,
-    //     "brand": brand.value,
-    // });
+    const res = await docRef.set({
+        "id": docRef.id,
+        "originalPrice": Number(originalPrice.value),
+        "eachPrice": eachPrice.value,
+        "mainImage": "https://petezzie.web.app/dp/image/" + docRef.id + "/" + docRef.id + ".png",
+        "size": size.value,
+        "averageStar": Number(averageStar.value),
+        "salePerc": Number(salePerc.value),
+        "style": style.value,
+        "toShow": toShow.value == "true" ? true : false,
+        "type": type.value,
+        "isInStock": isInStock.value == "true" ? true : false,
+        "isSale": isSale.value == "true" ? true : false,
+        "name": name.value,
+        "Date": firebase.firestore.Timestamp.now(),
+        "isEachPrice": isEachPrice.value == "true" ? true : false,
+        "brand": brand.value,
+    });
     alert("Uploaded");
 }
 

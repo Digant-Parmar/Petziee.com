@@ -142,7 +142,7 @@ function buyNow() {
             //     console.error("code : " + code + "message:" + message + "details: " + details);
 
             // });
-            var url = 'https://petzieee.web.app/payment/payment.html?name=' + encodeURIComponent(id) + '&quantity=' + encodeURIComponent(quantity.value);
+            var url = 'https://petziee-dev.web.app/payment/payment.html?name=' + encodeURIComponent(id) + '&quantity=' + encodeURIComponent(quantity.value);
             document.location.href = url;
 
             // $.ajax({
@@ -160,7 +160,7 @@ function buyNow() {
         } else {
             // User not logged in or has just logged out.
             console.log("User not logged in to add to cart");
-            window.location.assign("https://petzieee.web.app/login/login.html");
+            window.location.assign("https://petziee-dev.web.app/login/login.html");
 
         }
     });
