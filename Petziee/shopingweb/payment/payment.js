@@ -132,8 +132,10 @@ document.getElementById('paynow').onclick = async function(e) {
                         }).then((value) => {
                             if (value) {
                                 $('#lottie').css('display', 'none');
+                                $('#lottieCompleted').css('display', '');
                                 // alert("Payment Successfull");
-                                window.history.go(-3);
+                                setTimeout(function() { window.history.go(-3); }, 4000);
+
                             } else {
                                 $('#lottie').css('display', 'none');
                                 $('#overlay').remove();
@@ -196,9 +198,9 @@ document.getElementById('paynow').onclick = async function(e) {
                         $('#lottie').css('display', '');
 
                         console.log(response);
-                        alert(response.razorpay_payment_id);
-                        alert(response.razorpay_order_id);
-                        alert(response.razorpay_signature);
+                        // alert(response.razorpay_payment_id);
+                        // alert(response.razorpay_order_id);
+                        // alert(response.razorpay_signature);
 
                         var confirmPayment = functions.httpsCallable("confirmPayment");
                         await confirmPayment({
@@ -208,11 +210,13 @@ document.getElementById('paynow').onclick = async function(e) {
                             id: result.receipt,
                         }).then((value) => {
                             if (value) {
-                                alert("Payment Successfull");
+                                // alert("Payment Successfull");
                                 $('#lottie').css('display', 'none');
-                                $('#overlay').remove();
+                                $('#lottieCompleted').css('display', '');
 
-                                window.history.go(-2);
+                                // $('#overlay').remove();
+
+                                setTimeout(function() { window.history.go(-2); }, 4000);
 
                             } else {
                                 alert("Payment Unsuccessfull");
