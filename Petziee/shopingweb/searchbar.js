@@ -48,7 +48,7 @@ function autocomplete(inp) {
                 b.addEventListener("click", function(e) {
                     /*insert the value for the autocomplete text field:*/
                     inp.value = this.getElementsByTagName("input")[0].value;
-                    window.location.href = "https://petziee-dev.web.app/dp/" + this.getElementsByTagName("input")[0].id + ".html";
+                    window.location.href = "https://petzieee.web.app/dp/" + this.getElementsByTagName("input")[0].id + ".html";
                     /*close the list of autocompleted values,
                     (or any other open lists of autocompleted values:*/
                     closeAllLists();
