@@ -222,7 +222,7 @@
                             <h5>'+nameOfProduct+'
                             </h5>
 
-                            <p class="mb-2 text-muted text-uppercase small">Compney : FARMINA PET FOODS</p>
+                            <p class="mb-2 text-muted text-uppercase small">Company : FARMINA PET FOODS</p>
                             <ul class="rating">
                                 <li> <i class="fas fa-star fa-sm text-primary"></i> </li>
                                 <li> <i class="fas fa-star fa-sm text-primary"></i> </li>
