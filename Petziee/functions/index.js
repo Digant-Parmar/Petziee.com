@@ -128,7 +128,7 @@ exports.razorpay = functions.https.onCall(async(data, context) => {
 
 
 
-    var instance = new Razorpay({ key_id: 'rzp_test_EQavvp4sNxxG6W', key_secret: 'NyrBxjP43twshRqwKZgG5sMu' });
+    var instance = new Razorpay({ key_id: 'rzp_live_zNDp8kSiWigyQ5', key_secret: '8vuYp1R9DGjreC5zSWPXT5ZU' });
 
     var x;
     var totalPrice = 0;
@@ -251,7 +251,7 @@ exports.confirmPayment = functions.https.onCall(async(data, context) => {
 
     const text = data.razorpay_order_id + "|" + data.razorpay_payment_id;
     var signature = crypto
-        .createHmac("sha256", "NyrBxjP43twshRqwKZgG5sMu")
+        .createHmac("sha256", "8vuYp1R9DGjreC5zSWPXT5ZUs")
         .update(text)
         .digest("hex");
 

@@ -108,10 +108,10 @@ document.getElementById('paynow').onclick = async function(e) {
                 console.log("resule", result);
                 var options = {
                     "key": "rzp_live_zNDp8kSiWigyQ5", // Enter the Key ID generated from the Dashboard
-                    "amount": "10000", // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+                    "amount": result.amount, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
                     "currency": "INR",
-                    "name": "Acme Corp",
-                    "description": "Test Transaction",
+                    "name": "Petziee",
+                    "description": "For orderId: " + result.id,
                     "image": "https://petziee-dev.web.app/image/sanji.png",
                     "order_id": result.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
                     "handler": async function(response) {
@@ -157,7 +157,7 @@ document.getElementById('paynow').onclick = async function(e) {
                         "address": selectedAddress.add1 + " " + selectedAddress.add2 + " " + selectedAddress.city + " " + selectedAddress.state + "-" + selectedAddress.pin
                     },
                     "theme": {
-                        "color": "#3399cc"
+                        "color": "#2e2e2e"
                     }
                 };
                 var rzp1 = new Razorpay(options);
@@ -189,8 +189,8 @@ document.getElementById('paynow').onclick = async function(e) {
                     "key": "rzp_live_zNDp8kSiWigyQ5", // Enter the Key ID generated from the Dashboard
                     "amount": (cost * 100) + "", // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
                     "currency": "INR",
-                    "name": "Acme Corp",
-                    "description": "Test Transaction",
+                    "name": "Petziee",
+                    "description": "For orderID: " + result.id,
                     "image": "https://petziee-dev.web.app/image/sanji.png",
                     "order_id": result.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
                     "handler": async function(response) {
@@ -235,7 +235,7 @@ document.getElementById('paynow').onclick = async function(e) {
                         "address": selectedAddress.add1 + " " + selectedAddress.add2 + " " + selectedAddress.city + " " + selectedAddress.state + "-" + selectedAddress.pin
                     },
                     "theme": {
-                        "color": "#3399cc"
+                        "color": "#2e2e2e"
                     }
                 };
                 var rzp1 = new Razorpay(options);

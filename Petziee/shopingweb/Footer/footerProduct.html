@@ -1,6 +1,3 @@
-<!-- Footer -->
-
-
 <footer id="footer" style="color: white; background: #181818;">
 
     <div class="container ">
@@ -10,7 +7,16 @@
             <div class="footer-item one">
 
                 <h1 id="yamatoPress" class="logon">PETZIEE</h1>
+                <script>
+                    var pressTimer;
 
+                    $("#yamatoPress").mouseup(function() {
+                        $("#yamato").css('display', 'none');
+                    }).mousedown(function() {
+                        // Set timeout
+                        $("#yamato").css('display', '');
+                    });
+                </script>
                 <p class="text">REDEFINIG PET'S CULTURE.</p>
                 <!-- 
 
@@ -35,8 +41,8 @@
             <div class="footer-item">
                 <h2>Information</h2>
                 <ul>
-                    <li><a href="https://petzieee.web.app/security/shipping Policy.html ">Shipping Policy</a></li>
-                    <li><a href="https://petzieee.web.app/security/privacy Policy.html ">Privacy Policy</a></li>
+                    <li><a href="https://petzieee.web.app/security/terms and condition.html ">Shiping info.</a></li>
+                    <li><a href="https://petzieee.web.app/security/terms and condition.html ">Legal Notice</a></li>
                     <li><a href="https://petzieee.web.app/security/terms and condition.html">Terms and Conditions of use</a></li>
                     <li><a href="https://petzieee.web.app/security/refund policy.html">Refund</a></li>
                     <li>Payment with razorpay</li>
@@ -58,7 +64,18 @@
             <hr class="whit">
         </div>
     </div>
+    <!-- 
 
+<div class = "copyright-text backfooter"> 
+
+<div class = "container"> 
+
+<p class = "text" style="color: white;">© 2021 - Made with love and time</p> 
+
+<div> <img src = "../image/pay_method.png" alt = "payment method"> 
+</div> 
+</div> 
+</div> -->
 
     <div class="footer-copyright text-center py-3 mtop">© 2022 Copyright: <a href="#"> Made with love and time</a>
     </div>
